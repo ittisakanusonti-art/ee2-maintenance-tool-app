@@ -245,7 +245,7 @@
             .catch(err => console.error('โหลด Fuji_alarms.json ไม่สำเร็จ:', err));
 
         // โหลดข้อมูล Fuji VM4 Alarm
-        fetch('Fuji_VM4_alarms.json')
+        fetch('Fuji_vm4_alarms.json')
             .then(response => response.json())
             .then(data => { fujiVm4AlarmData = data.fuji_vm4_alarms || data; })
             .catch(err => console.error('โหลด Fuji_VM4_alarms.json ไม่สำเร็จ:', err));    
