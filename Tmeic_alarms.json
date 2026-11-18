@@ -1,0 +1,3540 @@
+{
+  "tmeic_alarms": [
+    {
+      "code": "50",
+      "group": "BLR1",
+      "name": "OCD",
+      "description": "Device short-circuit protection (OverCurrent Device). BLR signal is turned off and the drive stops.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "51",
+      "group": "BLR1",
+      "name": "OCD_U",
+      "description": "Device short-circuit, U-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "52",
+      "group": "BLR1",
+      "name": "OCD_V",
+      "description": "Device short-circuit, V-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "53",
+      "group": "BLR1",
+      "name": "OCD_W",
+      "description": "Device short-circuit, W-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "54",
+      "group": "BLR1",
+      "name": "OH_T",
+      "description": "Equipment overheat timer. Overheat of the stack continued for the time set with the timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "55",
+      "group": "BLR1",
+      "name": "OH_T_U",
+      "description": "Equipment overheat timer, U-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "56",
+      "group": "BLR1",
+      "name": "OH_T_V",
+      "description": "Equipment overheat timer, V-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "57",
+      "group": "BLR1",
+      "name": "OH_T_W",
+      "description": "Equipment overheat timer, W-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "58",
+      "group": "BLR1",
+      "name": "CURU",
+      "description": "Current failure of U-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของ current detector เฟส U และวงจรหลัก"
+    },
+    {
+      "code": "59",
+      "group": "BLR1",
+      "name": "CURW",
+      "description": "Current failure of W-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของ current detector เฟส W และวงจรหลัก"
+    },
+    {
+      "code": "60",
+      "group": "BLR1",
+      "name": "CPU_A",
+      "description": "Slave CPU A error.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize (ปิด/เปิดไฟควบคุม) หากยังเกิดซ้ำให้เปลี่ยนบอร์ด CTR"
+    },
+    {
+      "code": "61",
+      "group": "BLR1",
+      "name": "CPU_M",
+      "description": "Master CPU error.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize (ปิด/เปิดไฟควบคุม)"
+    },
+    {
+      "code": "62",
+      "group": "BLR1",
+      "name": "FUSE",
+      "description": "IGBT fuse blown.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "66",
+      "group": "BLR2",
+      "name": "OCD_B",
+      "description": "Device short-circuit, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "67",
+      "group": "BLR2",
+      "name": "OCD_B_U",
+      "description": "Device short-circuit, B bank U-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "68",
+      "group": "BLR2",
+      "name": "OCD_B_V",
+      "description": "Device short-circuit, B bank V-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "69",
+      "group": "BLR2",
+      "name": "OCD_B_W",
+      "description": "Device short-circuit, B bank W-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุปกรณ์ในวงจรหลักว่าเสียหายหรือไม่ หากเสียหายให้เปลี่ยน Stack หรือ Unit ตรวจสอบสาย AC หลักว่ามีลงกราวด์หรือไม่ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "70",
+      "group": "BLR2",
+      "name": "OH_T_B",
+      "description": "Equipment overheat timer, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "71",
+      "group": "BLR2",
+      "name": "OH_T_B_U",
+      "description": "Equipment overheat timer, B bank U-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "72",
+      "group": "BLR2",
+      "name": "OH_T_B_V",
+      "description": "Equipment overheat timer, B bank V-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "73",
+      "group": "BLR2",
+      "name": "OH_T_B_W",
+      "description": "Equipment overheat timer, B bank W-phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน พัดลมระบายอากาศ ไส้กรองอุดตันหรือไม่ และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "74",
+      "group": "BLR2",
+      "name": "CURU_B",
+      "description": "U-phase current failure, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของ current detector และวงจรหลัก"
+    },
+    {
+      "code": "75",
+      "group": "BLR2",
+      "name": "CURW_B",
+      "description": "W-phase current failure, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของ current detector และวงจรหลัก"
+    },
+    {
+      "code": "78",
+      "group": "BLR2",
+      "name": "FUSE_B",
+      "description": "IGBT fuse blown, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "82",
+      "group": "BLR3",
+      "name": "OSS",
+      "description": "Overspeed. Overspeed of the motor was detected.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่า speed sensor ไม่ขาดหรือหลุด ตรวจสอบค่า overshoot ของ speed control และอิทธิพลจากเครื่องจักรที่เชื่อมต่ออยู่"
+    },
+    {
+      "code": "83",
+      "group": "BLR3",
+      "name": "OSS_FO",
+      "description": "Output frequency exceeded.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบค่า overshoot ของ speed control และอิทธิพลจากเครื่องจักรที่เชื่อมต่ออยู่"
+    },
+    {
+      "code": "86",
+      "group": "BLR3",
+      "name": "SP_ERR",
+      "description": "Speed detection error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสิ่งแปลกปลอมที่ติดค้าง การเดินสาย speed sensor (resolver) และการตั้งค่าพารามิเตอร์ sensorless"
+    },
+    {
+      "code": "87",
+      "group": "BLR3",
+      "name": "SP_ERR2",
+      "description": "Speed error 2.",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "88",
+      "group": "BLR3",
+      "name": "E1_ERR",
+      "description": "Voltage reference error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสาย sensor (HCT) หรือสายเอาต์พุต หากจำเป็นให้เปลี่ยน HCT"
+    },
+    {
+      "code": "112",
+      "group": "BLR5",
+      "name": "PLD_ERR",
+      "description": "PLD error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบจัมเปอร์ \"Use UVS2\" (JP4) บนบอร์ด XIO หากไม่พบปัญหาให้เปลี่ยนบอร์ด CTR"
+    },
+    {
+      "code": "114",
+      "group": "BLR5",
+      "name": "PHSFT_ERR",
+      "description": "PHASE SFT automatic correction error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสายไฟเมนและสายไฟ PLL ทำ power supply initialize"
+    },
+    {
+      "code": "115",
+      "group": "BLR5",
+      "name": "DS_T",
+      "description": "Door open timer.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "116",
+      "group": "BLR5",
+      "name": "BLR_FAULT",
+      "description": "BLR fault. Secondary display of BLR being off.",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ BLR ดับ"
+    },
+    {
+      "code": "117",
+      "group": "BLR5",
+      "name": "PRE_F",
+      "description": "Precharge fault. Pre-charge contactor failure.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์และคอนแทกเตอร์ของวงจร pre-charge แรงดันไฟของวงจร pre-charge และวงจรควบคุมบนบอร์ด GDM"
+    },
+    {
+      "code": "118",
+      "group": "BLR5",
+      "name": "GR_T",
+      "description": "Ground detection timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่าวงจรหลักมี ground fault หรือไม่ หาก IGBT เสียหายให้เปลี่ยน"
+    },
+    {
+      "code": "120",
+      "group": "BLR5",
+      "name": "SPA4_T",
+      "description": "Spare 4 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "121",
+      "group": "BLR5",
+      "name": "SPA3_T",
+      "description": "Spare 3 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "122",
+      "group": "BLR5",
+      "name": "SPA2_T",
+      "description": "Spare 2 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "123",
+      "group": "BLR5",
+      "name": "SPA1_T",
+      "description": "Spare 1 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "124",
+      "group": "BLR5",
+      "name": "SPA4",
+      "description": "Spare 4.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "125",
+      "group": "BLR5",
+      "name": "SPA3",
+      "description": "Spare 3.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "126",
+      "group": "BLR5",
+      "name": "SPA2",
+      "description": "Spare 2.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "127",
+      "group": "BLR5",
+      "name": "SPA1",
+      "description": "Spare 1.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "128",
+      "group": "BLR6",
+      "name": "PN15_F",
+      "description": "15V power fault (+15V or -15V voltage error).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบหน่วยจ่ายไฟควบคุม และเปลี่ยนบอร์ด CTR"
+    },
+    {
+      "code": "129",
+      "group": "BLR6",
+      "name": "CPSF",
+      "description": "Control power loss.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบแรงดันแหล่งจ่ายไฟควบคุม ฟิวส์บนบอร์ด GDM และไฟตกชั่วขณะ"
+    },
+    {
+      "code": "131",
+      "group": "BLR6",
+      "name": "MPSF",
+      "description": "Main power loss longer than the power-failure restart compensation time.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของวงจรหลักและ current detector"
+    },
+    {
+      "code": "132",
+      "group": "BLR6",
+      "name": "OVD",
+      "description": "DC overvoltage.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่ามีการลดความเร็วกะทันหันกว่าปกติหรือไม่ หากอินเวอร์เตอร์ตัวอื่นที่ต่อคอนเวอร์เตอร์เดียวกันตรวจพบ overvoltage ให้ตรวจสอบคอนเวอร์เตอร์"
+    },
+    {
+      "code": "133",
+      "group": "BLR6",
+      "name": "OVD_B",
+      "description": "DC overvoltage, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่ามีการลดความเร็วกะทันหันกว่าปกติหรือไม่ หากอินเวอร์เตอร์ตัวอื่นที่ต่อคอนเวอร์เตอร์เดียวกันตรวจพบ overvoltage ให้ตรวจสอบคอนเวอร์เตอร์"
+    },
+    {
+      "code": "134",
+      "group": "BLR6",
+      "name": "OVP",
+      "description": "Positive DC overvoltage.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "135",
+      "group": "BLR6",
+      "name": "OVN",
+      "description": "Negative DC overvoltage.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "136",
+      "group": "BLR6",
+      "name": "OVP_B",
+      "description": "Positive DC overvoltage, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "137",
+      "group": "BLR6",
+      "name": "OVN_B",
+      "description": "Negative DC overvoltage, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "138",
+      "group": "BLR6",
+      "name": "GPSF",
+      "description": "Gate power loss.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "139",
+      "group": "BLR6",
+      "name": "GPSF_B",
+      "description": "Gate power loss, B bank.",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "140",
+      "group": "BLR6",
+      "name": "OCA",
+      "description": "AC overcurrent (hardware detection).",
+      "severity": "Heavy Fault",
+      "action": "คอนเวอร์เตอร์: ตรวจสอบสาย AC หลักว่าลงกราวด์หรือไม่ และวงจรหลักว่า DC short-circuit หรือไม่ / อินเวอร์เตอร์: ตรวจสอบ speed sensor สาย AC หลัก วงจรหลัก และแรงดัน DC ว่าตกหรือไม่"
+    },
+    {
+      "code": "141",
+      "group": "BLR6",
+      "name": "OCA_B",
+      "description": "AC overcurrent, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ดำเนินการเช่นเดียวกับ OCA (รหัส 140)"
+    },
+    {
+      "code": "142",
+      "group": "BLR6",
+      "name": "IPM",
+      "description": "IPM failure (overcurrent in the IPM device).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่า IPM เสียหายหรือไม่ หากเสียหายให้เปลี่ยน IPM และบอร์ด GDM ตรวจสอบสาย AC หลักว่าลงกราวด์หรือไม่ และฟิวส์"
+    },
+    {
+      "code": "143",
+      "group": "BLR6",
+      "name": "PLL",
+      "description": "PLL error (power supply synchronization).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์อินพุตบอร์ด PDM และลำดับเฟสอินพุต PLL ว่าตรงกับวงจรหลักหรือไม่"
+    },
+    {
+      "code": "145",
+      "group": "UVA1",
+      "name": "UVD",
+      "description": "DC volts drop.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบขั้นตอนการใช้งาน หากอินเวอร์เตอร์ตัวอื่นที่ต่อคอนเวอร์เตอร์เดียวกันตรวจพบแรงดันตกให้ตรวจสอบคอนเวอร์เตอร์ และตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "146",
+      "group": "UVA1",
+      "name": "OL5",
+      "description": "Overload 5 min.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพโหลด"
+    },
+    {
+      "code": "147",
+      "group": "UVA1",
+      "name": "OL20",
+      "description": "Overload 20 min.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพโหลด"
+    },
+    {
+      "code": "150",
+      "group": "UVA1",
+      "name": "CL_T",
+      "description": "Current limit timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสถานะการทำงานและโหลด ปัจจัยที่ทำให้เครื่องจักรโอเวอร์โหลด และกำลังไฟ (kW) เอาต์พุตของไดรฟ์"
+    },
+    {
+      "code": "151",
+      "group": "UVA1",
+      "name": "AUX_FN_T",
+      "description": "INP/CTT fan stop timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสถานะ MCCB ของพัดลม สภาพการหมุนของพัดลม และมอเตอร์พัดลม"
+    },
+    {
+      "code": "154",
+      "group": "UVA1",
+      "name": "DCSW",
+      "description": "DC main open.",
+      "severity": "Heavy Fault",
+      "action": "ระบบ multistage: ตรวจสอบการเสียบยูนิตอินเวอร์เตอร์ / ตู้ standalone: ตรวจสอบ MCCB หลัก"
+    },
+    {
+      "code": "155",
+      "group": "UVA1",
+      "name": "AC_MCCB",
+      "description": "AC input MCCB open.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสาย answerback auxiliary contact ของเบรกเกอร์ AC อินพุต และตรวจสอบเบรกเกอร์"
+    },
+    {
+      "code": "156",
+      "group": "UVA1",
+      "name": "PH_LOSS",
+      "description": "Converter phase loss.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบวงจรอินพุต"
+    },
+    {
+      "code": "159",
+      "group": "UVA1",
+      "name": "BLR",
+      "description": "Electrical critical fault. Secondary display of BLR being off.",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ BLR ดับ"
+    },
+    {
+      "code": "161",
+      "group": "UVA2",
+      "name": "UVD_B",
+      "description": "DC volts drop, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบขั้นตอนการใช้งาน คอนเวอร์เตอร์ และฟิวส์ DC"
+    },
+    {
+      "code": "167",
+      "group": "UVA2",
+      "name": "AUX_FN_T_B",
+      "description": "INP/CTT fan stop timer, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสถานะ MCCB ของพัดลม สภาพการหมุนของพัดลม และมอเตอร์พัดลม"
+    },
+    {
+      "code": "170",
+      "group": "UVA2",
+      "name": "DCSW_B",
+      "description": "DC main open, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ระบบ multistage: ตรวจสอบการเสียบยูนิตอินเวอร์เตอร์ / ตู้ standalone: ตรวจสอบ MCCB หลัก"
+    },
+    {
+      "code": "171",
+      "group": "UVA2",
+      "name": "AC_MCCB_B",
+      "description": "AC input MCCB open, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสาย answerback auxiliary contact ของเบรกเกอร์ AC อินพุต และตรวจสอบเบรกเกอร์"
+    },
+    {
+      "code": "172",
+      "group": "UVA2",
+      "name": "PH_LOSS_B",
+      "description": "Converter phase loss, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบวงจรอินพุต"
+    },
+    {
+      "code": "176",
+      "group": "UVA3",
+      "name": "UVP_B",
+      "description": "Positive DC voltage drop, B bank.",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "177",
+      "group": "UVA3",
+      "name": "UVN_B",
+      "description": "Negative DC voltage drop, B bank.",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "178",
+      "group": "UVA3",
+      "name": "UVP",
+      "description": "Positive DC voltage drop.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "179",
+      "group": "UVA3",
+      "name": "UVN",
+      "description": "Negative DC voltage drop.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "180",
+      "group": "UVA3",
+      "name": "OH_ACL_T",
+      "description": "Input ACL overheat timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน เช่น โอเวอร์โหลด การระบายความร้อน และ temperature relay ของ ACL"
+    },
+    {
+      "code": "181",
+      "group": "UVA3",
+      "name": "OH_ACL_T_B",
+      "description": "Input ACL overheat timer, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน เช่น โอเวอร์โหลด การระบายความร้อน และ temperature relay ของ ACL"
+    },
+    {
+      "code": "182",
+      "group": "UVA3",
+      "name": "SYS_ERR",
+      "description": "System configuration error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบข้อมูล adjustment record ของอุปกรณ์อื่น"
+    },
+    {
+      "code": "183",
+      "group": "UVA3",
+      "name": "PARA_ERR",
+      "description": "Set parameter error.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize และโหลดข้อมูล adjustment record ใหม่"
+    },
+    {
+      "code": "184",
+      "group": "UVA3",
+      "name": "CODE_ERR",
+      "description": "SRAM code checksum error.",
+      "severity": "Heavy Fault",
+      "action": "SRAM เสีย ให้เปลี่ยนบอร์ด CTR"
+    },
+    {
+      "code": "185",
+      "group": "UVA3",
+      "name": "NO_LOAD",
+      "description": "Output release (open load detected).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพโหลด วงจร IGBT วงจร gate และวงจรตรวจจับกระแส"
+    },
+    {
+      "code": "186",
+      "group": "UVA3",
+      "name": "GR_T",
+      "description": "Ground detection timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่าวงจรหลักมี ground fault หรือไม่ หาก IGBT เสียหายให้เปลี่ยน"
+    },
+    {
+      "code": "187",
+      "group": "UVA3",
+      "name": "PHASE_ERR",
+      "description": "Phase rotate fail.",
+      "severity": "Heavy Fault",
+      "action": "ไม่ได้ใช้งาน (Not used)"
+    },
+    {
+      "code": "188",
+      "group": "UVA3",
+      "name": "BLA",
+      "description": "AC breaker trip.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ BLA ภายนอก"
+    },
+    {
+      "code": "189",
+      "group": "UVA3",
+      "name": "STALL",
+      "description": "Low frequency overload (stall).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพโหลด"
+    },
+    {
+      "code": "190",
+      "group": "UVA3",
+      "name": "VDC_HUNT_T",
+      "description": "VDC hunt timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่าค่า gain ของ voltage control สูงเกินไปหรือไม่"
+    },
+    {
+      "code": "191",
+      "group": "UVA3",
+      "name": "UPS_ERR",
+      "description": "UPS error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสถานะการทำงานของ UPS และสายไฟควบคุม"
+    },
+    {
+      "code": "194",
+      "group": "UVA4",
+      "name": "TL_F1",
+      "description": "LAN failure 1.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "195",
+      "group": "UVA4",
+      "name": "TL_F2",
+      "description": "LAN failure 2.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "199",
+      "group": "UVA4",
+      "name": "N_IM",
+      "description": "Number of motors error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ NFB ของมอเตอร์แต่ละตัว และวงจรตรวจจับจำนวนมอเตอร์"
+    },
+    {
+      "code": "200",
+      "group": "UVA4",
+      "name": "SPA4_T",
+      "description": "Spare 4 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "201",
+      "group": "UVA4",
+      "name": "SPA3_T",
+      "description": "Spare 3 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "202",
+      "group": "UVA4",
+      "name": "SPA2_T",
+      "description": "Spare 2 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "203",
+      "group": "UVA4",
+      "name": "SPA1_T",
+      "description": "Spare 1 timer.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "204",
+      "group": "UVA4",
+      "name": "SPA4",
+      "description": "Spare 4.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "205",
+      "group": "UVA4",
+      "name": "SPA3",
+      "description": "Spare 3.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "206",
+      "group": "UVA4",
+      "name": "SPA2",
+      "description": "Spare 2.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "207",
+      "group": "UVA4",
+      "name": "SPA1",
+      "description": "Spare 1.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "208",
+      "group": "UV1",
+      "name": "UVS",
+      "description": "External safe switch (Under Voltage Safety interlock).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพทางฝั่ง master cubicle"
+    },
+    {
+      "code": "209",
+      "group": "UV1",
+      "name": "IL",
+      "description": "External interlock.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพทางฝั่ง master cubicle"
+    },
+    {
+      "code": "210",
+      "group": "UV1",
+      "name": "P_SW",
+      "description": "Panel interlock switch on.",
+      "severity": "Heavy Fault",
+      "action": "กดสวิตช์ให้เป็น \"Operation permitted\""
+    },
+    {
+      "code": "211",
+      "group": "UV1",
+      "name": "QSTOP_FAULT",
+      "description": "Quick stop operated.",
+      "severity": "Heavy Fault",
+      "action": "ปลดคำสั่ง QSTOP"
+    },
+    {
+      "code": "212",
+      "group": "UV1",
+      "name": "RDIR_PROT",
+      "description": "Reverse direction protection.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่า speed reference เป็นทิศทางกลับหรือไม่"
+    },
+    {
+      "code": "213",
+      "group": "UV1",
+      "name": "PLL_ERR",
+      "description": "PLL error.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์บอร์ด PDM และลำดับเฟสอินพุต PLL ว่าตรงกับวงจรหลักหรือไม่"
+    },
+    {
+      "code": "214",
+      "group": "UV1",
+      "name": "MPSFA",
+      "description": "MPSF detected (main power failure alarm).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของวงจรหลักและ current detector"
+    },
+    {
+      "code": "215",
+      "group": "UV1",
+      "name": "ACSW_F",
+      "description": "AC contactor fault.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบคอนแทกเตอร์ฝั่งโหลด (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "216",
+      "group": "UV1",
+      "name": "SWILON",
+      "description": "Soft interlock on.",
+      "severity": "Heavy Fault",
+      "action": "ทำการ mask (โดยปกติไม่ได้ใช้งาน)"
+    },
+    {
+      "code": "217",
+      "group": "UV1",
+      "name": "AC_DCN",
+      "description": "Output disconnect open.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ disconnecting switch (หน้าสัมผัสและความต่อเนื่อง)"
+    },
+    {
+      "code": "219",
+      "group": "UV1",
+      "name": "ACSW_F_B",
+      "description": "AC contactor fault, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบคอนแทกเตอร์ฝั่งโหลด (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "220",
+      "group": "UV1",
+      "name": "MP_S_IL",
+      "description": "MP start interlock. Secondary display.",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock (MP_SIL) ดับ"
+    },
+    {
+      "code": "221",
+      "group": "UV1",
+      "name": "UVA_EX",
+      "description": "External ready condition met (external equipment electrical condition).",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ UVA ดับของอินเวอร์เตอร์ฝั่งตรงข้าม"
+    },
+    {
+      "code": "222",
+      "group": "UV1",
+      "name": "UVA",
+      "description": "FI ready condition met (electrical condition ready).",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "223",
+      "group": "UV1",
+      "name": "C_IL",
+      "description": "Close interlock.",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักของ starting interlock (SIL)"
+    },
+    {
+      "code": "224",
+      "group": "UV2",
+      "name": "AIN_FAULT",
+      "description": "Aux A/D signal fault (4-20 mA input below 4 mA).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสายสัญญาณและแหล่งกำเนิดสัญญาณ"
+    },
+    {
+      "code": "225",
+      "group": "UV2",
+      "name": "SP_LOST",
+      "description": "External speed reference lost.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการขาดของสัญญาณ analog speed reference"
+    },
+    {
+      "code": "226",
+      "group": "UV2",
+      "name": "TL_F3",
+      "description": "LAN failure 3.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "227",
+      "group": "UV2",
+      "name": "TL_F4",
+      "description": "LAN failure 4.",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "228",
+      "group": "UV2",
+      "name": "PHASE_IL",
+      "description": "PS phase error interlock (main power vs PLL power).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบเฟสของไฟเมนและไฟ PLL"
+    },
+    {
+      "code": "230",
+      "group": "UV2",
+      "name": "M_OH",
+      "description": "Motor overheat.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "231",
+      "group": "UV2",
+      "name": "B_HLTY",
+      "description": "Brake healthy.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบวงจรเบรก"
+    },
+    {
+      "code": "232",
+      "group": "UV2",
+      "name": "UVS1_ANS",
+      "description": "External safe switch 1 answerback error.",
+      "severity": "Heavy Fault",
+      "action": "เปลี่ยนบอร์ด I/O และบอร์ด CTR หากใช้ UVS2 ให้ตั้งจัมเปอร์ตามความจำเป็น"
+    },
+    {
+      "code": "233",
+      "group": "UV2",
+      "name": "UVS2_ANS",
+      "description": "External safe switch 2 answerback error.",
+      "severity": "Heavy Fault",
+      "action": "เปลี่ยนบอร์ด I/O และบอร์ด CTR หากใช้ UVS2 ให้ตั้งจัมเปอร์ตามความจำเป็น"
+    },
+    {
+      "code": "234",
+      "group": "UV2",
+      "name": "OCA",
+      "description": "AC overcurrent.",
+      "severity": "Heavy Fault",
+      "action": "ดำเนินการเช่นเดียวกับ OCA (รหัส 140)"
+    },
+    {
+      "code": "235",
+      "group": "UV2",
+      "name": "OCA_B",
+      "description": "AC overcurrent, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ดำเนินการเช่นเดียวกับ OCA (รหัส 140)"
+    },
+    {
+      "code": "236",
+      "group": "UV2",
+      "name": "MP_FAULT",
+      "description": "MP critical fault.",
+      "severity": "Heavy Fault",
+      "action": "ทำ fault reset หลังจากกำจัดสาเหตุหลักของ fault แล้ว"
+    },
+    {
+      "code": "237",
+      "group": "UV2",
+      "name": "SPA1",
+      "description": "Spare 1.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "238",
+      "group": "UV2",
+      "name": "SPA2",
+      "description": "Spare 2.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "239",
+      "group": "UV2",
+      "name": "FAULT",
+      "description": "Critical fault.",
+      "severity": "Heavy Fault",
+      "action": "ทำ fault reset หลังจากกำจัดสาเหตุหลักของ fault แล้ว"
+    },
+    {
+      "code": "240",
+      "group": "SIL1",
+      "name": "SPA1",
+      "description": "Spare 1 (start interlock).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "241",
+      "group": "SIL1",
+      "name": "SPA2",
+      "description": "Spare 2 (start interlock).",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "245",
+      "group": "SIL1",
+      "name": "GPSF",
+      "description": "Gate power loss (start interlock).",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "246",
+      "group": "SIL1",
+      "name": "UV_SIL",
+      "description": "DC volt drop start interlock.",
+      "severity": "Heavy Fault",
+      "action": "สั่งทำงานคอนเวอร์เตอร์ และหากแรงดันตกในอินเวอร์เตอร์ให้ตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "247",
+      "group": "SIL1",
+      "name": "ACSW_C",
+      "description": "AC contactor closed.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบคอนแทกเตอร์ (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "249",
+      "group": "SIL1",
+      "name": "GPSF_B",
+      "description": "Gate power loss B (start interlock).",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "250",
+      "group": "SIL1",
+      "name": "UV_SIL_B",
+      "description": "DC volt drop start interlock, B bank.",
+      "severity": "Heavy Fault",
+      "action": "สั่งทำงานคอนเวอร์เตอร์ และหากแรงดันตกในอินเวอร์เตอร์ให้ตรวจสอบฟิวส์ DC"
+    },
+    {
+      "code": "251",
+      "group": "SIL1",
+      "name": "ACSW_C_B",
+      "description": "AC contactor closed, B bank.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบคอนแทกเตอร์ (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "253",
+      "group": "SIL1",
+      "name": "M_FN",
+      "description": "Motor fan stop.",
+      "severity": "Heavy Fault",
+      "action": "สตาร์ทพัดลมระบายความร้อนมอเตอร์"
+    },
+    {
+      "code": "254",
+      "group": "SIL1",
+      "name": "SP_SIL",
+      "description": "Zero speed start interlock.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่ามอเตอร์หยุดแล้ว จากนั้นสั่งเดินเครื่องใหม่"
+    },
+    {
+      "code": "255",
+      "group": "SIL1",
+      "name": "STCMD",
+      "description": "Operation command start interlock.",
+      "severity": "Heavy Fault",
+      "action": "ปิดสัญญาณสั่งขับ (driving signal) ฝั่ง master"
+    },
+    {
+      "code": "272",
+      "group": "MP_SIL1",
+      "name": "MP_BE_TM1_OL",
+      "description": "Bearing temperature 1 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "273",
+      "group": "MP_SIL1",
+      "name": "MP_BE_TM2_OL",
+      "description": "Bearing temperature 2 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "274",
+      "group": "MP_SIL1",
+      "name": "MP_BE_TM3_OL",
+      "description": "Bearing temperature 3 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "275",
+      "group": "MP_SIL1",
+      "name": "MP_BE_TMX_OL",
+      "description": "Bearing temperature max over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "276",
+      "group": "MP_SIL1",
+      "name": "MP_CW_TM1_OL",
+      "description": "Cooling water temperature 1 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "277",
+      "group": "MP_SIL1",
+      "name": "MP_CW_TM2_OL",
+      "description": "Cooling water temperature 2 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "278",
+      "group": "MP_SIL1",
+      "name": "MP_CW_TMX_OL",
+      "description": "Cooling water temperature max over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "279",
+      "group": "MP_SIL1",
+      "name": "MP_IAR_TM1_OL",
+      "description": "Inlet air temperature 1 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "280",
+      "group": "MP_SIL1",
+      "name": "MP_IAR_TM2_OL",
+      "description": "Inlet air temperature 2 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "281",
+      "group": "MP_SIL1",
+      "name": "MP_IAR_TMX_OL",
+      "description": "Inlet air temperature max over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "282",
+      "group": "MP_SIL1",
+      "name": "MP_OAR_TM1_OL",
+      "description": "Outlet air temperature 1 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "283",
+      "group": "MP_SIL1",
+      "name": "MP_OAR_TM2_OL",
+      "description": "Outlet air temperature 2 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "284",
+      "group": "MP_SIL1",
+      "name": "MP_OAR_TMX_OL",
+      "description": "Outlet air temperature max over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "285",
+      "group": "MP_SIL1",
+      "name": "MP_SW_TM1_OL",
+      "description": "Stator winding temperature 1 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "286",
+      "group": "MP_SIL1",
+      "name": "MP_SW_TM2_OL",
+      "description": "Stator winding temperature 2 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "287",
+      "group": "MP_SIL1",
+      "name": "MP_SW_TM3_OL",
+      "description": "Stator winding temperature 3 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "288",
+      "group": "MP_SIL2",
+      "name": "MP_SW_TMX_OL",
+      "description": "Stator winding temperature max over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "289",
+      "group": "MP_SIL2",
+      "name": "MP_BV_1X_OL",
+      "description": "Bearing vibration 1X over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "290",
+      "group": "MP_SIL2",
+      "name": "MP_BV_1Y_OL",
+      "description": "Bearing vibration 1Y over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "291",
+      "group": "MP_SIL2",
+      "name": "MP_BV_1Z_OL",
+      "description": "Bearing vibration 1Z over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "292",
+      "group": "MP_SIL2",
+      "name": "MP_BV_2X_OL",
+      "description": "Bearing vibration 2X over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "293",
+      "group": "MP_SIL2",
+      "name": "MP_BV_2Y_OL",
+      "description": "Bearing vibration 2Y over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "294",
+      "group": "MP_SIL2",
+      "name": "MP_BV_2Z_OL",
+      "description": "Bearing vibration 2Z over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "295",
+      "group": "MP_SIL2",
+      "name": "MP_BV_3X_OL",
+      "description": "Bearing vibration 3X over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "296",
+      "group": "MP_SIL2",
+      "name": "MP_BV_3Y_OL",
+      "description": "Bearing vibration 3Y over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "297",
+      "group": "MP_SIL2",
+      "name": "MP_BV_3Z_OL",
+      "description": "Bearing vibration 3Z over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "298",
+      "group": "MP_SIL2",
+      "name": "MP_BV_X1_OL",
+      "description": "Bearing vibration max 1 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "299",
+      "group": "MP_SIL2",
+      "name": "MP_BV_X2_OL",
+      "description": "Bearing vibration max 2 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "300",
+      "group": "MP_SIL2",
+      "name": "MP_BV_X3_OL",
+      "description": "Bearing vibration max 3 over level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "301",
+      "group": "MP_SIL2",
+      "name": "MP_CWF1_LL",
+      "description": "Cooling water flow 1 low level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "302",
+      "group": "MP_SIL2",
+      "name": "MP_CWF2_LL",
+      "description": "Cooling water flow 2 low level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "303",
+      "group": "MP_SIL2",
+      "name": "MP_CWFS_LL",
+      "description": "Cooling water flow sum low level (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "304",
+      "group": "MP_SIL3",
+      "name": "MP_BE_TM_H1",
+      "description": "Bearing temperature high 1 (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "305",
+      "group": "MP_SIL3",
+      "name": "MP_BE_TM_H2",
+      "description": "Bearing temperature high 2 (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "306",
+      "group": "MP_SIL3",
+      "name": "MP_BE_TM_H3",
+      "description": "Bearing temperature high 3 (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "307",
+      "group": "MP_SIL3",
+      "name": "MP_CWF_L1",
+      "description": "Cooling water flow low 1 (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "308",
+      "group": "MP_SIL3",
+      "name": "MP_SW_TM_H",
+      "description": "Stator winding temperature high (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "309",
+      "group": "MP_SIL3",
+      "name": "MP_WLK1",
+      "description": "Water leakage 1 (MP start interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP start interlock ดับ"
+    },
+    {
+      "code": "320",
+      "group": "READY1",
+      "name": "TL_F1",
+      "description": "LAN failure 1",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "321",
+      "group": "READY1",
+      "name": "TL_F2",
+      "description": "LAN failure 2",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "322",
+      "group": "READY1",
+      "name": "TL_F3",
+      "description": "LAN failure 3",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "323",
+      "group": "READY1",
+      "name": "TL_F4",
+      "description": "LAN failure 4",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "324",
+      "group": "READY1",
+      "name": "DEGD_F2",
+      "description": "Dynamic EGD transmission line failure 2",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ master station ของ DEGD (WAGO PLC สำหรับ MP) และสาย Ethernet"
+    },
+    {
+      "code": "325",
+      "group": "READY1",
+      "name": "DEGD_F3",
+      "description": "Dynamic EGD transmission line failure 3",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ master station ของ DEGD (WAGO PLC สำหรับ MP) และสาย Ethernet"
+    },
+    {
+      "code": "327",
+      "group": "READY1",
+      "name": "TQZ_GB",
+      "description": "TQZ control gate block (TQZ timeout GB)",
+      "severity": "Heavy Fault",
+      "action": "โหมด gate block จะกลับสู่ปกติอัตโนมัติหลัง TQZ control สิ้นสุด หากไม่ใช้ TQZ control ให้ตั้ง FLG_TQZ = 0"
+    },
+    {
+      "code": "330",
+      "group": "READY1",
+      "name": "ACSW_T",
+      "description": "AC switch open timer (AC contactor open timer)",
+      "severity": "Heavy Fault",
+      "action": "โดยปกติคอนแทกเตอร์ฝั่งโหลดจะต่อเมื่อสัญญาณ UV ติด หากตรวจพบสัญญาณนี้ทั้งที่ UV ติด ให้ตรวจสอบคอนแทกเตอร์ (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "331",
+      "group": "READY1",
+      "name": "WM_DC_CTT",
+      "description": "Wall mount DC CTT open timer",
+      "severity": "Heavy Fault",
+      "action": "DC contactor จะต่อเมื่อแรงดัน DC และสัญญาณ UV เกิดขึ้น ให้ตรวจสอบเงื่อนไขดังกล่าว"
+    },
+    {
+      "code": "334",
+      "group": "READY1",
+      "name": "MP_R_IL",
+      "description": "MP ready interlock",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP ready interlock ดับ"
+    },
+    {
+      "code": "335",
+      "group": "READY1",
+      "name": "UV_READY",
+      "description": "Under voltage ready (electrical condition met)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ UV ดับ"
+    },
+    {
+      "code": "337",
+      "group": "READY2",
+      "name": "SP_LOST",
+      "description": "External speed reference lost",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการขาดของสัญญาณ analog speed reference"
+    },
+    {
+      "code": "338",
+      "group": "READY2",
+      "name": "FSEEK_IL",
+      "description": "Sensorless frequency seek interlock (SL restart IL)",
+      "severity": "Heavy Fault",
+      "action": "จะติดเองอัตโนมัติหลังตรวจจับความเร็วมอเตอร์ที่หมุนอิสระได้ หากไม่ใช้ฟังก์ชัน sensorless flying restart (FLG_RESTART=2) ให้ทำการ mask"
+    },
+    {
+      "code": "340",
+      "group": "READY2",
+      "name": "M_FN_T",
+      "description": "Motor fan stop timer",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "341",
+      "group": "READY2",
+      "name": "BR_F",
+      "description": "Electromagnetic brake failure",
+      "severity": "Heavy Fault",
+      "action": "แบบ built-in: ตรวจสอบคอนแทกเตอร์วงจรจ่ายไฟ / แบบ air brake: ตรวจสอบ microswitch ของ air valve และ electromagnetic valve / แบบ electromagnetic: ตรวจสอบ LED \"LF\" ของหน่วยจ่ายไฟ หากดับให้ตรวจสอบแรงดันอินพุตและกระแสเอาต์พุต"
+    },
+    {
+      "code": "343",
+      "group": "READY2",
+      "name": "CHG_START",
+      "description": "System changing start",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของวงจร motor changeover (สัญญาณ 2S และ 3S)"
+    },
+    {
+      "code": "346",
+      "group": "READY2",
+      "name": "ACSW_T_B",
+      "description": "AC contactor open timer, B bank",
+      "severity": "Heavy Fault",
+      "action": "โดยปกติคอนแทกเตอร์ฝั่งโหลดจะต่อเมื่อสัญญาณ UV ติด หากตรวจพบสัญญาณนี้ทั้งที่ UV ติด ให้ตรวจสอบคอนแทกเตอร์ (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "349",
+      "group": "READY2",
+      "name": "SPA1",
+      "description": "Spare 1",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "350",
+      "group": "READY2",
+      "name": "SPA2",
+      "description": "Spare 2",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "352",
+      "group": "MP_RIL1",
+      "name": "MP_CF1_MRA",
+      "description": "Cooling fan 1 motor running (MP ready interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP ready interlock ดับ"
+    },
+    {
+      "code": "353",
+      "group": "MP_RIL1",
+      "name": "MP_CF2_MRA",
+      "description": "Cooling fan 2 motor running (MP ready interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP ready interlock ดับ"
+    },
+    {
+      "code": "354",
+      "group": "MP_RIL1",
+      "name": "MP_OLU_HFDA",
+      "description": "Oil lubrication unit heavy fault (MP ready interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP ready interlock ดับ"
+    },
+    {
+      "code": "355",
+      "group": "MP_RIL1",
+      "name": "MP_OLU_HPL_NA",
+      "description": "Oil lubrication unit high pressure line normal (MP ready interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP ready interlock ดับ"
+    },
+    {
+      "code": "356",
+      "group": "MP_RIL1",
+      "name": "MP_OLU_LPL_NA",
+      "description": "Oil lubrication unit low pressure line normal (MP ready interlock)",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ MP ready interlock ดับ"
+    },
+    {
+      "code": "368",
+      "group": "HFD1",
+      "name": "DEGD_F2",
+      "description": "Dynamic EGD transmission line failure 2",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ master station ของ DEGD (WAGO PLC สำหรับ MP) และสาย Ethernet"
+    },
+    {
+      "code": "369",
+      "group": "HFD1",
+      "name": "DEGD_F3",
+      "description": "Dynamic EGD transmission line failure 3",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ master station ของ DEGD (WAGO PLC สำหรับ MP) และสาย Ethernet"
+    },
+    {
+      "code": "370",
+      "group": "HFD1",
+      "name": "P_SW",
+      "description": "Panel interlock switch on",
+      "severity": "Heavy Fault",
+      "action": "กดสวิตช์ให้เป็น \"Operation permitted\""
+    },
+    {
+      "code": "371",
+      "group": "HFD1",
+      "name": "QSTOP_FAULT",
+      "description": "Quick stop operated",
+      "severity": "Heavy Fault",
+      "action": "ปลดคำสั่ง QSTOP"
+    },
+    {
+      "code": "372",
+      "group": "HFD1",
+      "name": "RDIR_PROT",
+      "description": "Reverse direction protection",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่า speed reference เป็นทิศทางกลับหรือไม่"
+    },
+    {
+      "code": "373",
+      "group": "HFD1",
+      "name": "PLL_ERR",
+      "description": "PLL error",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์บอร์ด PDM และลำดับเฟสอินพุต PLL ว่าตรงกับวงจรหลักหรือไม่"
+    },
+    {
+      "code": "374",
+      "group": "HFD1",
+      "name": "MPSFA",
+      "description": "MPSF detected (main power failure)",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการเดินสายของวงจรหลักและ current detector"
+    },
+    {
+      "code": "375",
+      "group": "HFD1",
+      "name": "ACSW_F",
+      "description": "AC contactor fault",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบคอนแทกเตอร์ฝั่งโหลด (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "377",
+      "group": "HFD1",
+      "name": "AC_DCN",
+      "description": "Output disconnect open",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ disconnecting switch (หน้าสัมผัสและความต่อเนื่อง)"
+    },
+    {
+      "code": "379",
+      "group": "HFD1",
+      "name": "ACSW_F_B",
+      "description": "AC contactor fault, B bank",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบคอนแทกเตอร์ฝั่งโหลด (จุดสัมผัสและการนำไฟฟ้า)"
+    },
+    {
+      "code": "381",
+      "group": "HFD1",
+      "name": "UVA_EX",
+      "description": "External ready condition met",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้ UVA ดับของอินเวอร์เตอร์ฝั่งตรงข้าม"
+    },
+    {
+      "code": "382",
+      "group": "HFD1",
+      "name": "UVA",
+      "description": "EI ready condition met",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "384",
+      "group": "HFD2",
+      "name": "AIN_FAULT",
+      "description": "Aux A/D signal fault",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสายสัญญาณและแหล่งกำเนิดสัญญาณ"
+    },
+    {
+      "code": "385",
+      "group": "HFD2",
+      "name": "SP_LOST",
+      "description": "External speed reference lost",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการขาดของสัญญาณ analog speed reference"
+    },
+    {
+      "code": "386",
+      "group": "HFD2",
+      "name": "TL_F3",
+      "description": "LAN failure 3",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "387",
+      "group": "HFD2",
+      "name": "TL_F4",
+      "description": "LAN failure 4",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "388",
+      "group": "HFD2",
+      "name": "M_FN_T",
+      "description": "Motor fan stop timer",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "389",
+      "group": "HFD2",
+      "name": "BR_F",
+      "description": "Electromagnetic brake failure",
+      "severity": "Heavy Fault",
+      "action": "แบบ built-in: ตรวจสอบคอนแทกเตอร์วงจรจ่ายไฟ / แบบ air brake: ตรวจสอบ microswitch ของ air valve และ electromagnetic valve / แบบ electromagnetic: ตรวจสอบ LED \"LF\" ของหน่วยจ่ายไฟ หากดับให้ตรวจสอบแรงดันอินพุตและกระแสเอาต์พุต"
+    },
+    {
+      "code": "390",
+      "group": "HFD2",
+      "name": "M_OH",
+      "description": "Motor overheat",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "391",
+      "group": "HFD2",
+      "name": "B_HLTY",
+      "description": "Brake healthy",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบวงจรเบรก"
+    },
+    {
+      "code": "392",
+      "group": "HFD2",
+      "name": "TL_F1",
+      "description": "LAN failure 1",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "393",
+      "group": "HFD2",
+      "name": "TL_F2",
+      "description": "LAN failure 2",
+      "severity": "Heavy Fault",
+      "action": "ทำ power supply initialize ตรวจสอบบอร์ด transmission และสายใยแก้วนำแสง/สาย Ethernet"
+    },
+    {
+      "code": "394",
+      "group": "HFD2",
+      "name": "OCA",
+      "description": "AC overcurrent",
+      "severity": "Heavy Fault",
+      "action": "ดำเนินการเช่นเดียวกับ OCA (รหัส 140)"
+    },
+    {
+      "code": "395",
+      "group": "HFD2",
+      "name": "OCA_B",
+      "description": "AC overcurrent, B bank",
+      "severity": "Heavy Fault",
+      "action": "ดำเนินการเช่นเดียวกับ OCA (รหัส 140)"
+    },
+    {
+      "code": "397",
+      "group": "HFD2",
+      "name": "SPA1",
+      "description": "Spare 1",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "398",
+      "group": "HFD2",
+      "name": "SPA2",
+      "description": "Spare 2",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "399",
+      "group": "HFD2",
+      "name": "GR_T",
+      "description": "Ground detection timer",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบว่าวงจรหลักมี ground fault หรือไม่ หาก IGBT เสียหายให้เปลี่ยน"
+    },
+    {
+      "code": "400",
+      "group": "MP_HFD1",
+      "name": "MP_BE_TM1_OL",
+      "description": "Bearing temperature 1 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "401",
+      "group": "MP_HFD1",
+      "name": "MP_BE_TM2_OL",
+      "description": "Bearing temperature 2 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "402",
+      "group": "MP_HFD1",
+      "name": "MP_BE_TM3_OL",
+      "description": "Bearing temperature 3 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "403",
+      "group": "MP_HFD1",
+      "name": "MP_BE_TMX_OL",
+      "description": "Bearing temperature max over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "404",
+      "group": "MP_HFD1",
+      "name": "MP_CW_TM1_OL",
+      "description": "Cooling water temperature 1 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "405",
+      "group": "MP_HFD1",
+      "name": "MP_CW_TM2_OL",
+      "description": "Cooling water temperature 2 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "406",
+      "group": "MP_HFD1",
+      "name": "MP_CW_TMX_OL",
+      "description": "Cooling water temperature max over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "407",
+      "group": "MP_HFD1",
+      "name": "MP_IAR_TM1_OL",
+      "description": "Inlet air temperature 1 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาเข้าสูงขึ้น"
+    },
+    {
+      "code": "408",
+      "group": "MP_HFD1",
+      "name": "MP_IAR_TM2_OL",
+      "description": "Inlet air temperature 2 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาเข้าสูงขึ้น"
+    },
+    {
+      "code": "409",
+      "group": "MP_HFD1",
+      "name": "MP_IAR_TMX_OL",
+      "description": "Inlet air temperature max over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาเข้าสูงขึ้น"
+    },
+    {
+      "code": "410",
+      "group": "MP_HFD1",
+      "name": "MP_OAR_TM1_OL",
+      "description": "Outlet air temperature 1 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาออกสูงขึ้น"
+    },
+    {
+      "code": "411",
+      "group": "MP_HFD1",
+      "name": "MP_OAR_TM2_OL",
+      "description": "Outlet air temperature 2 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาออกสูงขึ้น"
+    },
+    {
+      "code": "412",
+      "group": "MP_HFD1",
+      "name": "MP_OAR_TMX_OL",
+      "description": "Outlet air temperature max over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาออกสูงขึ้น"
+    },
+    {
+      "code": "413",
+      "group": "MP_HFD1",
+      "name": "MP_SW_TM1_OL",
+      "description": "Stator winding temperature 1 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "414",
+      "group": "MP_HFD1",
+      "name": "MP_SW_TM2_OL",
+      "description": "Stator winding temperature 2 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "415",
+      "group": "MP_HFD1",
+      "name": "MP_SW_TM3_OL",
+      "description": "Stator winding temperature 3 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "416",
+      "group": "MP_HFD2",
+      "name": "MP_SW_TMX_OL",
+      "description": "Stator winding temperature max over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "417",
+      "group": "MP_HFD2",
+      "name": "MP_BV_1X_OL",
+      "description": "Bearing vibration 1X over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "418",
+      "group": "MP_HFD2",
+      "name": "MP_BV_1Y_OL",
+      "description": "Bearing vibration 1Y over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "419",
+      "group": "MP_HFD2",
+      "name": "MP_BV_1Z_OL",
+      "description": "Bearing vibration 1Z over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "420",
+      "group": "MP_HFD2",
+      "name": "MP_BV_2X_OL",
+      "description": "Bearing vibration 2X over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "421",
+      "group": "MP_HFD2",
+      "name": "MP_BV_2Y_OL",
+      "description": "Bearing vibration 2Y over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "422",
+      "group": "MP_HFD2",
+      "name": "MP_BV_2Z_OL",
+      "description": "Bearing vibration 2Z over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "423",
+      "group": "MP_HFD2",
+      "name": "MP_BV_3X_OL",
+      "description": "Bearing vibration 3X over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "424",
+      "group": "MP_HFD2",
+      "name": "MP_BV_3Y_OL",
+      "description": "Bearing vibration 3Y over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "425",
+      "group": "MP_HFD2",
+      "name": "MP_BV_3Z_OL",
+      "description": "Bearing vibration 3Z over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "426",
+      "group": "MP_HFD2",
+      "name": "MP_BV_X1_OL",
+      "description": "Bearing vibration max 1 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "427",
+      "group": "MP_HFD2",
+      "name": "MP_BV_X2_OL",
+      "description": "Bearing vibration max 2 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "428",
+      "group": "MP_HFD2",
+      "name": "MP_BV_X3_OL",
+      "description": "Bearing vibration max 3 over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "429",
+      "group": "MP_HFD2",
+      "name": "MP_CWF1_LL",
+      "description": "Cooling water flow 1 low level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "430",
+      "group": "MP_HFD2",
+      "name": "MP_CWF2_LL",
+      "description": "Cooling water flow 2 low level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "431",
+      "group": "MP_HFD2",
+      "name": "MP_CWFS_LL",
+      "description": "Cooling water flow sum low level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "432",
+      "group": "MP_HFD3",
+      "name": "MP_BE_TM_H1",
+      "description": "Bearing temperature high 1",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "433",
+      "group": "MP_HFD3",
+      "name": "MP_BE_TM_H2",
+      "description": "Bearing temperature high 2",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "434",
+      "group": "MP_HFD3",
+      "name": "MP_BE_TM_H3",
+      "description": "Bearing temperature high 3",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "435",
+      "group": "MP_HFD3",
+      "name": "MP_CF1_MR",
+      "description": "Cooling fan 1 motor run",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่มอเตอร์พัดลมระบายความร้อนหยุดทำงาน"
+    },
+    {
+      "code": "436",
+      "group": "MP_HFD3",
+      "name": "MP_CF2_MR",
+      "description": "Cooling fan 2 motor run",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่มอเตอร์พัดลมระบายความร้อนหยุดทำงาน"
+    },
+    {
+      "code": "437",
+      "group": "MP_HFD3",
+      "name": "MP_CWF_L1",
+      "description": "Cooling water flow low 1",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "438",
+      "group": "MP_HFD3",
+      "name": "MP_OLU_HFD",
+      "description": "Oil lubrication unit heavy fault",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบหน่วยหล่อลื่นน้ำมัน (oil lubrication unit)"
+    },
+    {
+      "code": "439",
+      "group": "MP_HFD3",
+      "name": "MP_OLU_HPL_N",
+      "description": "Oil lubrication unit high pressure line normal",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบหน่วยหล่อลื่นน้ำมัน (oil lubrication unit)"
+    },
+    {
+      "code": "440",
+      "group": "MP_HFD3",
+      "name": "MP_OLU_LPL_N",
+      "description": "Oil lubrication unit low pressure line normal",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบหน่วยหล่อลื่นน้ำมัน (oil lubrication unit)"
+    },
+    {
+      "code": "441",
+      "group": "MP_HFD3",
+      "name": "MP_SW_TM_H",
+      "description": "Stator winding temperature high",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "442",
+      "group": "MP_HFD3",
+      "name": "MP_WLK1",
+      "description": "Water leakage 1",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้น้ำรั่ว"
+    },
+    {
+      "code": "448",
+      "group": "MP_HFD4",
+      "name": "MP_OL_TM_TR",
+      "description": "Transformer oil temperature trip",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำมันสูงขึ้น"
+    },
+    {
+      "code": "449",
+      "group": "MP_HFD4",
+      "name": "MP_WD_TM_TR",
+      "description": "Transformer winding temperature trip",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสูงขึ้น"
+    },
+    {
+      "code": "450",
+      "group": "MP_HFD4",
+      "name": "MP_OL_LVL_TR",
+      "description": "Transformer oil level trip",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบระดับน้ำมัน"
+    },
+    {
+      "code": "451",
+      "group": "MP_HFD4",
+      "name": "MP_PRD_TR",
+      "description": "Transformer pressure relief device trip",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ pressure relief device"
+    },
+    {
+      "code": "452",
+      "group": "MP_HFD4",
+      "name": "MP_BH_RL_TR",
+      "description": "Transformer Buchholz relay trip",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ Buchholz relay"
+    },
+    {
+      "code": "453",
+      "group": "MP_HFD4",
+      "name": "MP_GP_RL_TR",
+      "description": "Transformer sudden gas pressure relay trip",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ sudden gas pressure relay"
+    },
+    {
+      "code": "454",
+      "group": "MP_HFD4",
+      "name": "MP_OL_TM_OL",
+      "description": "Transformer oil temperature over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำมันสูงขึ้น"
+    },
+    {
+      "code": "455",
+      "group": "MP_HFD4",
+      "name": "MP_WD_TM_OL",
+      "description": "Transformer winding temperature over level",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสูงขึ้น"
+    },
+    {
+      "code": "464",
+      "group": "STPRQ1",
+      "name": "OH",
+      "description": "Equipment overheat",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "465",
+      "group": "STPRQ1",
+      "name": "AUX_FN",
+      "description": "INP/CTT fan stop",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสถานะ MCCB ของพัดลม สภาพการหมุนของพัดลม และมอเตอร์พัดลม"
+    },
+    {
+      "code": "466",
+      "group": "STPRQ1",
+      "name": "OH_B",
+      "description": "Equipment overheat, B bank",
+      "severity": "Heavy Fault",
+      "action": null
+    },
+    {
+      "code": "467",
+      "group": "STPRQ1",
+      "name": "AUX_FN_B",
+      "description": "INP/CTT fan stop, B bank",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสถานะ MCCB ของพัดลม สภาพการหมุนของพัดลม และมอเตอร์พัดลม"
+    },
+    {
+      "code": "468",
+      "group": "STPRQ1",
+      "name": "OH_ACL",
+      "description": "Input ACL overheat",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน เช่น โอเวอร์โหลด การระบายความร้อน และ temperature relay ของ ACL"
+    },
+    {
+      "code": "469",
+      "group": "STPRQ1",
+      "name": "MTMP_S",
+      "description": "Motor temperature stop request (motor temperature sensor fault)",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์และตัววัดอุณหภูมิมอเตอร์"
+    },
+    {
+      "code": "470",
+      "group": "STPRQ1",
+      "name": "M_OH",
+      "description": "Motor overheat",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "471",
+      "group": "STPRQ1",
+      "name": "M_OH_A",
+      "description": "Motor overheat alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสภาพการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "472",
+      "group": "STPRQ1",
+      "name": "OL_A",
+      "description": "Overload alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสภาพโหลด"
+    },
+    {
+      "code": "473",
+      "group": "STPRQ1",
+      "name": "CL_TA",
+      "description": "STPRQ1 current limit alarm",
+      "severity": "Alarm",
+      "action": null
+    },
+    {
+      "code": "474",
+      "group": "STPRQ1",
+      "name": "GR_A",
+      "description": "Ground detection alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบว่าสายวงจรหลักเสื่อมสภาพฉนวนหรือไม่"
+    },
+    {
+      "code": "475",
+      "group": "STPRQ1",
+      "name": "PRE_CTT_F",
+      "description": "Initial charge contactor fault",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์และคอนแทกเตอร์ของวงจร pre-charge แรงดันไฟของวงจร pre-charge และวงจรควบคุมบนบอร์ด GDM"
+    },
+    {
+      "code": "477",
+      "group": "STPRQ1",
+      "name": "M_FN",
+      "description": "Motor fan stop",
+      "severity": "Heavy Fault",
+      "action": "สตาร์ทพัดลมระบายความร้อนมอเตอร์"
+    },
+    {
+      "code": "479",
+      "group": "STPRQ1",
+      "name": "SPA1",
+      "description": "Spare 1",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "480",
+      "group": "STPRQ2",
+      "name": "SP_LST_A",
+      "description": "External speed reference lost (alarm)",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการขาดของสัญญาณ analog speed reference"
+    },
+    {
+      "code": "484",
+      "group": "STPRQ2",
+      "name": "OH_ACL_B",
+      "description": "Input ACL overheat, B bank",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงาน เช่น โอเวอร์โหลด การระบายความร้อน และ temperature relay ของ ACL"
+    },
+    {
+      "code": "496",
+      "group": "LFD1",
+      "name": "AIN_FAULT",
+      "description": "Aux A/D signal fault",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสายสัญญาณและแหล่งกำเนิดสัญญาณ"
+    },
+    {
+      "code": "497",
+      "group": "LFD1",
+      "name": "AUX_FN",
+      "description": "INP/CTT fan stop",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสถานะ MCCB ของพัดลม สภาพการหมุนของพัดลม และมอเตอร์พัดลม"
+    },
+    {
+      "code": "498",
+      "group": "LFD1",
+      "name": "SOFT_STL",
+      "description": "Soft stall operated (automatic speed reduction to prevent overload trip)",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสภาพโหลด หากต้องการปิดฟังก์ชันลดความเร็วอัตโนมัติให้ตั้ง FLG_SOFT_STALL = 0"
+    },
+    {
+      "code": "499",
+      "group": "LFD1",
+      "name": "AUX_FN_B",
+      "description": "INP/CTT fan stop, B bank",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสถานะ MCCB ของพัดลม สภาพการหมุนของพัดลม และมอเตอร์พัดลม"
+    },
+    {
+      "code": "500",
+      "group": "LFD1",
+      "name": "OH_ACL",
+      "description": "Input ACL overheat",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสภาพการทำงาน เช่น โอเวอร์โหลด การระบายความร้อน และ temperature relay ของ ACL"
+    },
+    {
+      "code": "501",
+      "group": "LFD1",
+      "name": "MTMP_S",
+      "description": "Motor temperature sensor fault",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์และตัววัดอุณหภูมิมอเตอร์"
+    },
+    {
+      "code": "502",
+      "group": "LFD1",
+      "name": "M_OH",
+      "description": "Motor overheat",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสภาพการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "503",
+      "group": "LFD1",
+      "name": "M_OH_A",
+      "description": "Motor overheat alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสภาพการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "504",
+      "group": "LFD1",
+      "name": "SL_CHG",
+      "description": "Automatic sensorless mode change",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ speed sensor แล้วทำ power supply initialize หากต้องการให้ trip เมื่อ speed sensor เสีย ให้ปิดฟังก์ชันเปลี่ยนโหมด sensorless อัตโนมัติ"
+    },
+    {
+      "code": "505",
+      "group": "LFD1",
+      "name": "SPA1",
+      "description": "Spare 1",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสัญญาณ spare และข้อมูล mask"
+    },
+    {
+      "code": "506",
+      "group": "LFD1",
+      "name": "GR_A",
+      "description": "Ground detection alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบว่าสายวงจรหลักเสื่อมสภาพฉนวนหรือไม่"
+    },
+    {
+      "code": "507",
+      "group": "LFD1",
+      "name": "PRE_CTT_F",
+      "description": "Initial charge contactor fault",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบฟิวส์และคอนแทกเตอร์ของวงจร pre-charge แรงดันไฟของวงจร pre-charge และวงจรควบคุมบนบอร์ด GDM"
+    },
+    {
+      "code": "508",
+      "group": "LFD1",
+      "name": "CUR_DIFF",
+      "description": "Current differential detection",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบว่า DC bus ของวงจรหลักและ output contactor ของ bank A หรือ B เปิดอยู่หรือไม่ ตรวจสอบการเดินสายและรูปแบบของ current detector และสายที่ต่อเข้า CTR"
+    },
+    {
+      "code": "509",
+      "group": "LFD1",
+      "name": "M_FN",
+      "description": "Motor fan stop",
+      "severity": "Light Fault",
+      "action": "สตาร์ทพัดลมระบายความร้อนมอเตอร์"
+    },
+    {
+      "code": "510",
+      "group": "LFD1",
+      "name": "GR_T",
+      "description": "Ground detection timer",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบว่าวงจรหลักมี ground fault หรือไม่ หาก IGBT เสียหายให้เปลี่ยน"
+    },
+    {
+      "code": "511",
+      "group": "LFD1",
+      "name": "STPRQ",
+      "description": "Internal fault stop request",
+      "severity": "Heavy Fault",
+      "action": "ดูสาเหตุหลักที่ทำให้สัญญาณ STPRQ ดับ"
+    },
+    {
+      "code": "512",
+      "group": "LFD2",
+      "name": "SP_LST_A",
+      "description": "External speed reference lost (alarm)",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการขาดของสัญญาณ analog speed reference"
+    },
+    {
+      "code": "513",
+      "group": "LFD2",
+      "name": "VDC_HUNT",
+      "description": "VDC hunt",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบว่าค่า gain ของ voltage control สูงเกินไปหรือไม่"
+    },
+    {
+      "code": "514",
+      "group": "LFD2",
+      "name": "TJ_OH",
+      "description": "Device TJ overheat",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสภาพการทำงาน หากไม่พบโอเวอร์โหลด ให้ตรวจสอบพัดลมระบายอากาศ ไส้กรองอุดตัน และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "515",
+      "group": "LFD2",
+      "name": "TMP_DIF",
+      "description": "PWB/FIN temperature difference high",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสภาพการทำงาน หากไม่พบโอเวอร์โหลด ให้ตรวจสอบพัดลมระบายอากาศ ไส้กรองอุดตัน และอุณหภูมิห้องไฟฟ้า"
+    },
+    {
+      "code": "516",
+      "group": "LFD2",
+      "name": "OH_ACL_B",
+      "description": "Input ACL overheat, B bank",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบสภาพการทำงาน เช่น โอเวอร์โหลด การระบายความร้อน และ temperature relay ของ ACL"
+    },
+    {
+      "code": "517",
+      "group": "LFD2",
+      "name": "DEGD_F2",
+      "description": "Dynamic EGD transmission line failure 2",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ master station ของ DEGD (WAGO PLC สำหรับ MP) และสาย Ethernet"
+    },
+    {
+      "code": "518",
+      "group": "LFD2",
+      "name": "DEGD_F3",
+      "description": "Dynamic EGD transmission line failure 3",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบ master station ของ DEGD (WAGO PLC สำหรับ MP) และสาย Ethernet"
+    },
+    {
+      "code": "520",
+      "group": "LFD2",
+      "name": "OL_A",
+      "description": "Overload alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสภาพโหลด"
+    },
+    {
+      "code": "521",
+      "group": "LFD2",
+      "name": "CL_TA",
+      "description": "Current limit alarm",
+      "severity": "Alarm",
+      "action": null
+    },
+    {
+      "code": "522",
+      "group": "LFD2",
+      "name": "CODE_ERR",
+      "description": "SRAM code error",
+      "severity": "Light Fault",
+      "action": "SRAM เสีย ให้เปลี่ยนบอร์ด CTR"
+    },
+    {
+      "code": "528",
+      "group": "MP_LFD1",
+      "name": "MP_BE_TM1_OLA",
+      "description": "Bearing temperature 1 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "529",
+      "group": "MP_LFD1",
+      "name": "MP_BE_TM2_OLA",
+      "description": "Bearing temperature 2 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "530",
+      "group": "MP_LFD1",
+      "name": "MP_BE_TM3_OLA",
+      "description": "Bearing temperature 3 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "531",
+      "group": "MP_LFD1",
+      "name": "MP_BE_TMX_OLA",
+      "description": "Bearing temperature max over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "532",
+      "group": "MP_LFD1",
+      "name": "MP_CW_TM1_OLA",
+      "description": "Cooling water temperature 1 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "533",
+      "group": "MP_LFD1",
+      "name": "MP_CW_TM2_OLA",
+      "description": "Cooling water temperature 2 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "534",
+      "group": "MP_LFD1",
+      "name": "MP_CW_TMX_OLA",
+      "description": "Cooling water temperature max over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "535",
+      "group": "MP_LFD1",
+      "name": "MP_IAR_TM1_OLA",
+      "description": "Inlet air temperature 1 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาเข้าสูงขึ้น"
+    },
+    {
+      "code": "536",
+      "group": "MP_LFD1",
+      "name": "MP_IAR_TM2_OLA",
+      "description": "Inlet air temperature 2 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาเข้าสูงขึ้น"
+    },
+    {
+      "code": "537",
+      "group": "MP_LFD1",
+      "name": "MP_IAR_TMX_OLA",
+      "description": "Inlet air temperature max over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาเข้าสูงขึ้น"
+    },
+    {
+      "code": "538",
+      "group": "MP_LFD1",
+      "name": "MP_OAR_TM1_OLA",
+      "description": "Outlet air temperature 1 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาออกสูงขึ้น"
+    },
+    {
+      "code": "539",
+      "group": "MP_LFD1",
+      "name": "MP_OAR_TM2_OLA",
+      "description": "Outlet air temperature 2 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาออกสูงขึ้น"
+    },
+    {
+      "code": "540",
+      "group": "MP_LFD1",
+      "name": "MP_OAR_TMX_OLA",
+      "description": "Outlet air temperature max over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิอากาศขาออกสูงขึ้น"
+    },
+    {
+      "code": "541",
+      "group": "MP_LFD1",
+      "name": "MP_SW_TM1_OLA",
+      "description": "Stator winding temperature 1 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "542",
+      "group": "MP_LFD1",
+      "name": "MP_SW_TM2_OLA",
+      "description": "Stator winding temperature 2 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "543",
+      "group": "MP_LFD1",
+      "name": "MP_SW_TM3_OLA",
+      "description": "Stator winding temperature 3 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "544",
+      "group": "MP_LFD2",
+      "name": "MP_SW_TMX_OLA",
+      "description": "Stator winding temperature max over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสเตเตอร์สูงขึ้น"
+    },
+    {
+      "code": "545",
+      "group": "MP_LFD2",
+      "name": "MP_BV_1X_OLA",
+      "description": "Bearing vibration 1X over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "546",
+      "group": "MP_LFD2",
+      "name": "MP_BV_1Y_OLA",
+      "description": "Bearing vibration 1Y over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "547",
+      "group": "MP_LFD2",
+      "name": "MP_BV_1Z_OLA",
+      "description": "Bearing vibration 1Z over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "548",
+      "group": "MP_LFD2",
+      "name": "MP_BV_2X_OLA",
+      "description": "Bearing vibration 2X over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "549",
+      "group": "MP_LFD2",
+      "name": "MP_BV_2Y_OLA",
+      "description": "Bearing vibration 2Y over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "550",
+      "group": "MP_LFD2",
+      "name": "MP_BV_2Z_OLA",
+      "description": "Bearing vibration 2Z over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "551",
+      "group": "MP_LFD2",
+      "name": "MP_BV_3X_OLA",
+      "description": "Bearing vibration 3X over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "552",
+      "group": "MP_LFD2",
+      "name": "MP_BV_3Y_OLA",
+      "description": "Bearing vibration 3Y over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "553",
+      "group": "MP_LFD2",
+      "name": "MP_BV_3Z_OLA",
+      "description": "Bearing vibration 3Z over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "554",
+      "group": "MP_LFD2",
+      "name": "MP_BV_X1_OLA",
+      "description": "Bearing vibration max 1 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "555",
+      "group": "MP_LFD2",
+      "name": "MP_BV_X2_OLA",
+      "description": "Bearing vibration max 2 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "556",
+      "group": "MP_LFD2",
+      "name": "MP_BV_X3_OLA",
+      "description": "Bearing vibration max 3 over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้การสั่นสะเทือนของแบริ่งสูงขึ้น"
+    },
+    {
+      "code": "557",
+      "group": "MP_LFD2",
+      "name": "MP_CWF1_LLA",
+      "description": "Cooling water flow 1 low level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "558",
+      "group": "MP_LFD2",
+      "name": "MP_CWF2_LLA",
+      "description": "Cooling water flow 2 low level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "559",
+      "group": "MP_LFD2",
+      "name": "MP_CWFS_LLA",
+      "description": "Cooling water flow sum low level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "560",
+      "group": "MP_LFD3",
+      "name": "MP_CF1_MRA",
+      "description": "Cooling fan 1 motor running alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่มอเตอร์พัดลมระบายความร้อนหยุดทำงาน"
+    },
+    {
+      "code": "561",
+      "group": "MP_LFD3",
+      "name": "MP_CF2_MRA",
+      "description": "Cooling fan 2 motor running alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่มอเตอร์พัดลมระบายความร้อนหยุดทำงาน"
+    },
+    {
+      "code": "562",
+      "group": "MP_LFD3",
+      "name": "MP_CF1_MCC_F",
+      "description": "Cooling fan 1 MCC fault",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ MCC ของพัดลมระบายความร้อน"
+    },
+    {
+      "code": "563",
+      "group": "MP_LFD3",
+      "name": "MP_CF2_MCC_F",
+      "description": "Cooling fan 2 MCC fault",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ MCC ของพัดลมระบายความร้อน"
+    },
+    {
+      "code": "564",
+      "group": "MP_LFD3",
+      "name": "MP_CWF_L1A",
+      "description": "Cooling water flow low 1 alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้ปริมาณน้ำหล่อเย็นลดลง"
+    },
+    {
+      "code": "565",
+      "group": "MP_LFD3",
+      "name": "MP_CW_TM_H1",
+      "description": "Cooling water temperature high 1",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำหล่อเย็นสูงขึ้น"
+    },
+    {
+      "code": "566",
+      "group": "MP_LFD3",
+      "name": "MP_OLU_LFD",
+      "description": "Oil lubrication unit light fault",
+      "severity": "Alarm",
+      "action": "ตรวจสอบหน่วยหล่อลื่นน้ำมัน (oil lubrication unit)"
+    },
+    {
+      "code": "567",
+      "group": "MP_LFD3",
+      "name": "MP_OLU_HFDA",
+      "description": "Oil lubrication unit heavy fault alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบหน่วยหล่อลื่นน้ำมัน (oil lubrication unit)"
+    },
+    {
+      "code": "568",
+      "group": "MP_LFD3",
+      "name": "MP_SPH_ON_A",
+      "description": "Space heater on alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ space heater"
+    },
+    {
+      "code": "569",
+      "group": "MP_LFD3",
+      "name": "MP_SPH_MCC_F",
+      "description": "Space heater MCC fault",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ space heater"
+    },
+    {
+      "code": "570",
+      "group": "MP_LFD3",
+      "name": "MP_WLK1A",
+      "description": "Water leakage 1 alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้น้ำรั่ว"
+    },
+    {
+      "code": "576",
+      "group": "MP_LFD4",
+      "name": "MP_OL_TM_A",
+      "description": "Transformer oil temperature alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำมันสูงขึ้น"
+    },
+    {
+      "code": "577",
+      "group": "MP_LFD4",
+      "name": "MP_OL_TM_TR",
+      "description": "Transformer oil temperature trip",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำมันสูงขึ้น"
+    },
+    {
+      "code": "578",
+      "group": "MP_LFD4",
+      "name": "MP_WD_TM_A",
+      "description": "Transformer winding temperature alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสูงขึ้น"
+    },
+    {
+      "code": "579",
+      "group": "MP_LFD4",
+      "name": "MP_WD_TM_TR",
+      "description": "Transformer winding temperature trip",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสูงขึ้น"
+    },
+    {
+      "code": "580",
+      "group": "MP_LFD4",
+      "name": "MP_OL_LVL_A",
+      "description": "Transformer oil level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบระดับน้ำมัน"
+    },
+    {
+      "code": "581",
+      "group": "MP_LFD4",
+      "name": "MP_OL_LVL_TR",
+      "description": "Transformer oil level trip",
+      "severity": "Alarm",
+      "action": "ตรวจสอบระดับน้ำมัน"
+    },
+    {
+      "code": "582",
+      "group": "MP_LFD4",
+      "name": "MP_PRD_A",
+      "description": "Pressure relief device alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ pressure relief device"
+    },
+    {
+      "code": "583",
+      "group": "MP_LFD4",
+      "name": "MP_PRD_TR",
+      "description": "Pressure relief device trip",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ pressure relief device"
+    },
+    {
+      "code": "584",
+      "group": "MP_LFD4",
+      "name": "MP_BH_RL_A",
+      "description": "Buchholz relay alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ Buchholz relay"
+    },
+    {
+      "code": "585",
+      "group": "MP_LFD4",
+      "name": "MP_BH_RL_TR",
+      "description": "Buchholz relay trip",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ Buchholz relay"
+    },
+    {
+      "code": "586",
+      "group": "MP_LFD4",
+      "name": "MP_GP_RL_TR",
+      "description": "Sudden gas pressure relay trip",
+      "severity": "Alarm",
+      "action": "ตรวจสอบ sudden gas pressure relay"
+    },
+    {
+      "code": "587",
+      "group": "MP_LFD4",
+      "name": "MP_OL_TM_OLA",
+      "description": "Transformer oil temperature over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิน้ำมันสูงขึ้น"
+    },
+    {
+      "code": "588",
+      "group": "MP_LFD4",
+      "name": "MP_WD_TM_OLA",
+      "description": "Transformer winding temperature over level alarm",
+      "severity": "Alarm",
+      "action": "ตรวจสอบสาเหตุที่ทำให้อุณหภูมิขดลวดสูงขึ้น"
+    },
+    {
+      "code": "592",
+      "group": "MP_LFD5",
+      "name": "MP_BR01_CL",
+      "description": "Motor breaker 01 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "593",
+      "group": "MP_LFD5",
+      "name": "MP_BR02_CL",
+      "description": "Motor breaker 02 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "594",
+      "group": "MP_LFD5",
+      "name": "MP_BR03_CL",
+      "description": "Motor breaker 03 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "595",
+      "group": "MP_LFD5",
+      "name": "MP_BR04_CL",
+      "description": "Motor breaker 04 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "596",
+      "group": "MP_LFD5",
+      "name": "MP_BR05_CL",
+      "description": "Motor breaker 05 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "597",
+      "group": "MP_LFD5",
+      "name": "MP_BR06_CL",
+      "description": "Motor breaker 06 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "598",
+      "group": "MP_LFD5",
+      "name": "MP_BR07_CL",
+      "description": "Motor breaker 07 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "599",
+      "group": "MP_LFD5",
+      "name": "MP_BR08_CL",
+      "description": "Motor breaker 08 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "600",
+      "group": "MP_LFD5",
+      "name": "MP_BR09_CL",
+      "description": "Motor breaker 09 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "601",
+      "group": "MP_LFD5",
+      "name": "MP_BR10_CL",
+      "description": "Motor breaker 10 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "602",
+      "group": "MP_LFD5",
+      "name": "MP_BR11_CL",
+      "description": "Motor breaker 11 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "603",
+      "group": "MP_LFD5",
+      "name": "MP_BR12_CL",
+      "description": "Motor breaker 12 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "604",
+      "group": "MP_LFD5",
+      "name": "MP_BR13_CL",
+      "description": "Motor breaker 13 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "605",
+      "group": "MP_LFD5",
+      "name": "MP_BR14_CL",
+      "description": "Motor breaker 14 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "606",
+      "group": "MP_LFD5",
+      "name": "MP_BR15_CL",
+      "description": "Motor breaker 15 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "607",
+      "group": "MP_LFD5",
+      "name": "MP_BR16_CL",
+      "description": "Motor breaker 16 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "608",
+      "group": "MP_LFD6",
+      "name": "MP_BR17_CL",
+      "description": "Motor breaker 17 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "609",
+      "group": "MP_LFD6",
+      "name": "MP_BR18_CL",
+      "description": "Motor breaker 18 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "610",
+      "group": "MP_LFD6",
+      "name": "MP_BR19_CL",
+      "description": "Motor breaker 19 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "611",
+      "group": "MP_LFD6",
+      "name": "MP_BR20_CL",
+      "description": "Motor breaker 20 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "612",
+      "group": "MP_LFD6",
+      "name": "MP_BR21_CL",
+      "description": "Motor breaker 21 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "613",
+      "group": "MP_LFD6",
+      "name": "MP_BR22_CL",
+      "description": "Motor breaker 22 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "614",
+      "group": "MP_LFD6",
+      "name": "MP_BR23_CL",
+      "description": "Motor breaker 23 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "615",
+      "group": "MP_LFD6",
+      "name": "MP_BR24_CL",
+      "description": "Motor breaker 24 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "616",
+      "group": "MP_LFD6",
+      "name": "MP_BR25_CL",
+      "description": "Motor breaker 25 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "617",
+      "group": "MP_LFD6",
+      "name": "MP_BR26_CL",
+      "description": "Motor breaker 26 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "618",
+      "group": "MP_LFD6",
+      "name": "MP_BR27_CL",
+      "description": "Motor breaker 27 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "619",
+      "group": "MP_LFD6",
+      "name": "MP_BR28_CL",
+      "description": "Motor breaker 28 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "620",
+      "group": "MP_LFD6",
+      "name": "MP_BR29_CL",
+      "description": "Motor breaker 29 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "621",
+      "group": "MP_LFD6",
+      "name": "MP_BR30_CL",
+      "description": "Motor breaker 30 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "622",
+      "group": "MP_LFD6",
+      "name": "MP_BR31_CL",
+      "description": "Motor breaker 31 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "623",
+      "group": "MP_LFD6",
+      "name": "MP_BR32_CL",
+      "description": "Motor breaker 32 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "624",
+      "group": "MP_LFD7",
+      "name": "MP_BR33_CL",
+      "description": "Motor breaker 33 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "625",
+      "group": "MP_LFD7",
+      "name": "MP_BR34_CL",
+      "description": "Motor breaker 34 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "626",
+      "group": "MP_LFD7",
+      "name": "MP_BR35_CL",
+      "description": "Motor breaker 35 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "627",
+      "group": "MP_LFD7",
+      "name": "MP_BR36_CL",
+      "description": "Motor breaker 36 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "628",
+      "group": "MP_LFD7",
+      "name": "MP_BR37_CL",
+      "description": "Motor breaker 37 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "629",
+      "group": "MP_LFD7",
+      "name": "MP_BR38_CL",
+      "description": "Motor breaker 38 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "630",
+      "group": "MP_LFD7",
+      "name": "MP_BR39_CL",
+      "description": "Motor breaker 39 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "631",
+      "group": "MP_LFD7",
+      "name": "MP_BR40_CL",
+      "description": "Motor breaker 40 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "632",
+      "group": "MP_LFD7",
+      "name": "MP_BR41_CL",
+      "description": "Motor breaker 41 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "633",
+      "group": "MP_LFD7",
+      "name": "MP_BR42_CL",
+      "description": "Motor breaker 42 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "634",
+      "group": "MP_LFD7",
+      "name": "MP_BR43_CL",
+      "description": "Motor breaker 43 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "635",
+      "group": "MP_LFD7",
+      "name": "MP_BR44_CL",
+      "description": "Motor breaker 44 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "636",
+      "group": "MP_LFD7",
+      "name": "MP_BR45_CL",
+      "description": "Motor breaker 45 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "637",
+      "group": "MP_LFD7",
+      "name": "MP_BR46_CL",
+      "description": "Motor breaker 46 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "638",
+      "group": "MP_LFD7",
+      "name": "MP_BR47_CL",
+      "description": "Motor breaker 47 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "639",
+      "group": "MP_LFD7",
+      "name": "MP_BR48_CL",
+      "description": "Motor breaker 48 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "640",
+      "group": "MP_LFD8",
+      "name": "MP_BR49_CL",
+      "description": "Motor breaker 49 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "641",
+      "group": "MP_LFD8",
+      "name": "MP_BR50_CL",
+      "description": "Motor breaker 50 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "642",
+      "group": "MP_LFD8",
+      "name": "MP_BR51_CL",
+      "description": "Motor breaker 51 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "643",
+      "group": "MP_LFD8",
+      "name": "MP_BR52_CL",
+      "description": "Motor breaker 52 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "644",
+      "group": "MP_LFD8",
+      "name": "MP_BR53_CL",
+      "description": "Motor breaker 53 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "645",
+      "group": "MP_LFD8",
+      "name": "MP_BR54_CL",
+      "description": "Motor breaker 54 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "646",
+      "group": "MP_LFD8",
+      "name": "MP_BR55_CL",
+      "description": "Motor breaker 55 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "647",
+      "group": "MP_LFD8",
+      "name": "MP_BR56_CL",
+      "description": "Motor breaker 56 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "648",
+      "group": "MP_LFD8",
+      "name": "MP_BR57_CL",
+      "description": "Motor breaker 57 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "649",
+      "group": "MP_LFD8",
+      "name": "MP_BR58_CL",
+      "description": "Motor breaker 58 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "650",
+      "group": "MP_LFD8",
+      "name": "MP_BR59_CL",
+      "description": "Motor breaker 59 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "651",
+      "group": "MP_LFD8",
+      "name": "MP_BR60_CL",
+      "description": "Motor breaker 60 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "652",
+      "group": "MP_LFD8",
+      "name": "MP_BR61_CL",
+      "description": "Motor breaker 61 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "653",
+      "group": "MP_LFD8",
+      "name": "MP_BR62_CL",
+      "description": "Motor breaker 62 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "654",
+      "group": "MP_LFD8",
+      "name": "MP_BR63_CL",
+      "description": "Motor breaker 63 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    },
+    {
+      "code": "655",
+      "group": "MP_LFD8",
+      "name": "MP_BR64_CL",
+      "description": "Motor breaker 64 closed",
+      "severity": "Alarm",
+      "action": "ตรวจสอบการเปิด/ปิดของเบรกเกอร์มอเตอร์"
+    }
+  ]
+}

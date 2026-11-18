@@ -1,0 +1,580 @@
+{
+  "ํyaskawa_g7_alarms": [
+    {
+      "code": "OC",
+      "name": "Over Current",
+      "description": "Overcurrent. The Inverter output current exceeded the overcurrent detection level. (200% of rated current)",
+      "severity": "Drive Stop",
+      "causes": "เกิดการลัดวงจรหรือลงกราวด์ที่เอาต์พุต, โหลดสูงเกินไป, เวลาเร่ง/ลดความเร็วสั้นเกินไป, ใช้มอเตอร์พิเศษหรือขนาดใหญ่เกินไป, มีการสับเปลี่ยนแมกเนติกคอนแทกเตอร์ที่เอาต์พุต, สายไฟ PG ขาด/ต่อผิด, ไม่มีไฟเลี้ยง PG, หรือเทอร์มินัลควบคุมโอเวอร์โหลด (+V, -V, AC)",
+      "action": "รีเซ็ตหลังจากแก้ไขสาเหตุ, ตรวจสอบและแก้ไขการเดินสายและไฟเลี้ยง PG, ตรวจสอบการเดินสายและความต้านทาน (กระแสที่เทอร์มินัล +V/-V ต้องไม่เกิน 20mA)"
+    },
+    {
+      "code": "GF",
+      "name": "Ground Fault",
+      "description": "Ground Fault. A ground fault occurred on the Inverter output side where the current exceeded approximately 50% of the Inverter rated output current.",
+      "severity": "Drive Stop",
+      "causes": "เกิดข้อผิดพลาดลงกราวด์ (Ground Fault) ที่ฝั่งเอาต์พุต (มอเตอร์หรือสายเคเบิลเสียหาย), หรือเกิดการลัดวงจรที่เทอร์มินัลควบคุม (+V, -V, AC)",
+      "action": "รีเซ็ตหลังจากแก้ไขสาเหตุ, ตรวจสอบการเดินสายและความต้านทาน (กระแสที่เทอร์มินัล +V/-V ต้องไม่เกิน 20mA)"
+    },
+    {
+      "code": "PUF",
+      "name": "Fuse Blown",
+      "description": "Fuse Blown. The main circuit fuse blew because of a short-circuit or ground fault at the Inverter output.",
+      "severity": "Drive Stop",
+      "causes": "ทรานซิสเตอร์เอาต์พุตเสียหายเนื่องจากการลัดวงจรหรือลงกราวด์",
+      "action": "ตรวจสอบการลัดวงจรระหว่างเทอร์มินัล (B1/⊕3, U, V, W) และเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "OV",
+      "name": "Main Circuit Overvoltage",
+      "description": "Main Circuit Overvoltage. The main circuit DC bus voltage exceeded the overvoltage detection level (approx. 410V for 200V class, approx. 820V for 400V class).",
+      "severity": "Drive Stop",
+      "causes": "เวลาลดความเร็วสั้นเกินไป, พลังงานรีเจนเนอเรชันสูงเกินไป, มอเตอร์ลงกราวด์, ตั้งค่า Speed Search ไม่ถูกต้อง, ต่อสาย PG ไม่ถูกต้อง, หรือแรงดันไฟจ่ายเข้าสูงเกินไป",
+      "action": "เพิ่มเวลาลดความเร็ว, เพิ่มตัวต้านทานเบรก, เปิดใช้งานฟังก์ชันป้องกันการ Stall (L3-04), ใช้ระบบ Speed Search, เปิดใช้งานฟังก์ชันยับยั้งแรงดันเกิน (L3-11), หรือลดแรงดันไฟฟ้าขาเข้า"
+    },
+    {
+      "code": "UV1",
+      "name": "Main Circuit Undervoltage",
+      "description": "Main Circuit Undervoltage. The main circuit DC bus voltage dropped below the undervoltage detection level.",
+      "severity": "Drive Stop",
+      "causes": "ไฟขาเข้าเฟสขาดหาย, ไฟดับชั่วขณะ, สายไฟหลวม, แรงดันไฟฟ้าผันผวน, วงจรป้องกันเสิร์จขัดข้อง, หน้าสัมผัสช่วยของแมกเนติกคอนแทกเตอร์ขัดข้อง, หรือฟิวส์บนบอร์ดจ่ายไฟขาด",
+      "action": "รีเซ็ตความผิดพลาด, ปรับปรุงสภาพแวดล้อมหรือแหล่งจ่ายไฟ, เลือกแทปแรงดันไฟฟ้าให้ถูกต้อง, หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "UV2",
+      "name": "Control Power Fault",
+      "description": "Control Power Fault. Control power supply voltage is abnormal.",
+      "severity": "Drive Stop",
+      "causes": "เดินสายไฟควบคุมไม่ถูกต้อง, หรือไม่ได้ติดตั้งชุดตัวเก็บประจุสำรอง (Backup Capacitor Unit) สำหรับบางรุ่น/การตั้งค่า",
+      "action": "ปิดและเปิดเครื่องใหม่, เปลี่ยนอินเวอร์เตอร์, หรือติดตั้งชุดตัวเก็บประจุสำรอง"
+    },
+    {
+      "code": "UV3",
+      "name": "Inrush Prevention Circuit Fault",
+      "description": "Inrush Prevention Circuit Fault. Inrush current prevention circuit failure.",
+      "severity": "Drive Stop",
+      "causes": "แมกเนติกคอนแทกเตอร์ขัดข้อง หรือขดลวดกระตุ้นไหม้",
+      "action": "ปิดและเปิดเครื่องใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "PF",
+      "name": "Main Circuit Voltage Fault",
+      "description": "Main Circuit Voltage Fault. Defective input power supply phase sequence or open phase.",
+      "severity": "Drive Stop",
+      "causes": "ไฟขาเข้าเฟสขาดหาย, ไฟดับชั่วขณะ, สายไฟหลวม, แรงดันไฟฟ้าผันผวน, หรือความสมดุลของเฟสไม่ดี",
+      "action": "รีเซ็ตความผิดพลาดหลังจากแก้ไขสาเหตุแล้ว"
+    },
+    {
+      "code": "LF",
+      "name": "Output Open-phase",
+      "description": "Output Open-phase. An open phase occurred on the Inverter output side.",
+      "severity": "Drive Stop",
+      "causes": "สายเคเบิลเอาต์พุตหรือขดลวดมอเตอร์ขาด, ขั้วต่อหลวม, หรือขนาดมอเตอร์เล็กกว่า 5% ของพิกัด",
+      "action": "รีเซ็ตความผิดพลาด, ตรวจสอบขนาดของมอเตอร์และอินเวอร์เตอร์"
+    },
+    {
+      "code": "OH",
+      "name": "Cooling Fin Overheating",
+      "description": "Cooling Fin Overheating. The heatsink temperature exceeded the allowable value.",
+      "severity": "Drive Stop",
+      "causes": "อุณหภูมิแวดล้อมสูงเกินไป, มีแหล่งกำเนิดความร้อนใกล้เคียง, พัดลมหยุดทำงาน, หรือเทอร์มินัลควบคุมลัดวงจร/โอเวอร์โหลด",
+      "action": "ติดตั้งระบบทำความเย็น/ย้ายแหล่งความร้อน, เปลี่ยนพัดลม, ทำความสะอาดฮีทซิงค์, ตรวจสอบการเดินสาย (กระแสที่เทอร์มินัล +V/-V ต้องไม่เกิน 20mA)"
+    },
+    {
+      "code": "OH1",
+      "name": "Cooling Fin Overheating",
+      "description": "Cooling Fin Overheating. Heatsink temperature over-temperature fault.",
+      "severity": "Drive Stop",
+      "causes": "อุณหภูมิแวดล้อมสูงเกินไป, มีแหล่งกำเนิดความร้อนใกล้เคียง, พัดลมหยุดทำงาน, หรือเทอร์มินัลควบคุมลัดวงจร/โอเวอร์โหลด",
+      "action": "ติดตั้งระบบทำความเย็น/ย้ายแหล่งความร้อน, เปลี่ยนพัดลม, ทำความสะอาดฮีทซิงค์, ตรวจสอบการเดินสาย (กระแสที่เทอร์มินัล +V/-V ต้องไม่เกิน 20mA)"
+    },
+    {
+      "code": "OH3",
+      "name": "Motor Overheating Alarm",
+      "description": "Motor Overheating Alarm. Motor temperature exceeded the thermal protection level.",
+      "severity": "Alarm",
+      "causes": "มอเตอร์ร้อนเกินไป",
+      "action": "ตรวจสอบภาระโหลด รอบเวลาการทำงาน, ลักษณะกราฟ V/f, และพิกัดกระแสของมอเตอร์"
+    },
+    {
+      "code": "OH4",
+      "name": "Motor Overheating Fault",
+      "description": "Motor Overheating Fault. Motor temperature reached trip level.",
+      "severity": "Drive Stop",
+      "causes": "มอเตอร์ร้อนเกินไป",
+      "action": "ตรวจสอบภาระโหลด รอบเวลาการทำงาน, ลักษณะกราฟ V/f, และพิกัดกระแสของมอเตอร์"
+    },
+    {
+      "code": "RH",
+      "name": "Braking Resistor Overheating",
+      "description": "Braking Resistor Overheating. Braking resistor overload protection activated.",
+      "severity": "Drive Stop",
+      "causes": "เวลาลดความเร็วสั้นเกินไป หรือมีพลังงานรีเจนเนอเรชันมากเกินไป",
+      "action": "ลดโหลด, เพิ่มเวลาลดความเร็ว, ลดความเร็วรอบ, หรือเปลี่ยนไปใช้ยูนิตตัวต้านทานเบรก (Braking Resistor Unit)"
+    },
+    {
+      "code": "RR",
+      "name": "Internal Braking Transistor Fault",
+      "description": "Internal Braking Transistor Fault. Braking transistor damaged.",
+      "severity": "Drive Stop",
+      "causes": "ทรานซิสเตอร์เสียหาย หรือวงจรควบคุมขัดข้อง",
+      "action": "ถอดตัวต้านทานเบรกออกแล้วเปิดเครื่อง หากยังมีข้อผิดพลาดอยู่ให้เปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "OL1",
+      "name": "Motor Overload",
+      "description": "Motor Overload. Motor protection function detected an overload condition.",
+      "severity": "Drive Stop",
+      "causes": "โหลดหนักเกินไป, เวลาเร่ง/ลดความเร็วสั้นเกินไป, ตั้งค่า Speed Search ไม่ถูกต้อง, โอเวอร์โหลดที่ความเร็วต่ำ, ตั้งค่าการป้องกันมอเตอร์ไม่ถูกต้อง (L1-01), ต่อสาย PG/มอเตอร์ไม่ถูกต้อง, แรงดัน V/f สูงเกินไป, ตั้งค่าพิกัดกระแสมอเตอร์ไม่ถูกต้อง, สายไฟลัดวงจร/โอเวอร์โหลด, หรือแรงดันไฟเข้าต่ำ",
+      "action": "ตรวจสอบโหลดรอบการทำงาน, ใช้ฟังก์ชัน Speed Search, แก้ไขการเดินสายและการตั้งค่า, ปรับแรงดันสูงสุด (Max Voltage) หรือการชดเชยแรงบิด (Torque Compensation)"
+    },
+    {
+      "code": "OL2",
+      "name": "Inverter Overload",
+      "description": "Inverter Overload. Inverter electronic thermal protection detected an overload condition.",
+      "severity": "Drive Stop",
+      "causes": "โหลดหนักเกินไป, เวลาเร่ง/ลดความเร็วสั้นเกินไป, ตั้งค่า Speed Search ไม่ถูกต้อง, ต่อสาย PG/มอเตอร์ไม่ถูกต้อง, แรงดัน V/f สูงเกินไป, ขนาดอินเวอร์เตอร์เล็กเกินไป, สายไฟลัดวงจร/โอเวอร์โหลด, หรือโอเวอร์โหลดที่ความเร็วต่ำ",
+      "action": "ตรวจสอบโหลดรอบการทำงาน, ใช้ฟังก์ชัน Speed Search, แก้ไขการเดินสาย, เปลี่ยนอินเวอร์เตอร์ให้มีขนาดใหญ่ขึ้น, หรือปรับค่า Carrier frequency"
+    },
+    {
+      "code": "OL3",
+      "name": "Overtorque Detected 1",
+      "description": "Overtorque Detected 1. Output current exceeded the overtorque detection level for the specified time.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "กระแสเอาต์พุตเกินค่าที่ตั้งไว้ใน L6-02 นานกว่าเวลา L6-03",
+      "action": "ตรวจสอบการตั้งค่าพารามิเตอร์ L6 และตรวจสอบระบบทางกล"
+    },
+    {
+      "code": "OL4",
+      "name": "Overtorque Detected 2",
+      "description": "Overtorque Detected 2. Output current exceeded the overtorque detection level for the specified time.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "กระแสเอาต์พุตเกินค่าที่ตั้งไว้ใน L6-05 นานกว่าเวลา L6-06",
+      "action": "ตรวจสอบการตั้งค่าพารามิเตอร์ L6 และตรวจสอบระบบทางกล"
+    },
+    {
+      "code": "OL7",
+      "name": "High-slip Braking OL",
+      "description": "High-slip Braking OL. High-slip braking resistor overload protection activated.",
+      "severity": "Drive Stop",
+      "causes": "ความถี่ไม่เปลี่ยนแปลงตามเวลาที่ตั้งไว้ใน N3-04",
+      "action": "ตรวจสอบโหลดที่มีความเฉื่อย, ตั้งค่าเวลาลดความเร็วให้น้อยกว่าหรือเท่ากับ 120 วินาที"
+    },
+    {
+      "code": "UL3",
+      "name": "Undertorque Detected 1",
+      "description": "Undertorque Detected 1. Output current dropped below the undertorque detection level.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "กระแสต่ำกว่าค่า L6-02 นานกว่าเวลา L6-03",
+      "action": "ตรวจสอบการตั้งค่าพารามิเตอร์ L6 และตรวจสอบระบบทางกล"
+    },
+    {
+      "code": "UL4",
+      "name": "Undertorque Detected 2",
+      "description": "Undertorque Detected 2. Output current dropped below the undertorque detection level.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "กระแสต่ำกว่าค่า L6-05 นานกว่าเวลา L6-06",
+      "action": "ตรวจสอบการตั้งค่าพารามิเตอร์ L6 และตรวจสอบระบบทางกล"
+    },
+    {
+      "code": "OS",
+      "name": "Overspeed",
+      "description": "Overspeed. Motor speed exceeded the overspeed detection level.",
+      "severity": "Drive Stop",
+      "causes": "ความเร็วรอบเกินค่า F1-08 นานกว่าเวลา F1-09",
+      "action": "ปรับจูนค่า Gain, ตรวจสอบค่าความเร็วอ้างอิง, และตรวจสอบการตั้งค่าพารามิเตอร์ F1"
+    },
+    {
+      "code": "PGO",
+      "name": "PG Disconnection Detected",
+      "description": "PG Disconnection Detected. Pulse generator (PG) signal is disconnected.",
+      "severity": "Drive Stop",
+      "causes": "มีพัลส์จาก PG ป้อนเข้ามาในขณะที่อินเวอร์เตอร์กำลังจ่ายความถี่ออก",
+      "action": "แก้ไขการเดินสาย PG, จ่ายไฟเลี้ยงให้ PG, และตรวจสอบเบรก"
+    },
+    {
+      "code": "DEV",
+      "name": "Excessive Speed Deviation",
+      "description": "Excessive Speed Deviation. Difference between speed reference and actual speed exceeded tolerance.",
+      "severity": "Drive Stop",
+      "causes": "ค่าความคลาดเคลื่อนเกินกว่าค่า F1-10 นานกว่าเวลา F1-11",
+      "action": "ลดโหลด, เพิ่มเวลาเร่ง/ลดความเร็ว, ตรวจสอบระบบทางกล, ตรวจสอบการตั้งค่า F1, และตรวจสอบเบรก"
+    },
+    {
+      "code": "CF",
+      "name": "Control Fault",
+      "description": "Control Fault. Motor control calculation error or constant setting error.",
+      "severity": "Drive Stop",
+      "causes": "ถึงขีดจำกัดแรงบิดนานกว่า 3 วินาที (หยุดด้วยการลดความเร็ว) หรือเกิดข้อผิดพลาดในการคำนวณความเร็ว",
+      "action": "ตรวจสอบค่าคงที่ของมอเตอร์หรือทำการ Autotuning ใหม่"
+    },
+    {
+      "code": "FBL",
+      "name": "PID Feedback Reference Lost",
+      "description": "PID Feedback Reference Lost. PID feedback signal dropped below loss level.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "สัญญาณ PID Feedback ต่ำกว่าค่า b5-13 นานกว่าเวลา b5-14",
+      "action": "ตรวจสอบการตั้งค่าพารามิเตอร์ b5 และแก้ไขการเดินสายสัญญาณ PID Feedback"
+    },
+    {
+      "code": "EF0",
+      "name": "Opt External Flt",
+      "description": "Opt External Flt. External fault input received from an option card.",
+      "severity": "Drive Stop",
+      "causes": "ได้รับสัญญาณความผิดพลาดจาก Option Board ภายนอก",
+      "action": "ตรวจสอบการ์ดออปชัน (Option Board) และสัญญาณที่เกี่ยวข้อง"
+    },
+    {
+      "code": "EF3",
+      "name": "External Fault S3",
+      "description": "External Fault S3. External fault signal input at terminal S3.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF4",
+      "name": "External Fault S4",
+      "description": "External Fault S4. External fault signal input at terminal S4.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF5",
+      "name": "External Fault S5",
+      "description": "External Fault S5. External fault signal input at terminal S5.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF6",
+      "name": "External Fault S6",
+      "description": "External Fault S6. External fault signal input at terminal S6.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF7",
+      "name": "External Fault S7",
+      "description": "External Fault S7. External fault signal input at terminal S7.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF8",
+      "name": "External Fault S8",
+      "description": "External Fault S8. External fault signal input at terminal S8.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF9",
+      "name": "External Fault S9",
+      "description": "External Fault S9. External fault signal input at terminal S9.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF10",
+      "name": "External Fault S10",
+      "description": "External Fault S10. External fault signal input at terminal S10.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF11",
+      "name": "External Fault S11",
+      "description": "External Fault S11. External fault signal input at terminal S11.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "EF12",
+      "name": "External Fault S12",
+      "description": "External Fault S12. External fault signal input at terminal S12.",
+      "severity": "Drive Stop",
+      "causes": "เกิดความผิดพลาดจากอินพุตอเนกประสงค์ภายนอก",
+      "action": "รีเซ็ตสัญญาณอินพุต และกำจัดสาเหตุที่ทำให้เกิดข้อผิดพลาด"
+    },
+    {
+      "code": "SVE",
+      "name": "Zero Servo Fault",
+      "description": "Zero Servo Fault. Position deviation exceeded zero servo tolerance range.",
+      "severity": "Drive Stop",
+      "causes": "ตำแหน่งเคลื่อนที่ไปจากช่วงความเผื่อของ Zero Servo",
+      "action": "เพิ่มขีดจำกัดแรงบิด, ลดทอร์กโหลด, หรือตรวจสอบสัญญาณรบกวน"
+    },
+    {
+      "code": "SER",
+      "name": "Speed Search Retrials",
+      "description": "Speed Search Retrials. Number of speed search retrials exceeded the parameter limit.",
+      "severity": "Drive Stop",
+      "causes": "จำนวนครั้งในการลองค้นหาความเร็วเกินขีดจำกัดพารามิเตอร์ b3-19",
+      "action": "ตรวจสอบการตั้งค่าพารามิเตอร์ b3"
+    },
+    {
+      "code": "OPR",
+      "name": "Oper Disconnect",
+      "description": "Oper Disconnect. Digital operator connection was broken during operation.",
+      "severity": "Drive Stop",
+      "causes": "การเชื่อมต่อกับ Digital Operator ขาดหายไประหว่างทำงาน",
+      "action": "ตรวจสอบการเชื่อมต่อ"
+    },
+    {
+      "code": "CE",
+      "name": "Memobus Com Err",
+      "description": "Memobus Com Err. Communication data error via serial communication.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "ไม่ได้รับข้อมูลนานกว่า 2 วินาที",
+      "action": "ตรวจสอบอุปกรณ์และสัญญาณการสื่อสาร"
+    },
+    {
+      "code": "BUS",
+      "name": "Option Com Err",
+      "description": "Option Com Err. Communication error between option card and network master.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "เกิดข้อผิดพลาดในการสื่อสารระหว่างสั่ง Run/Freq",
+      "action": "ตรวจสอบอุปกรณ์และสัญญาณการสื่อสาร"
+    },
+    {
+      "code": "E5",
+      "name": "SI-T WDT Err",
+      "description": "SI-T WDT Err. Watchdog timer error on communication option card.",
+      "severity": "Drive Stop / Alarm",
+      "causes": "ข้อมูลการควบคุมไม่สอดคล้องกัน",
+      "action": "ตรวจสอบจังหวะเวลา/รอบการสื่อสาร (อ้างอิงเอกสาร TOBPC73060008)"
+    },
+    {
+      "code": "E-15",
+      "name": "SI-F/G Com Err",
+      "description": "SI-F/G Com Err. Communication error on fieldbus option card.",
+      "severity": "Drive Stop",
+      "causes": "ตรวจพบข้อผิดพลาดในการสื่อสาร",
+      "action": "ตรวจสอบสัญญาณการสื่อสาร"
+    },
+    {
+      "code": "E-10",
+      "name": "SI-F/G CPU down",
+      "description": "SI-F/G CPU down. CPU failure on option card.",
+      "severity": "Drive Stop",
+      "causes": "การ์ดออปชันขัดข้อง",
+      "action": "เชื่อมต่อ Digital Operator ใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF00",
+      "name": "Digital Operator Com Err 1",
+      "description": "Digital Operator Com Err 1. Communications with digital operator failed at startup.",
+      "severity": "Drive Stop",
+      "causes": "ไม่สามารถเชื่อมต่อกับ Digital Operator ได้ภายใน 5 วินาที",
+      "action": "เชื่อมต่อ Digital Operator ใหม่, เปลี่ยนอินเวอร์เตอร์หรือวงจรควบคุม"
+    },
+    {
+      "code": "CPF01",
+      "name": "Digital Operator Com Err 2",
+      "description": "Digital Operator Com Err 2. Communications with digital operator lost during operation.",
+      "severity": "Drive Stop",
+      "causes": "เกิดข้อผิดพลาดในการสื่อสารนานกว่า 2 วินาทีหลังจากเชื่อมต่อสำเร็จ",
+      "action": "เชื่อมต่อ Digital Operator ใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF02",
+      "name": "Baseblock Circuit Err",
+      "description": "CPF02 Baseblock Circuit Err. Hardware baseblock circuit failure.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมเสียหาย",
+      "action": "ปิดและเปิดเครื่องใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF03",
+      "name": "EEPROM Error",
+      "description": "EEPROM Error. Internal EEPROM read/write error.",
+      "severity": "Drive Stop",
+      "causes": "ไฟดับระหว่างกำลังเขียนข้อมูล หรือวงจรควบคุมเสียหาย",
+      "action": "ปิดและเปิดเครื่องใหม่, ทำการ Initialize ค่าคงที่ (A1-03), หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF04",
+      "name": "Internal A/D Err",
+      "description": "Internal A/D Err. Internal A/D converter error.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมเสียหาย, หรือเกิดการลัดวงจร/โอเวอร์โหลด",
+      "action": "ปิดและเปิดเครื่องใหม่, เปลี่ยนอินเวอร์เตอร์, หรือตรวจสอบการเดินสาย"
+    },
+    {
+      "code": "CPF05",
+      "name": "External A/D Err",
+      "description": "External A/D Err. External A/D converter error.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมเสียหาย, หรือเกิดการลัดวงจร/โอเวอร์โหลด",
+      "action": "ปิดและเปิดเครื่องใหม่, เปลี่ยนอินเวอร์เตอร์, หรือตรวจสอบการเดินสาย"
+    },
+    {
+      "code": "CPF06",
+      "name": "Option Board Connection Error",
+      "description": "Option Board Connection Error. Option card connection error at startup.",
+      "severity": "Drive Stop",
+      "causes": "เสียบการ์ดไม่ถูกต้อง, หรืออินเวอร์เตอร์/การ์ดออปชันชำรุด",
+      "action": "เสียบการ์ดใหม่ให้แน่น, หรือเปลี่ยนอินเวอร์เตอร์/การ์ดออปชัน"
+    },
+    {
+      "code": "CPF07",
+      "name": "ASIC Internal RAM Fault",
+      "description": "ASIC Internal RAM Fault. Internal RAM failure in custom IC.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมเสียหาย",
+      "action": "ปิดและเปิดเครื่องใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF08",
+      "name": "Watchdog Timer Fault",
+      "description": "Watchdog Timer Fault. CPU watchdog timer error.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมเสียหาย",
+      "action": "ปิดและเปิดเครื่องใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF09",
+      "name": "CPU-ASIC Mutual Diagnosis Fault",
+      "description": "CPU-ASIC Mutual Diagnosis Fault. Communication error between CPU and ASIC.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมเสียหาย",
+      "action": "ปิดและเปิดเครื่องใหม่ หรือเปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF10",
+      "name": "ASIC Version Fault",
+      "description": "ASIC Version Fault. Incompatible ASIC version detected.",
+      "severity": "Drive Stop",
+      "causes": "วงจรควบคุมของอินเวอร์เตอร์ขัดข้อง",
+      "action": "เปลี่ยนอินเวอร์เตอร์"
+    },
+    {
+      "code": "CPF20",
+      "name": "Option Board A/D Error",
+      "description": "Option Board A/D Error. A/D converter error on option card.",
+      "severity": "Drive Stop",
+      "causes": "การเชื่อมต่อการ์ดออปชันหรือคอนเวอร์เตอร์ขัดข้อง",
+      "action": "เสียบการ์ดใหม่ หรือเปลี่ยน Option Board"
+    },
+    {
+      "code": "CPF21",
+      "name": "Option Board Self Diag Err",
+      "description": "Option Board Self Diag Err. Self-diagnostic error on option card.",
+      "severity": "Drive Stop",
+      "causes": "การ์ดออปชันขัดข้อง",
+      "action": "เปลี่ยน Option Board"
+    },
+    {
+      "code": "CPF22",
+      "name": "Option Board Model Code Err",
+      "description": "Option Board Model Code Err. Model code error on option card.",
+      "severity": "Drive Stop",
+      "causes": "การ์ดออปชันขัดข้อง",
+      "action": "เปลี่ยน Option Board"
+    },
+    {
+      "code": "CPF23",
+      "name": "Option Board DPRAM Err",
+      "description": "Option Board DPRAM Err. Dual-port RAM error on option card.",
+      "severity": "Drive Stop",
+      "causes": "ใช้งานฟังก์ชันคัดลอกข้อมูล (Copy function) ระหว่างสื่อสาร, หรือการเชื่อมต่อไม่ดี",
+      "action": "ใช้งานในโหมด Off-line, ถอดการ์ดออปชันออกแล้วเสียบกลับเข้าไปใหม่"
+    },
+    {
+      "code": "VCF",
+      "name": "Main Circuit Capacitor Neutral Point Potential Error",
+      "description": "Main Circuit Capacitor Neutral Point Potential Error. Neutral point voltage imbalance in main circuit capacitors.",
+      "severity": "Drive Stop",
+      "causes": "ตัวเก็บประจุเสื่อมสภาพ, อินเวอร์เตอร์ขัดข้อง, เอาต์พุตเฟสขาดหาย, ตั้งค่า Carrier frequency ไม่เหมาะสม, หรือมอเตอร์หลุดจากซิงโครไนซ์",
+      "action": "เปลี่ยนตัวเก็บประจุ, ตรวจสอบเอาต์พุตหรือเฟสขาดหาย (LF), ตรวจสอบ Carrier frequency (C6-03/04), ลดโหลด/เพิ่มเวลาเร่งความเร็ว, ตรวจสอบ V/f"
+    },
+    {
+      "code": "FAN",
+      "name": "Cooling Fan Fault",
+      "description": "Cooling Fan Fault. Inverter cooling fan stopped.",
+      "severity": "Alarm / Drive Stop",
+      "causes": "พัดลมหยุดทำงาน หรือฮีทซิงค์อุดตัน",
+      "action": "เปลี่ยนพัดลมระบายความร้อน หรือทำความสะอาดฮีทซิงค์"
+    },
+    {
+      "code": "OH2",
+      "name": "Inverter Overheating Pre-alarm",
+      "description": "Inverter Overheating Pre-alarm. Heatsink temperature approaching overtemperature level.",
+      "severity": "Alarm",
+      "causes": "อุณหภูมิฮีทซิงค์ใกล้ถึงระดับความร้อนสูงเกินไป",
+      "action": "เคลียร์สัญญาณอินพุตที่เทอร์มินัล"
+    },
+    {
+      "code": "CALL",
+      "name": "Communications on Standby",
+      "description": "Communications on Standby. Waiting for initial communication from master device.",
+      "severity": "Alarm",
+      "causes": "รอการสื่อสารเริ่มต้นจากอุปกรณ์มาสเตอร์ (Master device)",
+      "action": "ตรวจสอบการเชื่อมต่ออุปกรณ์มาสเตอร์และการตั้งค่าการสื่อสาร"
+    },
+    {
+      "code": "RUNC",
+      "name": "Reset during Run Command Input Error",
+      "description": "Reset during Run Command Input Error. Fault reset signal applied while run command is active.",
+      "severity": "Alarm",
+      "causes": "ส่งสัญญาณรีเซ็ตความผิดพลาดเข้ามาในขณะที่คำสั่งสั่งทำงาน (Run command) ยังทำงานอยู่",
+      "action": "ปิดคำสั่งเดินเครื่อง (Run command) ก่อนทำการรีเซ็ต"
+    },
+    {
+      "code": "AER",
+      "name": "SI-T Station Number Setting Error",
+      "description": "SI-T Station Number Setting Error. Incorrect station number set on option card.",
+      "severity": "Alarm",
+      "causes": "ตั้งเลขสถานีบนการ์ดออปชันไม่ถูกต้อง",
+      "action": "ตรวจสอบสวิตช์ตั้งเลขสถานีบนการ์ดออปชัน"
+    },
+    {
+      "code": "CYC",
+      "name": "SI-T Communications Cycle Setting Error",
+      "description": "SI-T Communications Cycle Setting Error. Incorrect communication cycle set.",
+      "severity": "Alarm",
+      "causes": "ตั้งค่ารอบเวลาการสื่อสารไม่ถูกต้อง",
+      "action": "ตรวจสอบการตั้งค่ารอบเวลาการสื่อสาร"
+    },
+    {
+      "code": "BB",
+      "name": "External Baseblock",
+      "description": "External Baseblock. Inverter output turned off by external baseblock command.",
+      "severity": "Alarm",
+      "causes": "อินเวอร์เตอร์ปิดเอาต์พุตด้วยคำสั่ง Baseblock ภายนอก",
+      "action": "ตรวจสอบสัญญาณอินพุตซีเควนซ์ภายนอกสำหรับคำสั่ง Baseblock"
+    },
+    {
+      "code": "HCA",
+      "name": "Current Alarm",
+      "description": "Current Alarm. Output current exceeded current alarm level.",
+      "severity": "Alarm",
+      "causes": "กระแสเอาต์พุตเกินระดับสัญญาณเตือนกระแส",
+      "action": "โหลดสูงเกินไป หรือเวลาเร่ง/ลดความเร็วสั้นเกินไป ตรวจสอบพิกัดความสามารถ"
+    },
+    {
+      "code": "LT-C",
+      "name": "Electrolytic Capacitor Maintenance Timer",
+      "description": "Electrolytic Capacitor Maintenance Timer. Main circuit capacitors have reached their design life.",
+      "severity": "Alarm",
+      "causes": "ตัวเก็บประจุในวงจรหลักถึงอายุการใช้งานที่ออกแบบไว้",
+      "action": "ตรวจสอบและเปลี่ยนตัวเก็บประจุวงจรหลัก, ทำการรีเซ็ตพารามิเตอร์ o2-18 หลังเปลี่ยน"
+    },
+    {
+      "code": "LT-F",
+      "name": "Cooling Fan Maintenance Timer",
+      "description": "Cooling Fan Maintenance Timer. Cooling fan has reached its design life.",
+      "severity": "Alarm",
+      "causes": "พัดลมระบายความร้อนถึงอายุการใช้งานที่ออกแบบไว้",
+      "action": "เปลี่ยนพัดลมระบายความร้อนใหม่, ตั้งค่าพารามิเตอร์ o2-10"
+    }
+  ]
+}

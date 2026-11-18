@@ -1,0 +1,636 @@
+{
+  "fuji_vm4_alarms": [
+    {
+      "code": "1",
+      "group": "Master",
+      "name": "FUSE",
+      "description": "IGBT fuse blown. DC main circuit fuse blown due to output short-circuit, controller/gate drive abnormality or IGBT short-circuit.",
+      "severity": "Major Fault 2",
+      "action": "IGBT มักเสียหาย เปลี่ยนฟิวส์อย่างเดียวไม่ได้ ให้เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "2",
+      "group": "Master",
+      "name": "OV",
+      "description": "Main circuit overvoltage. DC main circuit voltage exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration หลีกเลี่ยงการลดความเร็วพร้อมกัน และเพิ่มเวลา deceleration พร้อมสังเกตแรงดัน DC"
+    },
+    {
+      "code": "3",
+      "group": "Master",
+      "name": "OTF",
+      "description": "Cooling unit overheat. Cooling unit of main circuit element exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนของตู้ ตรวจสอบไส้กรองอากาศอุดตันและอุณหภูมิแวดล้อม"
+    },
+    {
+      "code": "4",
+      "group": "Master",
+      "name": "UV",
+      "description": "Main circuit undervoltage. DC main circuit voltage below regulated threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการทำงานของคอนแทกเตอร์ MC-RN และ initial charge MC-ST รวมถึงเช็คแรงดัน DC bus"
+    },
+    {
+      "code": "5",
+      "group": "Master",
+      "name": "UVH",
+      "description": "Pulse off voltage level. Voltage dropped below pulse off threshold during operation.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันไฟฟ้ากระแสตรงและแรงดันระบบอินพุตว่ามีไฟตกหรือไฟดับหรือไม่"
+    },
+    {
+      "code": "6",
+      "group": "Master",
+      "name": "OC",
+      "description": "Overcurrent. Peak output current exceeds the overcurrent operating level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่เอาต์พุต ปรับค่าตั้งอินเวอร์เตอร์ และเช็คระบบควบคุมหรือกระแสกระชาก"
+    },
+    {
+      "code": "7",
+      "group": "Master",
+      "name": "OLM",
+      "description": "Motor overload. Torque current persists above threshold for a defined time.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบตรวจจับความเร็ว (PLG) แรงเสียดทานทางกล และเบรกมอเตอร์"
+    },
+    {
+      "code": "8",
+      "group": "Master",
+      "name": "OLI",
+      "description": "Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์และสภาพโหลดให้เหมาะสมไม่ให้เกินพิกัดอินเวอร์เตอร์"
+    },
+    {
+      "code": "9",
+      "group": "Master",
+      "name": "ACR",
+      "description": "ACR CPU error. No interrupt of the ACR CPU for a certain period (hardware failure).",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "10",
+      "group": "Master",
+      "name": "GND",
+      "description": "Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ หรือตรวจสอบ CT"
+    },
+    {
+      "code": "15",
+      "group": "Master",
+      "name": "OTM",
+      "description": "Motor overheat. Motor temperature exceeds the configured setting.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมมอเตอร์ พัดลมระบายความร้อน และเซนเซอร์อุณหภูมิ"
+    },
+    {
+      "code": "16",
+      "group": "Master",
+      "name": "THMO",
+      "description": "Temperature sensor error. Motor temperature sensor measured value out of fixed range.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์ หากเสียหายให้เปลี่ยนไปใช้ตัวสำรองในมอเตอร์"
+    },
+    {
+      "code": "17",
+      "group": "Master",
+      "name": "FTA",
+      "description": "External major fault. A major fault signal from external sequence control.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault ภายนอก"
+    },
+    {
+      "code": "18",
+      "group": "Master",
+      "name": "FTB",
+      "description": "External minor fault. A minor fault signal from external sequence control.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault ภายนอก"
+    },
+    {
+      "code": "19",
+      "group": "Master",
+      "name": "FTC",
+      "description": "External middle fault. A medium fault signal from external sequence control.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault ภายนอก"
+    },
+    {
+      "code": "20",
+      "group": "Master",
+      "name": "OS",
+      "description": "Motor overspeed. Actual or estimated speed exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "หลีกเลี่ยงการหมุนความเร็วสูงเกินพิกัด และตรวจสอบ transmitted torque limit"
+    },
+    {
+      "code": "21",
+      "group": "Master",
+      "name": "PLG",
+      "description": "PLG error. Disconnection of PLG pulse output A or B while running.",
+      "severity": "Major Fault 2 / Minor Fault 1 / Minor Fault 2",
+      "action": "ตรวจสอบสาย PLG แรงดันไฟเลี้ยง และเปลี่ยน PLG หรือ controller หากจำเป็น"
+    },
+    {
+      "code": "22",
+      "group": "Master",
+      "name": "MLK",
+      "description": "Motor start delay. Torque current instruction exceeds threshold while speed stays near zero.",
+      "severity": "Major Fault 2 / Minor Fault 1 / Minor Fault 2",
+      "action": "ตรวจสอบระบบตรวจจับความเร็ว (PLG) และตรวจสอบการติดขัดทางกลหรือเบรกมอเตอร์"
+    },
+    {
+      "code": "23",
+      "group": "Master",
+      "name": "A LNK",
+      "description": "ACR link error. Link communication error between controller units.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายเคเบิลออปติคอลลิงก์และคอนเนกเตอร์การสื่อสาร"
+    },
+    {
+      "code": "24",
+      "group": "Master",
+      "name": "DCCT",
+      "description": "Current sensor error. DCCT not connected or bad connector contact.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายเคเบิลและคอนเนกเตอร์ที่ต่อกับ DCCT"
+    },
+    {
+      "code": "30",
+      "group": "Master",
+      "name": "MICREX",
+      "description": "MICREX error. Transmission error from MICREX PLC.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบสาเหตุของ transmission error (TER bit) ทางฝั่ง PLC"
+    },
+    {
+      "code": "31",
+      "group": "Master",
+      "name": "IFC",
+      "description": "Host transmission system error. P(E) link abnormality or PLC_EN drop.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ทำการกู้คืนระบบ P(E) link และตรวจสอบสัญญาณเชื่อมต่อโฮสต์"
+    },
+    {
+      "code": "32",
+      "group": "Master",
+      "name": "DLA",
+      "description": "DLA error. Board-level communication or hardware error.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "เปลี่ยนการ์ด DLA หรือตรวจสอบการเชื่อมต่อ"
+    },
+    {
+      "code": "33",
+      "group": "Master",
+      "name": "DLINE",
+      "description": "D-Line/T-Link error. Transmission interruption detected on D-Line or T-Link.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบแหล่งจ่ายไฟ PLC, สายเคเบิล D-Line/T-Link และตัวต้านทานปลายสาย (100Ω)"
+    },
+    {
+      "code": "35",
+      "group": "Master",
+      "name": "SX L",
+      "description": "SX bus minor fault. Minor error on SX bus communication.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1 / Minor Fault 2",
+      "action": "ตรวจสอบการเดินสาย SX bus และอุปกรณ์เชื่อมต่อ"
+    },
+    {
+      "code": "36",
+      "group": "Master",
+      "name": "SX H",
+      "description": "SX bus major fault. Major error on SX bus communication.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบระบบ SX bus และการตั้งค่าฮาร์ดแวร์"
+    },
+    {
+      "code": "37",
+      "group": "Master",
+      "name": "SXBUS",
+      "description": "SX bus error. General SX bus communication failure.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบ MICREX PLC, สาย SX bus, การ์ด SX และอุปกรณ์ร่วมเครือข่าย"
+    },
+    {
+      "code": "38",
+      "group": "Master",
+      "name": "PSB",
+      "description": "PSB Card error. Power supply board hardware or communication fault.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "เปลี่ยนการ์ด PSB หรือตรวจสอบการจ่ายไฟ"
+    },
+    {
+      "code": "39",
+      "group": "Master",
+      "name": "PROFI",
+      "description": "Profibus error. Profibus communication interruption or failure.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบแหล่งจ่ายไฟ PLC, สาย Profibus และสวิตช์เทอร์มิเนตอร์"
+    },
+    {
+      "code": "40",
+      "group": "Slave1",
+      "name": "GND",
+      "description": "Slave1 Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ของยูนิต Slave1"
+    },
+    {
+      "code": "41",
+      "group": "Slave1",
+      "name": "FUSE",
+      "description": "Slave1 IGBT fuse blown. DC main circuit fuse blown due to output short-circuit or IGBT damage.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave1 และ IGBT stack"
+    },
+    {
+      "code": "42",
+      "group": "Slave1",
+      "name": "OV",
+      "description": "Slave1 Main circuit overvoltage. DC main circuit voltage exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration ของยูนิต Slave1"
+    },
+    {
+      "code": "43",
+      "group": "Slave1",
+      "name": "OTF",
+      "description": "Slave1 Cooling unit overheat. Cooling unit exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบพัดลมระบายความร้อนและไส้กรองของยูนิต Slave1"
+    },
+    {
+      "code": "44",
+      "group": "Slave1",
+      "name": "UV",
+      "description": "Slave1 Main circuit undervoltage. DC main circuit voltage below regulated threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์และแรงดัน DC bus ของยูนิต Slave1"
+    },
+    {
+      "code": "45",
+      "group": "Slave1",
+      "name": "UVH",
+      "description": "Slave1 Pulse off voltage level. Voltage dropped below pulse off threshold.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันไฟฟ้าและแหล่งจ่ายไฟของยูนิต Slave1"
+    },
+    {
+      "code": "46",
+      "group": "Slave1",
+      "name": "OC",
+      "description": "Slave1 Output overcurrent. Peak output current exceeds overcurrent level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่เอาต์พุตของยูนิต Slave1"
+    },
+    {
+      "code": "47",
+      "group": "Slave1",
+      "name": "OLM",
+      "description": "Slave1 Motor overload. Torque current persists above threshold for a defined time.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบโหลดและกระแสของยูนิต Slave1"
+    },
+    {
+      "code": "48",
+      "group": "Slave1",
+      "name": "OLI",
+      "description": "Slave1 Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังและสภาพโหลดของยูนิต Slave1"
+    },
+    {
+      "code": "49",
+      "group": "Slave1",
+      "name": "ACR",
+      "description": "Slave1 ACR CPU error. No interrupt of the ACR CPU for a certain period.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave1 หรือ controller (CTR)"
+    },
+    {
+      "code": "50",
+      "group": "Slave2",
+      "name": "GND",
+      "description": "Slave2 Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ของยูนิต Slave2"
+    },
+    {
+      "code": "51",
+      "group": "Slave2",
+      "name": "FUSE",
+      "description": "Slave2 IGBT fuse blown. DC main circuit fuse blown due to output short-circuit or IGBT damage.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave2 และ IGBT stack"
+    },
+    {
+      "code": "52",
+      "group": "Slave2",
+      "name": "OV",
+      "description": "Slave2 Main circuit overvoltage. DC main circuit voltage exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration ของยูนิต Slave2"
+    },
+    {
+      "code": "53",
+      "group": "Slave2",
+      "name": "OTF",
+      "description": "Slave2 Cooling unit overheat. Cooling unit exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบพัดลมระบายความร้อนและไส้กรองของยูนิต Slave2"
+    },
+    {
+      "code": "54",
+      "group": "Slave2",
+      "name": "UV",
+      "description": "Slave2 Main circuit undervoltage. DC main circuit voltage below regulated threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์และแรงดัน DC bus ของยูนิต Slave2"
+    },
+    {
+      "code": "55",
+      "group": "Slave2",
+      "name": "UVH",
+      "description": "Slave2 Pulse off voltage level. Voltage dropped below pulse off threshold.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันไฟฟ้าและแหล่งจ่ายไฟของยูนิต Slave2"
+    },
+    {
+      "code": "56",
+      "group": "Slave2",
+      "name": "OC",
+      "description": "Slave2 Output overcurrent. Peak output current exceeds overcurrent level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่เอาต์พุตของยูนิต Slave2"
+    },
+    {
+      "code": "57",
+      "group": "Slave2",
+      "name": "OLM",
+      "description": "Slave2 Motor overload. Torque current persists above threshold for a defined time.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบโหลดและกระแสของยูนิต Slave2"
+    },
+    {
+      "code": "58",
+      "group": "Slave2",
+      "name": "OLI",
+      "description": "Slave2 Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังและสภาพโหลดของยูนิต Slave2"
+    },
+    {
+      "code": "59",
+      "group": "Slave2",
+      "name": "ACR",
+      "description": "Slave2 ACR CPU error. No interrupt of the ACR CPU for a certain period.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave2 หรือ controller (CTR)"
+    },
+    {
+      "code": "60",
+      "group": "Slave3",
+      "name": "GND",
+      "description": "Slave3 Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ของยูนิต Slave3"
+    },
+    {
+      "code": "61",
+      "group": "Slave3",
+      "name": "FUSE",
+      "description": "Slave3 IGBT fuse blown. DC main circuit fuse blown due to output short-circuit or IGBT damage.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave3 และ IGBT stack"
+    },
+    {
+      "code": "62",
+      "group": "Slave3",
+      "name": "OV",
+      "description": "Slave3 Main circuit overvoltage. DC main circuit voltage exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration ของยูนิต Slave3"
+    },
+    {
+      "code": "63",
+      "group": "Slave3",
+      "name": "OTF",
+      "description": "Slave3 Cooling unit overheat. Cooling unit exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบพัดลมระบายความร้อนและไส้กรองของยูนิต Slave3"
+    },
+    {
+      "code": "64",
+      "group": "Slave3",
+      "name": "UV",
+      "description": "Slave3 Main circuit undervoltage. DC main circuit voltage below regulated threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์และแรงดัน DC bus ของยูนิต Slave3"
+    },
+    {
+      "code": "65",
+      "group": "Slave3",
+      "name": "UVH",
+      "description": "Slave3 Pulse off voltage level. Voltage dropped below pulse off threshold.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันไฟฟ้าและแหล่งจ่ายไฟของยูนิต Slave3"
+    },
+    {
+      "code": "66",
+      "group": "Slave3",
+      "name": "OC",
+      "description": "Slave3 Output overcurrent. Peak output current exceeds overcurrent level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่เอาต์พุตของยูนิต Slave3"
+    },
+    {
+      "code": "67",
+      "group": "Slave3",
+      "name": "OLM",
+      "description": "Slave3 Motor overload. Torque current persists above threshold for a defined time.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบโหลดและกระแสของยูนิต Slave3"
+    },
+    {
+      "code": "68",
+      "group": "Slave3",
+      "name": "OLI",
+      "description": "Slave3 Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังและสภาพโหลดของยูนิต Slave3"
+    },
+    {
+      "code": "69",
+      "group": "Slave3",
+      "name": "ACR",
+      "description": "Slave3 ACR CPU error. No interrupt of the ACR CPU for a certain period.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave3 หรือ controller (CTR)"
+    },
+    {
+      "code": "70",
+      "group": "Slave4",
+      "name": "GND",
+      "description": "Slave4 Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ของยูนิต Slave4"
+    },
+    {
+      "code": "71",
+      "group": "Slave4",
+      "name": "FUSE",
+      "description": "Slave4 IGBT fuse blown. DC main circuit fuse blown due to output short-circuit or IGBT damage.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave4 และ IGBT stack"
+    },
+    {
+      "code": "72",
+      "group": "Slave4",
+      "name": "OV",
+      "description": "Slave4 Main circuit overvoltage. DC main circuit voltage exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration ของยูนิต Slave4"
+    },
+    {
+      "code": "73",
+      "group": "Slave4",
+      "name": "OTF",
+      "description": "Slave4 Cooling unit overheat. Cooling unit exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบพัดลมระบายความร้อนและไส้กรองของยูนิต Slave4"
+    },
+    {
+      "code": "74",
+      "group": "Slave4",
+      "name": "UV",
+      "description": "Slave4 Main circuit undervoltage. DC main circuit voltage below regulated threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์และแรงดัน DC bus ของยูนิต Slave4"
+    },
+    {
+      "code": "75",
+      "group": "Slave4",
+      "name": "UVH",
+      "description": "Slave4 Pulse off voltage level. Voltage dropped below pulse off threshold.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันไฟฟ้าและแหล่งจ่ายไฟของยูนิต Slave4"
+    },
+    {
+      "code": "76",
+      "group": "Slave4",
+      "name": "OC",
+      "description": "Slave4 Output overcurrent. Peak output current exceeds overcurrent level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่เอาต์พุตของยูนิต Slave4"
+    },
+    {
+      "code": "77",
+      "group": "Slave4",
+      "name": "OLM",
+      "description": "Slave4 Motor overload. Torque current persists above threshold for a defined time.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบโหลดและกระแสของยูนิต Slave4"
+    },
+    {
+      "code": "78",
+      "group": "Slave4",
+      "name": "OLI",
+      "description": "Slave4 Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังและสภาพโหลดของยูนิต Slave4"
+    },
+    {
+      "code": "79",
+      "group": "Slave4",
+      "name": "ACR",
+      "description": "Slave4 ACR CPU error. No interrupt of the ACR CPU for a certain period.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave4 หรือ controller (CTR)"
+    },
+    {
+      "code": "80",
+      "group": "Slave5",
+      "name": "GND",
+      "description": "Slave5 Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ของยูนิต Slave5"
+    },
+    {
+      "code": "81",
+      "group": "Slave5",
+      "name": "FUSE",
+      "description": "Slave5 IGBT fuse blown. DC main circuit fuse blown due to output short-circuit or IGBT damage.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave5 และ IGBT stack"
+    },
+    {
+      "code": "82",
+      "group": "Slave5",
+      "name": "OV",
+      "description": "Slave5 Main circuit overvoltage. DC main circuit voltage exceeds threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration ของยูนิต Slave5"
+    },
+    {
+      "code": "83",
+      "group": "Slave5",
+      "name": "OTF",
+      "description": "Slave5 Cooling unit overheat. Cooling unit exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบพัดลมระบายความร้อนและไส้กรองของยูนิต Slave5"
+    },
+    {
+      "code": "84",
+      "group": "Slave5",
+      "name": "UV",
+      "description": "Slave5 Main circuit undervoltage. DC main circuit voltage below regulated threshold.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์และแรงดัน DC bus ของยูนิต Slave5"
+    },
+    {
+      "code": "85",
+      "group": "Slave5",
+      "name": "UVH",
+      "description": "Slave5 Pulse off voltage level. Voltage dropped below pulse off threshold.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันไฟฟ้าและแหล่งจ่ายไฟของยูนิต Slave5"
+    },
+    {
+      "code": "86",
+      "group": "Slave5",
+      "name": "OC",
+      "description": "Slave5 Output overcurrent. Peak output current exceeds overcurrent level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่เอาต์พุตของยูนิต Slave5"
+    },
+    {
+      "code": "87",
+      "group": "Slave5",
+      "name": "OLM",
+      "description": "Slave5 Motor overload. Torque current persists above threshold for a defined time.",
+      "severity": "Major Fault 2 / Middle Fault / Minor Fault 1",
+      "action": "ตรวจสอบโหลดและกระแสของยูนิต Slave5"
+    },
+    {
+      "code": "88",
+      "group": "Slave5",
+      "name": "OLI",
+      "description": "Slave5 Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังและสภาพโหลดของยูนิต Slave5"
+    },
+    {
+      "code": "89",
+      "group": "Slave5",
+      "name": "ACR",
+      "description": "Slave5 ACR CPU error. No interrupt of the ACR CPU for a certain period.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์ Slave5 หรือ controller (CTR)"
+    }
+  ]
+}

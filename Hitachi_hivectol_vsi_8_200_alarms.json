@@ -1,0 +1,724 @@
+{
+  "hitachi_hivectol_vsi_8_200_alarms": [
+    {
+      "code": "71760",
+      "group": "Heavy Fault",
+      "name": "Driver detection failed",
+      "description": "An error signal was detected from the IPM.",
+      "severity": "Heavy Fault",
+      "action": "IPM อาจเสียหาย ให้ตรวจสอบความสมบูรณ์ของอุปกรณ์ (IPM may be damaged. Check it for soundness.)"
+    },
+    {
+      "code": "73760",
+      "group": "Heavy Fault",
+      "name": "Driver detection failed",
+      "description": "An error signal was detected from the IPM.",
+      "severity": "Heavy Fault",
+      "action": "IPM อาจเสียหาย ให้ตรวจสอบความสมบูรณ์ของอุปกรณ์ (IPM may be damaged. Check it for soundness.)"
+    },
+    {
+      "code": "71870",
+      "group": "Heavy Fault",
+      "name": "PN short-circuiting pulse",
+      "description": "It was detected the short circuiting pulse between P phase and N phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการลัดวงจรระหว่างเฟส P และ N ในวงจรหลัก"
+    },
+    {
+      "code": "73870",
+      "group": "Heavy Fault",
+      "name": "PN short-circuiting pulse",
+      "description": "It was detected the short circuiting pulse between P phase and N phase.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการลัดวงจรระหว่างเฟส P และ N ในวงจรหลัก"
+    },
+    {
+      "code": "71500",
+      "group": "Heavy Fault",
+      "name": "Over-current at the load side",
+      "description": "Current which exceeds the rated maximum flowed through the motor.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพโหลดและการลัดวงจรทางฝั่งโหลด"
+    },
+    {
+      "code": "73500",
+      "group": "Heavy Fault",
+      "name": "Over-current at the load side",
+      "description": "Current which exceeds the rated maximum flowed through the motor.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพโหลดและการลัดวงจรทางฝั่งโหลด"
+    },
+    {
+      "code": "71450",
+      "group": "Heavy Fault",
+      "name": "DC overvoltage",
+      "description": "DC voltage exceeds the setting value.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบแรงดัน DC bus และระบบ regeneration"
+    },
+    {
+      "code": "73450",
+      "group": "Heavy Fault",
+      "name": "DC overvoltage",
+      "description": "DC voltage exceeds the setting value.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบแรงดัน DC bus และระบบ regeneration"
+    },
+    {
+      "code": "71801",
+      "group": "Heavy Fault",
+      "name": "Fuse blown",
+      "description": "DC voltage fall below the setting value due to blown fuse.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์ในวงจรหลักและหาสสาเหตุของการลัดวงจร"
+    },
+    {
+      "code": "73801",
+      "group": "Heavy Fault",
+      "name": "Fuse blown",
+      "description": "DC voltage fall below the setting value due to blown fuse.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบฟิวส์ในวงจรหลักและหาสสาเหตุของการลัดวงจร"
+    },
+    {
+      "code": "71510",
+      "group": "Heavy Fault",
+      "name": "Overload",
+      "description": "Load current which exceeds the load characteristic of the motor flowed through the motor.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงานและภาระโหลดของมอเตอร์ (Check operation condition)"
+    },
+    {
+      "code": "73510",
+      "group": "Heavy Fault",
+      "name": "Overload",
+      "description": "Load current which exceeds the load characteristic of the motor flowed through the motor.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบสภาพการทำงานและภาระโหลดของมอเตอร์ (Check operation condition)"
+    },
+    {
+      "code": "71761",
+      "group": "Heavy Fault",
+      "name": "Stall detected",
+      "description": "The motor locked.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการติดขัดทางกลหรือสภาวะมอเตอร์ล็อก"
+    },
+    {
+      "code": "73761",
+      "group": "Heavy Fault",
+      "name": "Stall detected",
+      "description": "The motor locked.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบการติดขัดทางกลหรือสภาวะมอเตอร์ล็อก"
+    },
+    {
+      "code": "71301",
+      "group": "Heavy Fault",
+      "name": "External light fault TD",
+      "description": "The light fault occurred and tripped after a while.",
+      "severity": "Heavy Fault",
+      "action": "กำจัดสาเหตุของ light fault แล้วทำการรีเซ็ต (Eliminated the factor of the light fault and reset.)"
+    },
+    {
+      "code": "73301",
+      "group": "Heavy Fault",
+      "name": "External light fault TD",
+      "description": "The light fault occurred and tripped after a while.",
+      "severity": "Heavy Fault",
+      "action": "กำจัดสาเหตุของ light fault แล้วทำการรีเซ็ต (Eliminated the factor of the light fault and reset.)"
+    },
+    {
+      "code": "71802",
+      "group": "Heavy Fault",
+      "name": "Precharge fault",
+      "description": "The voltage of precharge circuit doesn't reach a setting value.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบวงจร pre-charge คอนแทกเตอร์ และฟิวส์"
+    },
+    {
+      "code": "73802",
+      "group": "Heavy Fault",
+      "name": "Precharge fault",
+      "description": "The voltage of precharge circuit doesn't reach a setting value.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบวงจร pre-charge คอนแทกเตอร์ และฟิวส์"
+    },
+    {
+      "code": "71275",
+      "group": "Heavy Fault",
+      "name": "30V Undervoltage",
+      "description": "PN15V voltage dropped.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบชุดจ่ายไฟควบคุมและแรงดันไฟฟ้า"
+    },
+    {
+      "code": "73275",
+      "group": "Heavy Fault",
+      "name": "30V Undervoltage",
+      "description": "PN15V voltage dropped.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบชุดจ่ายไฟควบคุมและแรงดันไฟฟ้า"
+    },
+    {
+      "code": "71261",
+      "group": "Heavy Fault",
+      "name": "Motor overheated",
+      "description": "The temperature detecting contact attached to the motor was activated.",
+      "severity": "Heavy Fault",
+      "action": "ปล่อยให้มอเตอร์เย็นลงก่อนเริ่มใช้งานใหม่ (Cool down the motor.)"
+    },
+    {
+      "code": "73261",
+      "group": "Heavy Fault",
+      "name": "Motor overheated",
+      "description": "The temperature detecting contact attached to the motor was activated.",
+      "severity": "Heavy Fault",
+      "action": "ปล่อยให้มอเตอร์เย็นลงก่อนเริ่มใช้งานใหม่ (Cool down the motor.)"
+    },
+    {
+      "code": "71120",
+      "group": "Heavy Fault",
+      "name": "Overspeed",
+      "description": "The motor was operated at the rate which exceeds the allowable maximum speed of the motor.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบค่าความเร็วที่ตั้งไว้และระบบควบคุมความเร็ว"
+    },
+    {
+      "code": "73120",
+      "group": "Heavy Fault",
+      "name": "Overspeed",
+      "description": "The motor was operated at the rate which exceeds the allowable maximum speed of the motor.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบค่าความเร็วที่ตั้งไว้และระบบควบคุมความเร็ว"
+    },
+    {
+      "code": "71881",
+      "group": "Heavy Fault",
+      "name": "Cooling fan halted TD",
+      "description": "The motor ceiling fan stopped and tripped after a while.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบพัดลมระบายความร้อนของมอเตอร์หรือตู้ควบคุม"
+    },
+    {
+      "code": "73881",
+      "group": "Heavy Fault",
+      "name": "Cooling fan halted TD",
+      "description": "The motor ceiling fan stopped and tripped after a while.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบพัดลมระบายความร้อนของมอเตอร์หรือตู้ควบคุม"
+    },
+    {
+      "code": "71143",
+      "group": "Heavy Fault",
+      "name": "Speed FB error",
+      "description": "The relationship between the motor speed and the current flowing through the motor revealed anomaly.",
+      "severity": "Heavy Fault",
+      "action": "หากเกิดซ้ำ ให้ตรวจสอบอุปกรณ์ตรวจจับความเร็ว (When this happens again, check up the speed detector.)"
+    },
+    {
+      "code": "73143",
+      "group": "Heavy Fault",
+      "name": "Speed FB error",
+      "description": "The relationship between the motor speed and the current flowing through the motor revealed anomaly.",
+      "severity": "Heavy Fault",
+      "action": "หากเกิดซ้ำ ให้ตรวจสอบอุปกรณ์ตรวจจับความเร็ว (When this happens again, check up the speed detector.)"
+    },
+    {
+      "code": "71144",
+      "group": "Heavy Fault",
+      "name": "Speed FB Pulse loss",
+      "description": "Speed FB is not detected.",
+      "severity": "Heavy Fault",
+      "action": "หากเกิดซ้ำ ให้ตรวจสอบอุปกรณ์ตรวจจับความเร็ว (When this happens again, check up the speed detector.)"
+    },
+    {
+      "code": "73144",
+      "group": "Heavy Fault",
+      "name": "Speed FB Pulse loss",
+      "description": "Speed FB is not detected.",
+      "severity": "Heavy Fault",
+      "action": "หากเกิดซ้ำ ให้ตรวจสอบอุปกรณ์ตรวจจับความเร็ว (When this happens again, check up the speed detector.)"
+    },
+    {
+      "code": "71220",
+      "group": "Heavy Fault",
+      "name": "Connector Off",
+      "description": "The connector was unplugged during operation.",
+      "severity": "Heavy Fault",
+      "action": "ลองเสียบต่อสายคอนเนกเตอร์ให้แน่นหนา (Try to reinsert the connector.)"
+    },
+    {
+      "code": "73220",
+      "group": "Heavy Fault",
+      "name": "Connector Off",
+      "description": "The connector was unplugged during operation.",
+      "severity": "Heavy Fault",
+      "action": "ลองเสียบต่อสายคอนเนกเตอร์ให้แน่นหนา (Try to reinsert the connector.)"
+    },
+    {
+      "code": "71250",
+      "group": "Heavy Fault",
+      "name": "Power Down",
+      "description": "Momentary power interruption was detected.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบความผิดปกติของคอนเวอร์เตอร์ (Refer to Converter fault.)"
+    },
+    {
+      "code": "73250",
+      "group": "Heavy Fault",
+      "name": "Power Down",
+      "description": "Momentary power interruption was detected.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบความผิดปกติของคอนเวอร์เตอร์ (Refer to Converter fault.)"
+    },
+    {
+      "code": "71274",
+      "group": "Heavy Fault",
+      "name": "DC48V Undervoltage",
+      "description": "DC48V voltage dropped.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบแหล่งจ่ายไฟ DC48V และวงจรควบคุม"
+    },
+    {
+      "code": "73274",
+      "group": "Heavy Fault",
+      "name": "DC48V Undervoltage",
+      "description": "DC48V voltage dropped.",
+      "severity": "Heavy Fault",
+      "action": "ตรวจสอบแหล่งจ่ายไฟ DC48V และวงจรควบคุม"
+    },
+    {
+      "code": "71860",
+      "group": "Main Circuit OFF Factor",
+      "name": "Heavy fault",
+      "description": "Trips by an occurrence of heavy fault.",
+      "severity": "Main Circuit OFF",
+      "action": "แก้ไขสาเหตุของ heavy fault ที่เกิดขึ้น"
+    },
+    {
+      "code": "73860",
+      "group": "Main Circuit OFF Factor",
+      "name": "Heavy fault",
+      "description": "Trips by an occurrence of heavy fault.",
+      "severity": "Main Circuit OFF",
+      "action": "แก้ไขสาเหตุของ heavy fault ที่เกิดขึ้น"
+    },
+    {
+      "code": "71900",
+      "group": "Main Circuit OFF Factor",
+      "name": "Converter malfunction",
+      "description": "The converter stops and the brownout of the break power supply is revealed.",
+      "severity": "Main Circuit OFF",
+      "action": "ตรวจสอบการทำงานของคอนเวอร์เตอร์และแหล่งจ่ายไฟเบรก"
+    },
+    {
+      "code": "73900",
+      "group": "Main Circuit OFF Factor",
+      "name": "Converter malfunction",
+      "description": "The converter stops and the brownout of the break power supply is revealed.",
+      "severity": "Main Circuit OFF",
+      "action": "ตรวจสอบการทำงานของคอนเวอร์เตอร์และแหล่งจ่ายไฟเบรก"
+    },
+    {
+      "code": "71720",
+      "group": "Main Circuit OFF Factor",
+      "name": "Main circuit 72 shutoff",
+      "description": "The DC power supply ON/OFF contactor is shut off.",
+      "severity": "Main Circuit OFF",
+      "action": "ตรวจสอบสถานะคอนแทกเตอร์และวงจรจ่ายไฟ DC"
+    },
+    {
+      "code": "73720",
+      "group": "Main Circuit OFF Factor",
+      "name": "Main circuit 72 shutoff",
+      "description": "The DC power supply ON/OFF contactor is shut off.",
+      "severity": "Main Circuit OFF",
+      "action": "ตรวจสอบสถานะคอนแทกเตอร์และวงจรจ่ายไฟ DC"
+    },
+    {
+      "code": "71040",
+      "group": "Main Circuit OFF Factor",
+      "name": "Main circuit master",
+      "description": "The main circuit interlock has not been established.",
+      "severity": "Main Circuit OFF",
+      "action": "ตรวจสอบเงื่อนไขอินเตอร์ล็อกของวงจรหลัก"
+    },
+    {
+      "code": "73040",
+      "group": "Main Circuit OFF Factor",
+      "name": "Main circuit master",
+      "description": "The main circuit interlock has not been established.",
+      "severity": "Main Circuit OFF",
+      "action": "ตรวจสอบเงื่อนไขอินเตอร์ล็อกของวงจรหลัก"
+    },
+    {
+      "code": "71300",
+      "group": "Light Fault",
+      "name": "External light fault",
+      "description": "The ceiling fan for IGBT cooling stopped.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบพัดลมระบายความร้อน IGBT"
+    },
+    {
+      "code": "73300",
+      "group": "Light Fault",
+      "name": "External light fault",
+      "description": "The ceiling fan for IGBT cooling stopped.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบพัดลมระบายความร้อน IGBT"
+    },
+    {
+      "code": "71150",
+      "group": "Light Fault",
+      "name": "Display abnormal",
+      "description": "Communication is faulty between control circuit board and display circuit board.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบการสื่อสารระหว่างบอร์ดควบคุมและบอร์ดแสดงผล"
+    },
+    {
+      "code": "73150",
+      "group": "Light Fault",
+      "name": "Display abnormal",
+      "description": "Communication is faulty between control circuit board and display circuit board.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบการสื่อสารระหว่างบอร์ดควบคุมและบอร์ดแสดงผล"
+    },
+    {
+      "code": "71511",
+      "group": "Light Fault",
+      "name": "Overload alarm",
+      "description": "Current which exceeds the continuous rating passed through the motor.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบภาระโหลดไม่ให้เกินพิกัดต่อเนื่อง"
+    },
+    {
+      "code": "73511",
+      "group": "Light Fault",
+      "name": "Overload alarm",
+      "description": "Current which exceeds the continuous rating passed through the motor.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบภาระโหลดไม่ให้เกินพิกัดต่อเนื่อง"
+    },
+    {
+      "code": "71141",
+      "group": "Light Fault",
+      "name": "Speed FB Error",
+      "description": "The relationship between the motor speed and the current flowing through the motor revealed anomaly.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบตัวตรวจจับความเร็วและสัญญาณฟีดแบ็ก"
+    },
+    {
+      "code": "73141",
+      "group": "Light Fault",
+      "name": "Speed FB Error",
+      "description": "The relationship between the motor speed and the current flowing through the motor revealed anomaly.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบตัวตรวจจับความเร็วและสัญญาณฟีดแบ็ก"
+    },
+    {
+      "code": "71142",
+      "group": "Light Fault",
+      "name": "Speed FB pulse loss",
+      "description": "Speed FB is not detected.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบการเดินสายและเซนเซอร์ตรวจจับความเร็ว"
+    },
+    {
+      "code": "73142",
+      "group": "Light Fault",
+      "name": "Speed FB pulse loss",
+      "description": "Speed FB is not detected.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบการเดินสายและเซนเซอร์ตรวจจับความเร็ว"
+    },
+    {
+      "code": "71263",
+      "group": "Light Fault",
+      "name": "Motor overheat alarm",
+      "description": "The motor is overheated.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบอุณหภูมิและการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "73263",
+      "group": "Light Fault",
+      "name": "Motor overheat alarm",
+      "description": "The motor is overheated.",
+      "severity": "Light Fault",
+      "action": "ตรวจสอบอุณหภูมิและการระบายความร้อนของมอเตอร์"
+    },
+    {
+      "code": "71999",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 WDT error",
+      "description": "W.D.T. error occurred in MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "เปลี่ยนบอร์ดควบคุมหรือตรวจสอบฮาร์ดแวร์ MPU"
+    },
+    {
+      "code": "73999",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 WDT error",
+      "description": "W.D.T. error occurred in MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "เปลี่ยนบอร์ดควบคุมหรือตรวจสอบฮาร์ดแวร์ MPU"
+    },
+    {
+      "code": "71996",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 invalid error",
+      "description": "Executed undefined instruction for MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "ตรวจสอบเฟิร์มแวร์หรือเปลี่ยนบอร์ดควบคุม"
+    },
+    {
+      "code": "73996",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 invalid error",
+      "description": "Executed undefined instruction for MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "ตรวจสอบเฟิร์มแวร์หรือเปลี่ยนบอร์ดควบคุม"
+    },
+    {
+      "code": "71992",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 stack over flow error",
+      "description": "Stack area over flow error occurred in MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "ตรวจสอบซอฟต์แวร์/เฟิร์มแวร์ หรือเปลี่ยนบอร์ดควบคุม"
+    },
+    {
+      "code": "73992",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 stack over flow error",
+      "description": "Stack area over flow error occurred in MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "ตรวจสอบซอฟต์แวร์/เฟิร์มแวร์ หรือเปลี่ยนบอร์ดควบคุม"
+    },
+    {
+      "code": "71998",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 CRC error",
+      "description": "CRC memory error occurred. Program for MPU 1 on control circuit board is rewritten.",
+      "severity": "Control Board Error",
+      "action": "ตรวจสอบความถูกต้องของโปรแกรมหรือรีแฟลชเฟิร์มแวร์"
+    },
+    {
+      "code": "73998",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 CRC error",
+      "description": "CRC memory error occurred. Program for MPU 1 on control circuit board is rewritten.",
+      "severity": "Control Board Error",
+      "action": "ตรวจสอบความถูกต้องของโปรแกรมหรือรีแฟลชเฟิร์มแวร์"
+    },
+    {
+      "code": "71995",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 address error",
+      "description": "Abnormal address was accessed in MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "เปลี่ยนบอร์ดควบคุม"
+    },
+    {
+      "code": "73995",
+      "group": "Control Circuit Board Error",
+      "name": "MPU 1 address error",
+      "description": "Abnormal address was accessed in MPU 1 on control circuit board.",
+      "severity": "Control Board Error",
+      "action": "เปลี่ยนบอร์ดควบคุม"
+    },
+    {
+      "code": "7-666",
+      "group": "Others",
+      "name": "MCS initial end",
+      "description": "MCS initial procedure end.",
+      "severity": "Others",
+      "action": "ตรวจสอบสถานะการเริ่มต้นระบบ"
+    },
+    {
+      "code": "7-777",
+      "group": "Others",
+      "name": "Off-line mode",
+      "description": "DIP SW for on-line changeover is not inserted.",
+      "severity": "Others",
+      "action": "เปลี่ยน DIP SW ไปที่โหมด On-line (Change the DIP SW to on-line mode)"
+    },
+    {
+      "code": "7-888",
+      "group": "Others",
+      "name": "Control constant not set",
+      "description": "Control constant is not yet set.",
+      "severity": "Others",
+      "action": "ตั้งค่าคอนสแตนท์การควบคุมให้เรียบร้อย"
+    },
+    {
+      "code": "7-997",
+      "group": "Others",
+      "name": "CAN abnormal",
+      "description": "CAN communication is abnormal.",
+      "severity": "Others",
+      "action": "ตรวจสอบสายสื่อสารและการตั้งค่า CAN bus"
+    },
+    {
+      "code": "61860",
+      "group": "Interlock",
+      "name": "Heavy fault",
+      "description": "Heavy fault factor is not removed.",
+      "severity": "Interlock",
+      "action": "กำจัดสาเหตุของ heavy fault ก่อนสั่งเริ่มทำงาน"
+    },
+    {
+      "code": "63860",
+      "group": "Interlock",
+      "name": "Heavy fault",
+      "description": "Heavy fault factor is not removed.",
+      "severity": "Interlock",
+      "action": "กำจัดสาเหตุของ heavy fault ก่อนสั่งเริ่มทำงาน"
+    },
+    {
+      "code": "61220",
+      "group": "Interlock",
+      "name": "Connector off",
+      "description": "Connector is not inserted on some circuit board.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบและเสียบต่อคอนเนกเตอร์บนแผงวงจรให้แน่น"
+    },
+    {
+      "code": "63220",
+      "group": "Interlock",
+      "name": "Connector off",
+      "description": "Connector is not inserted on some circuit board.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบและเสียบต่อคอนเนกเตอร์บนแผงวงจรให้แน่น"
+    },
+    {
+      "code": "61900",
+      "group": "Interlock",
+      "name": "Converter failure",
+      "description": "The converter is not working, or the power supply voltage to the brake drops.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบการทำงานของคอนเวอร์เตอร์และแรงดันจ่ายเบรก"
+    },
+    {
+      "code": "63900",
+      "group": "Interlock",
+      "name": "Converter failure",
+      "description": "The converter is not working, or the power supply voltage to the brake drops.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบการทำงานของคอนเวอร์เตอร์และแรงดันจ่ายเบรก"
+    },
+    {
+      "code": "61720",
+      "group": "Interlock",
+      "name": "Main circuit 72",
+      "description": "The contactor at DC power supply was shut off.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบวงจรจ่ายไฟ DC และคอนแทกเตอร์หลัก"
+    },
+    {
+      "code": "63720",
+      "group": "Interlock",
+      "name": "Main circuit 72",
+      "description": "The contactor at DC power supply was shut off.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบวงจรจ่ายไฟ DC และคอนแทกเตอร์หลัก"
+    },
+    {
+      "code": "61040",
+      "group": "Interlock",
+      "name": "Main circuit master",
+      "description": "The main circuit interlock doesn't establish.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบเงื่อนไขอินเตอร์ล็อกวงจรหลัก"
+    },
+    {
+      "code": "63040",
+      "group": "Interlock",
+      "name": "Main circuit master",
+      "description": "The main circuit interlock doesn't establish.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบเงื่อนไขอินเตอร์ล็อกวงจรหลัก"
+    },
+    {
+      "code": "61340",
+      "group": "Interlock",
+      "name": "Zero notch",
+      "description": "An operator is manipulating the switch for the motor operation.",
+      "severity": "Interlock",
+      "action": "คืนค่าสวิตช์สั่งงานไปที่ตำแหน่งศูนย์ (Zero notch)"
+    },
+    {
+      "code": "63340",
+      "group": "Interlock",
+      "name": "Zero notch",
+      "description": "An operator is manipulating the switch for the motor operation.",
+      "severity": "Interlock",
+      "action": "คืนค่าสวิตช์สั่งงานไปที่ตำแหน่งศูนย์ (Zero notch)"
+    },
+    {
+      "code": "61420",
+      "group": "Interlock",
+      "name": "Running",
+      "description": "PLC sends an operation command before turning on the main circuit.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบลำดับคำสั่ง (Sequence) จาก PLC ให้เปิดวงจรหลักก่อนสั่งรัน"
+    },
+    {
+      "code": "63420",
+      "group": "Interlock",
+      "name": "Running",
+      "description": "PLC sends an operation command before turning on the main circuit.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบลำดับคำสั่ง (Sequence) จาก PLC ให้เปิดวงจรหลักก่อนสั่งรัน"
+    },
+    {
+      "code": "61480",
+      "group": "Interlock",
+      "name": "Upper I/F failure",
+      "description": "Trouble takes place in the upper I/F hardware.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบฮาร์ดแวร์อินเทอร์เฟซส่วนบน (Upper I/F)"
+    },
+    {
+      "code": "63480",
+      "group": "Interlock",
+      "name": "Upper I/F failure",
+      "description": "Trouble takes place in the upper I/F hardware.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบฮาร์ดแวร์อินเทอร์เฟซส่วนบน (Upper I/F)"
+    },
+    {
+      "code": "61880",
+      "group": "Interlock",
+      "name": "IM cooling fan stopped",
+      "description": "The IM cooling fan is not running.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบพัดลมระบายความร้อนมอเตอร์ IM"
+    },
+    {
+      "code": "63880",
+      "group": "Interlock",
+      "name": "IM cooling fan stopped",
+      "description": "The IM cooling fan is not running.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบพัดลมระบายความร้อนมอเตอร์ IM"
+    },
+    {
+      "code": "61300",
+      "group": "Interlock",
+      "name": "External light fault",
+      "description": "The ceiling fan for IGBT cooling is not running.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบพัดลมระบายความร้อน IGBT"
+    },
+    {
+      "code": "63300",
+      "group": "Interlock",
+      "name": "External light fault",
+      "description": "The ceiling fan for IGBT cooling is not running.",
+      "severity": "Interlock",
+      "action": "ตรวจสอบพัดลมระบายความร้อน IGBT"
+    }
+  ]
+}

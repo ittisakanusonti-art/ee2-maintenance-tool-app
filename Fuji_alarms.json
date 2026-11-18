@@ -1,0 +1,1356 @@
+{
+  "fuji_alarms": [
+    {
+      "code": "1",
+      "group": "Master",
+      "name": "FUSE",
+      "description": "DC fuse blown. DC main circuit fuse blown due to output short-circuit, controller/gate drive abnormality or IGBT short-circuit.",
+      "severity": "Major Fault 2",
+      "action": "IGBT มักเสียหาย เปลี่ยนฟิวส์อย่างเดียวไม่ได้ ให้เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "2",
+      "group": "Master",
+      "name": "OV",
+      "description": "Main circuit overvoltage. DC main circuit voltage exceeds 790V.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration (ถ้ามี) หลีกเลี่ยงการลดความเร็วพร้อมกันและเพิ่มเวลา deceleration"
+    },
+    {
+      "code": "3",
+      "group": "Master",
+      "name": "OTF",
+      "description": "Cooling unit overheat. Cooling unit of main circuit element exceeds regulated value (80-90°C).",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนของตู้ ตรวจสอบไส้กรองอากาศอุดตันและอุณหภูมิแวดล้อม"
+    },
+    {
+      "code": "4",
+      "group": "Master",
+      "name": "UV",
+      "description": "Main circuit undervoltage. DC main circuit voltage below DC400V when running or after initial charging.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสถานะคอนเวอร์เตอร์ และวัดแรงดัน DC bus ฝั่งคอนเวอร์เตอร์ด้วย DC voltmeter"
+    },
+    {
+      "code": "5",
+      "group": "Master",
+      "name": "PWRL",
+      "description": "Instantaneous power interruption. Control power drops to 85% or less and DC main circuit voltage to 75% or less during operation.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันของแหล่งจ่ายไฟควบคุม"
+    },
+    {
+      "code": "6",
+      "group": "Master",
+      "name": "OC",
+      "description": "Overcurrent. Peak output current exceeds the overcurrent level (about 200% of rated RMS).",
+      "severity": "Major Fault 2",
+      "action": "ปรับค่าตั้งอินเวอร์เตอร์หากมี hunting ตรวจสอบการลัดวงจรที่มอเตอร์/สายเคเบิล และหลีกเลี่ยงโหลดเปลี่ยนฉับพลัน"
+    },
+    {
+      "code": "7",
+      "group": "Master",
+      "name": "OLM",
+      "description": "Motor overload. Torque current persists above No.162 for the time set by No.163 and No.164.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบตรวจจับความเร็ว (PLG) เบรก และการติดขัดทางกล"
+    },
+    {
+      "code": "8",
+      "group": "Master",
+      "name": "OLI",
+      "description": "Inverter overload. Output current overload per the time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบตรวจจับความเร็ว และสภาพโหลด"
+    },
+    {
+      "code": "9",
+      "group": "Master",
+      "name": "A CPU",
+      "description": "ACR CPU error. No interrupt of the ACR CPU for a certain period (hardware failure).",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "10",
+      "group": "Master",
+      "name": "GND",
+      "description": "Ground fault. Total unbalanced output current exceeds 50% of inverter rated current.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความต้านทานฉนวนของสายมอเตอร์และขดลวดมอเตอร์ หรือเปลี่ยน CT"
+    },
+    {
+      "code": "16",
+      "group": "Master",
+      "name": "OTDDC",
+      "description": "Print Board Temperature error. Control printed circuit board temperature exceeds 60°C.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมของตู้อินเวอร์เตอร์ให้ไม่เกิน 50°C หรือเปลี่ยน control stack/PCB"
+    },
+    {
+      "code": "19",
+      "group": "Master",
+      "name": "OTM",
+      "description": "Motor overheat. Motor temperature exceeds the No.170 setting.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมมอเตอร์ พัดลมระบายความร้อน และเซนเซอร์อุณหภูมิ"
+    },
+    {
+      "code": "21",
+      "group": "Master",
+      "name": "THMOM",
+      "description": "Motor temperature sensor error. Measured temperature exceeds the fixed range.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์ หากเสียให้เปลี่ยนไปใช้ตัวสำรองในมอเตอร์"
+    },
+    {
+      "code": "22",
+      "group": "Master",
+      "name": "FTA",
+      "description": "External major fault. A major fault signal from external sequence control.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault"
+    },
+    {
+      "code": "23",
+      "group": "Master",
+      "name": "FTB",
+      "description": "External minor fault. A minor fault signal from external sequence control.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault"
+    },
+    {
+      "code": "24",
+      "group": "Master",
+      "name": "FTC",
+      "description": "External middle fault. A medium fault signal from external sequence control.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault"
+    },
+    {
+      "code": "25",
+      "group": "Master",
+      "name": "OS",
+      "description": "Motor overspeed. Actual or estimated speed exceeds No.169.",
+      "severity": "Major Fault 2",
+      "action": "หลีกเลี่ยงการหมุนความเร็วสูงที่ไม่จำเป็น และตรวจสอบ transmitted torque limit"
+    },
+    {
+      "code": "26",
+      "group": "Master",
+      "name": "PLG",
+      "description": "PLG error. Disconnection of PLG pulse output A or B while running.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายและไฟเลี้ยง 12/15V ของ PLG หรือเปลี่ยน PLG / controller"
+    },
+    {
+      "code": "27",
+      "group": "Master",
+      "name": "DCCT",
+      "description": "Current sensor error. DCCT not connected (bad connector or disconnection).",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายและคอนเนกเตอร์ที่ต่อกับ DCCT"
+    },
+    {
+      "code": "30",
+      "group": "Master",
+      "name": "PSB",
+      "description": "Power supply board error. Type mismatch, DC/DC converter fault, EEPROM or communication error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยน controller"
+    },
+    {
+      "code": "31",
+      "group": "Master",
+      "name": "ST",
+      "description": "Initial charging delay. Voltage remains below undervoltage threshold after initial charging command.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบอุปกรณ์ผิดปกติในวงจร สายไฟ และสถานะคอนแทกเตอร์"
+    },
+    {
+      "code": "32",
+      "group": "Master",
+      "name": "MCST",
+      "description": "Initial charging contactor error. Initial charging contactor switched off.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์ initial charging, MCU PCB และสายไฟ"
+    },
+    {
+      "code": "33",
+      "group": "Master",
+      "name": "MCRN",
+      "description": "DC contactor error. DC main contactor switched off while pulses are generated.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ DC main contactor, MCU PCB และสายไฟ"
+    },
+    {
+      "code": "34",
+      "group": "Master",
+      "name": "MCM",
+      "description": "Output contactor error. Output contactor switched off while pulses are generated.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output contactor, MCU PCB และสายไฟ"
+    },
+    {
+      "code": "35",
+      "group": "Master",
+      "name": "MCB",
+      "description": "Output breaker error. Output breaker switched off while pulses are generated.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output breaker"
+    },
+    {
+      "code": "36",
+      "group": "Master",
+      "name": "MFAN",
+      "description": "Motor fan error. Motor fan failure (motor fan stopped).",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมมอเตอร์"
+    },
+    {
+      "code": "37",
+      "group": "Master",
+      "name": "SFAN",
+      "description": "System fan error. System fan failure (system fan stopped).",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมระบบ"
+    },
+    {
+      "code": "45",
+      "group": "Master",
+      "name": "MLK",
+      "description": "Motor start delay. Torque current instruction exceeds threshold while speed stays near zero.",
+      "severity": "Major Fault 2 / Minor Fault 1 / Minor Fault 2",
+      "action": "ตรวจสอบระบบตรวจจับความเร็ว (PLG) และเบรกหรือการติดขัดทางกล"
+    },
+    {
+      "code": "46",
+      "group": "Master",
+      "name": "LNK",
+      "description": "Multiple link error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการเชื่อมต่อระบบลิงก์"
+    },
+    {
+      "code": "61",
+      "group": "Master",
+      "name": "MICRX",
+      "description": "MICREX error. Transmission error bit from MICREX (PLC) is 1.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบสาเหตุของ transmission error ที่ MICREX (PLC)"
+    },
+    {
+      "code": "62",
+      "group": "Master",
+      "name": "PLCEN",
+      "description": "Host transmission system error. P(E) link health bit is 0 or PLC_EN bit drops to 0.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "กู้คืน P(E) link และตรวจสอบสาเหตุที่ PLC ตั้ง PLC_EN เป็น 0"
+    },
+    {
+      "code": "63",
+      "group": "Master",
+      "name": "HND",
+      "description": "Handshake time over. Handshake error in transmission process lasts for set time.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบระบบสื่อสารและการเชื่อมต่อ"
+    },
+    {
+      "code": "66",
+      "group": "Master",
+      "name": "OPC",
+      "description": "Control transmission card error. D-LINE or T-LINK transmission interruption lasts 100ms.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบสายเคเบิล คอนเนกเตอร์ ตัวต้านทานปลายสาย 100Ω หรือรีสตาร์ต PLC"
+    },
+    {
+      "code": "67",
+      "group": "Master",
+      "name": "TER",
+      "description": "Control transmission error. SX bus transmission interruption lasts 100ms.",
+      "severity": "Major Fault 2 / Middle Fault",
+      "action": "ตรวจสอบสาย SX bus การ์ด SX และอุปกรณ์เชื่อมต่อบน SX bus"
+    },
+    {
+      "code": "81",
+      "group": "Slave1",
+      "name": "FUSE",
+      "description": "Slave1 DC fuse blown. DC main circuit fuse blown.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "82",
+      "group": "Slave1",
+      "name": "OV",
+      "description": "Slave1 Main circuit overvoltage. DC main circuit voltage exceeds 790V.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration"
+    },
+    {
+      "code": "83",
+      "group": "Slave1",
+      "name": "OTF",
+      "description": "Slave1 Cooling unit overheat. Cooling unit exceeds regulated value.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนตู้และตรวจสอบไส้กรองอากาศ"
+    },
+    {
+      "code": "84",
+      "group": "Slave1",
+      "name": "UV",
+      "description": "Slave1 Main circuit undervoltage. DC main circuit voltage below DC400V.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสถานะคอนเวอร์เตอร์และแรงดัน DC bus"
+    },
+    {
+      "code": "85",
+      "group": "Slave1",
+      "name": "PWRL",
+      "description": "Slave1 Instantaneous power interruption. Control power and DC bus drop during operation.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันของแหล่งจ่ายไฟควบคุม"
+    },
+    {
+      "code": "86",
+      "group": "Slave1",
+      "name": "OC",
+      "description": "Slave1 Overcurrent. Peak output current exceeds overcurrent level.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่มอเตอร์/สายเคเบิล และปรับค่าตั้งอินเวอร์เตอร์"
+    },
+    {
+      "code": "87",
+      "group": "Slave1",
+      "name": "OLM",
+      "description": "Slave1 Motor overload. Torque current exceeds limit for set time.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบ PLG และสภาพทางกล"
+    },
+    {
+      "code": "88",
+      "group": "Slave1",
+      "name": "OLI",
+      "description": "Slave1 Inverter overload. Output current overload per time-current characteristic.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์และสภาพโหลด"
+    },
+    {
+      "code": "89",
+      "group": "Slave1",
+      "name": "A CPU",
+      "description": "Slave1 ACR CPU error. No interrupt of the ACR CPU for a certain period.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "90",
+      "group": "Slave1",
+      "name": "GND",
+      "description": "Slave1 Ground fault. Total unbalanced output current exceeds 50% of rating.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความเป็นฉนวนของสายมอเตอร์และขดลวด"
+    },
+    {
+      "code": "96",
+      "group": "Slave1",
+      "name": "OTDDC",
+      "description": "Slave1 Print Board Temperature error. Control PCB temperature exceeds 60°C.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมตู้ให้อยู่ในเกณฑ์มาตรฐาน"
+    },
+    {
+      "code": "99",
+      "group": "Slave1",
+      "name": "OTM",
+      "description": "Slave1 Motor overheat. Motor temperature exceeds setting.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์ พัดลม และเซนเซอร์"
+    },
+    {
+      "code": "101",
+      "group": "Slave1",
+      "name": "THMOM",
+      "description": "Slave1 Motor temperature sensor error. Measured temperature exceeds fixed range.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์หรือเปลี่ยนไปใช้ตัวสำรอง"
+    },
+    {
+      "code": "102",
+      "group": "Slave1",
+      "name": "FTA",
+      "description": "Slave1 External major fault signal.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault"
+    },
+    {
+      "code": "103",
+      "group": "Slave1",
+      "name": "FTB",
+      "description": "Slave1 External minor fault signal.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault"
+    },
+    {
+      "code": "104",
+      "group": "Slave1",
+      "name": "FTC",
+      "description": "Slave1 External middle fault signal.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault"
+    },
+    {
+      "code": "105",
+      "group": "Slave1",
+      "name": "OS",
+      "description": "Slave1 Motor overspeed. Speed exceeds limit.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ transmitted torque limit และค่าความเร็วที่ตั้ง"
+    },
+    {
+      "code": "106",
+      "group": "Slave1",
+      "name": "PLG",
+      "description": "Slave1 PLG error. Disconnection of PLG pulse output while running.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสาย PLG ไฟเลี้ยง และเปลี่ยน PLG หากจำเป็น"
+    },
+    {
+      "code": "107",
+      "group": "Slave1",
+      "name": "DCCT",
+      "description": "Slave1 Current sensor error. DCCT not connected.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายและคอนเนกเตอร์ DCCT"
+    },
+    {
+      "code": "110",
+      "group": "Slave1",
+      "name": "PSB",
+      "description": "Slave1 Power supply board error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยน controller"
+    },
+    {
+      "code": "111",
+      "group": "Slave1",
+      "name": "ST",
+      "description": "Slave1 Initial charging delay.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบอุปกรณ์ในวงจร สายไฟ และสถานะคอนแทกเตอร์"
+    },
+    {
+      "code": "112",
+      "group": "Slave1",
+      "name": "MCST",
+      "description": "Slave1 Initial charging contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์ initial charging และสายไฟ"
+    },
+    {
+      "code": "113",
+      "group": "Slave1",
+      "name": "MCRN",
+      "description": "Slave1 DC contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ DC main contactor และสายไฟ"
+    },
+    {
+      "code": "114",
+      "group": "Slave1",
+      "name": "MCM",
+      "description": "Slave1 Output contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output contactor และสายไฟ"
+    },
+    {
+      "code": "115",
+      "group": "Slave1",
+      "name": "MCB",
+      "description": "Slave1 Output breaker error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output breaker"
+    },
+    {
+      "code": "116",
+      "group": "Slave1",
+      "name": "MFAN",
+      "description": "Slave1 Motor fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมมอเตอร์"
+    },
+    {
+      "code": "117",
+      "group": "Slave1",
+      "name": "SFAN",
+      "description": "Slave1 System fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมระบบ"
+    },
+    {
+      "code": "121",
+      "group": "Slave2",
+      "name": "FUSE",
+      "description": "Slave2 DC fuse blown.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "122",
+      "group": "Slave2",
+      "name": "OV",
+      "description": "Slave2 Main circuit overvoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration"
+    },
+    {
+      "code": "123",
+      "group": "Slave2",
+      "name": "OTF",
+      "description": "Slave2 Cooling unit overheat.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนตู้และตรวจสอบไส้กรองอากาศ"
+    },
+    {
+      "code": "124",
+      "group": "Slave2",
+      "name": "UV",
+      "description": "Slave2 Main circuit undervoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสถานะคอนเวอร์เตอร์และแรงดัน DC bus"
+    },
+    {
+      "code": "125",
+      "group": "Slave2",
+      "name": "PWRL",
+      "description": "Slave2 Instantaneous power interruption.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันของแหล่งจ่ายไฟควบคุม"
+    },
+    {
+      "code": "126",
+      "group": "Slave2",
+      "name": "OC",
+      "description": "Slave2 Overcurrent.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่มอเตอร์/สายเคเบิล และปรับค่าตั้งอินเวอร์เตอร์"
+    },
+    {
+      "code": "127",
+      "group": "Slave2",
+      "name": "OLM",
+      "description": "Slave2 Motor overload.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบ PLG และสภาพทางกล"
+    },
+    {
+      "code": "128",
+      "group": "Slave2",
+      "name": "OLI",
+      "description": "Slave2 Inverter overload.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์และสภาพโหลด"
+    },
+    {
+      "code": "129",
+      "group": "Slave2",
+      "name": "A CPU",
+      "description": "Slave2 ACR CPU error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "130",
+      "group": "Slave2",
+      "name": "GND",
+      "description": "Slave2 Ground fault.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความเป็นฉนวนของสายมอเตอร์และขดลวด"
+    },
+    {
+      "code": "136",
+      "group": "Slave2",
+      "name": "OTDDC",
+      "description": "Slave2 Print Board Temperature error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมตู้ให้อยู่ในเกณฑ์มาตรฐาน"
+    },
+    {
+      "code": "139",
+      "group": "Slave2",
+      "name": "OTM",
+      "description": "Slave2 Motor overheat.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์ พัดลม และเซนเซอร์"
+    },
+    {
+      "code": "141",
+      "group": "Slave2",
+      "name": "THMOM",
+      "description": "Slave2 Motor temperature sensor error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์หรือเปลี่ยนไปใช้ตัวสำรอง"
+    },
+    {
+      "code": "142",
+      "group": "Slave2",
+      "name": "FTA",
+      "description": "Slave2 External major fault signal.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault"
+    },
+    {
+      "code": "143",
+      "group": "Slave2",
+      "name": "FTB",
+      "description": "Slave2 External minor fault signal.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault"
+    },
+    {
+      "code": "144",
+      "group": "Slave2",
+      "name": "FTC",
+      "description": "Slave2 External middle fault signal.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault"
+    },
+    {
+      "code": "145",
+      "group": "Slave2",
+      "name": "OS",
+      "description": "Slave2 Motor overspeed.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ transmitted torque limit และค่าความเร็วที่ตั้ง"
+    },
+    {
+      "code": "146",
+      "group": "Slave2",
+      "name": "PLG",
+      "description": "Slave2 PLG error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสาย PLG ไฟเลี้ยง และเปลี่ยน PLG หากจำเป็น"
+    },
+    {
+      "code": "147",
+      "group": "Slave2",
+      "name": "DCCT",
+      "description": "Slave2 Current sensor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายและคอนเนกเตอร์ DCCT"
+    },
+    {
+      "code": "150",
+      "group": "Slave2",
+      "name": "PSB",
+      "description": "Slave2 Power supply board error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยน controller"
+    },
+    {
+      "code": "151",
+      "group": "Slave2",
+      "name": "ST",
+      "description": "Slave2 Initial charging delay.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบอุปกรณ์ในวงจร สายไฟ และสถานะคอนแทกเตอร์"
+    },
+    {
+      "code": "152",
+      "group": "Slave2",
+      "name": "MCST",
+      "description": "Slave2 Initial charging contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์ initial charging และสายไฟ"
+    },
+    {
+      "code": "153",
+      "group": "Slave2",
+      "name": "MCRN",
+      "description": "Slave2 DC contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ DC main contactor และสายไฟ"
+    },
+    {
+      "code": "154",
+      "group": "Slave2",
+      "name": "MCM",
+      "description": "Slave2 Output contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output contactor และสายไฟ"
+    },
+    {
+      "code": "155",
+      "group": "Slave2",
+      "name": "MCB",
+      "description": "Slave2 Output breaker error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output breaker"
+    },
+    {
+      "code": "156",
+      "group": "Slave2",
+      "name": "MFAN",
+      "description": "Slave2 Motor fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมมอเตอร์"
+    },
+    {
+      "code": "157",
+      "group": "Slave2",
+      "name": "SFAN",
+      "description": "Slave2 System fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมระบบ"
+    },
+    {
+      "code": "161",
+      "group": "Slave3",
+      "name": "FUSE",
+      "description": "Slave3 DC fuse blown.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "162",
+      "group": "Slave3",
+      "name": "OV",
+      "description": "Slave3 Main circuit overvoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration"
+    },
+    {
+      "code": "163",
+      "group": "Slave3",
+      "name": "OTF",
+      "description": "Slave3 Cooling unit overheat.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนตู้และตรวจสอบไส้กรองอากาศ"
+    },
+    {
+      "code": "164",
+      "group": "Slave3",
+      "name": "UV",
+      "description": "Slave3 Main circuit undervoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสถานะคอนเวอร์เตอร์และแรงดัน DC bus"
+    },
+    {
+      "code": "165",
+      "group": "Slave3",
+      "name": "PWRL",
+      "description": "Slave3 Instantaneous power interruption.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันของแหล่งจ่ายไฟควบคุม"
+    },
+    {
+      "code": "166",
+      "group": "Slave3",
+      "name": "OC",
+      "description": "Slave3 Overcurrent.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่มอเตอร์/สายเคเบิล และปรับค่าตั้งอินเวอร์เตอร์"
+    },
+    {
+      "code": "167",
+      "group": "Slave3",
+      "name": "OLM",
+      "description": "Slave3 Motor overload.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบ PLG และสภาพทางกล"
+    },
+    {
+      "code": "168",
+      "group": "Slave3",
+      "name": "OLI",
+      "description": "Slave3 Inverter overload.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์และสภาพโหลด"
+    },
+    {
+      "code": "169",
+      "group": "Slave3",
+      "name": "A CPU",
+      "description": "Slave3 ACR CPU error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "170",
+      "group": "Slave3",
+      "name": "GND",
+      "description": "Slave3 Ground fault.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความเป็นฉนวนของสายมอเตอร์และขดลวด"
+    },
+    {
+      "code": "176",
+      "group": "Slave3",
+      "name": "OTDDC",
+      "description": "Slave3 Print Board Temperature error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมตู้ให้อยู่ในเกณฑ์มาตรฐาน"
+    },
+    {
+      "code": "179",
+      "group": "Slave3",
+      "name": "OTM",
+      "description": "Slave3 Motor overheat.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์ พัดลม และเซนเซอร์"
+    },
+    {
+      "code": "181",
+      "group": "Slave3",
+      "name": "THMOM",
+      "description": "Slave3 Motor temperature sensor error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์หรือเปลี่ยนไปใช้ตัวสำรอง"
+    },
+    {
+      "code": "182",
+      "group": "Slave3",
+      "name": "FTA",
+      "description": "Slave3 External major fault signal.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault"
+    },
+    {
+      "code": "183",
+      "group": "Slave3",
+      "name": "FTB",
+      "description": "Slave3 External minor fault signal.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault"
+    },
+    {
+      "code": "184",
+      "group": "Slave3",
+      "name": "FTC",
+      "description": "Slave3 External middle fault signal.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault"
+    },
+    {
+      "code": "185",
+      "group": "Slave3",
+      "name": "OS",
+      "description": "Slave3 Motor overspeed.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ transmitted torque limit และค่าความเร็วที่ตั้ง"
+    },
+    {
+      "code": "186",
+      "group": "Slave3",
+      "name": "PLG",
+      "description": "Slave3 PLG error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสาย PLG ไฟเลี้ยง และเปลี่ยน PLG หากจำเป็น"
+    },
+    {
+      "code": "187",
+      "group": "Slave3",
+      "name": "DCCT",
+      "description": "Slave3 Current sensor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายและคอนเนกเตอร์ DCCT"
+    },
+    {
+      "code": "190",
+      "group": "Slave3",
+      "name": "PSB",
+      "description": "Slave3 Power supply board error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยน controller"
+    },
+    {
+      "code": "191",
+      "group": "Slave3",
+      "name": "ST",
+      "description": "Slave3 Initial charging delay.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบอุปกรณ์ในวงจร สายไฟ และสถานะคอนแทกเตอร์"
+    },
+    {
+      "code": "192",
+      "group": "Slave3",
+      "name": "MCST",
+      "description": "Slave3 Initial charging contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์ initial charging และสายไฟ"
+    },
+    {
+      "code": "193",
+      "group": "Slave3",
+      "name": "MCRN",
+      "description": "Slave3 DC contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ DC main contactor และสายไฟ"
+    },
+    {
+      "code": "194",
+      "group": "Slave3",
+      "name": "MCM",
+      "description": "Slave3 Output contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output contactor และสายไฟ"
+    },
+    {
+      "code": "195",
+      "group": "Slave3",
+      "name": "MCB",
+      "description": "Slave3 Output breaker error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output breaker"
+    },
+    {
+      "code": "196",
+      "group": "Slave3",
+      "name": "MFAN",
+      "description": "Slave3 Motor fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมมอเตอร์"
+    },
+    {
+      "code": "197",
+      "group": "Slave3",
+      "name": "SFAN",
+      "description": "Slave3 System fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมระบบ"
+    },
+    {
+      "code": "201",
+      "group": "Slave4",
+      "name": "FUSE",
+      "description": "Slave4 DC fuse blown.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "202",
+      "group": "Slave4",
+      "name": "OV",
+      "description": "Slave4 Main circuit overvoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration"
+    },
+    {
+      "code": "203",
+      "group": "Slave4",
+      "name": "OTF",
+      "description": "Slave4 Cooling unit overheat.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนตู้และตรวจสอบไส้กรองอากาศ"
+    },
+    {
+      "code": "204",
+      "group": "Slave4",
+      "name": "UV",
+      "description": "Slave4 Main circuit undervoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสถานะคอนเวอร์เตอร์และแรงดัน DC bus"
+    },
+    {
+      "code": "205",
+      "group": "Slave4",
+      "name": "PWRL",
+      "description": "Slave4 Instantaneous power interruption.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันของแหล่งจ่ายไฟควบคุม"
+    },
+    {
+      "code": "206",
+      "group": "Slave4",
+      "name": "OC",
+      "description": "Slave4 Overcurrent.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่มอเตอร์/สายเคเบิล และปรับค่าตั้งอินเวอร์เตอร์"
+    },
+    {
+      "code": "207",
+      "group": "Slave4",
+      "name": "OLM",
+      "description": "Slave4 Motor overload.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบ PLG และสภาพทางกล"
+    },
+    {
+      "code": "208",
+      "group": "Slave4",
+      "name": "OLI",
+      "description": "Slave4 Inverter overload.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์และสภาพโหลด"
+    },
+    {
+      "code": "209",
+      "group": "Slave4",
+      "name": "A CPU",
+      "description": "Slave4 ACR CPU error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "210",
+      "group": "Slave4",
+      "name": "GND",
+      "description": "Slave4 Ground fault.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความเป็นฉนวนของสายมอเตอร์และขดลวด"
+    },
+    {
+      "code": "216",
+      "group": "Slave4",
+      "name": "OTDDC",
+      "description": "Slave4 Print Board Temperature error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมตู้ให้อยู่ในเกณฑ์มาตรฐาน"
+    },
+    {
+      "code": "219",
+      "group": "Slave4",
+      "name": "OTM",
+      "description": "Slave4 Motor overheat.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์ พัดลม และเซนเซอร์"
+    },
+    {
+      "code": "221",
+      "group": "Slave4",
+      "name": "THMOM",
+      "description": "Slave4 Motor temperature sensor error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์หรือเปลี่ยนไปใช้ตัวสำรอง"
+    },
+    {
+      "code": "222",
+      "group": "Slave4",
+      "name": "FTA",
+      "description": "Slave4 External major fault signal.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault"
+    },
+    {
+      "code": "223",
+      "group": "Slave4",
+      "name": "FTB",
+      "description": "Slave4 External minor fault signal.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault"
+    },
+    {
+      "code": "224",
+      "group": "Slave4",
+      "name": "FTC",
+      "description": "Slave4 External middle fault signal.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault"
+    },
+    {
+      "code": "225",
+      "group": "Slave4",
+      "name": "OS",
+      "description": "Slave4 Motor overspeed.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ transmitted torque limit และค่าความเร็วที่ตั้ง"
+    },
+    {
+      "code": "226",
+      "group": "Slave4",
+      "name": "PLG",
+      "description": "Slave4 PLG error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสาย PLG ไฟเลี้ยง และเปลี่ยน PLG หากจำเป็น"
+    },
+    {
+      "code": "227",
+      "group": "Slave4",
+      "name": "DCCT",
+      "description": "Slave4 Current sensor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายและคอนเนกเตอร์ DCCT"
+    },
+    {
+      "code": "230",
+      "group": "Slave4",
+      "name": "PSB",
+      "description": "Slave4 Power supply board error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยน controller"
+    },
+    {
+      "code": "231",
+      "group": "Slave4",
+      "name": "ST",
+      "description": "Slave4 Initial charging delay.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบอุปกรณ์ในวงจร สายไฟ และสถานะคอนแทกเตอร์"
+    },
+    {
+      "code": "232",
+      "group": "Slave4",
+      "name": "MCST",
+      "description": "Slave4 Initial charging contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์ initial charging และสายไฟ"
+    },
+    {
+      "code": "233",
+      "group": "Slave4",
+      "name": "MCRN",
+      "description": "Slave4 DC contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ DC main contactor และสายไฟ"
+    },
+    {
+      "code": "234",
+      "group": "Slave4",
+      "name": "MCM",
+      "description": "Slave4 Output contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output contactor และสายไฟ"
+    },
+    {
+      "code": "235",
+      "group": "Slave4",
+      "name": "MCB",
+      "description": "Slave4 Output breaker error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output breaker"
+    },
+    {
+      "code": "236",
+      "group": "Slave4",
+      "name": "MFAN",
+      "description": "Slave4 Motor fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมมอเตอร์"
+    },
+    {
+      "code": "237",
+      "group": "Slave4",
+      "name": "SFAN",
+      "description": "Slave4 System fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมระบบ"
+    },
+    {
+      "code": "241",
+      "group": "Slave5",
+      "name": "FUSE",
+      "description": "Slave5 DC fuse blown.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์และ IGBT stack หรือติดต่อผู้ผลิต"
+    },
+    {
+      "code": "242",
+      "group": "Slave5",
+      "name": "OV",
+      "description": "Slave5 Main circuit overvoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุปกรณ์ regeneration และเพิ่มเวลา deceleration"
+    },
+    {
+      "code": "243",
+      "group": "Slave5",
+      "name": "OTF",
+      "description": "Slave5 Cooling unit overheat.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนพัดลมระบายความร้อนตู้และตรวจสอบไส้กรองอากาศ"
+    },
+    {
+      "code": "244",
+      "group": "Slave5",
+      "name": "UV",
+      "description": "Slave5 Main circuit undervoltage.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสถานะคอนเวอร์เตอร์และแรงดัน DC bus"
+    },
+    {
+      "code": "245",
+      "group": "Slave5",
+      "name": "PWRL",
+      "description": "Slave5 Instantaneous power interruption.",
+      "severity": "Major Fault 2 / Minor Fault 2",
+      "action": "ตรวจสอบแรงดันของแหล่งจ่ายไฟควบคุม"
+    },
+    {
+      "code": "246",
+      "group": "Slave5",
+      "name": "OC",
+      "description": "Slave5 Overcurrent.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบการลัดวงจรที่มอเตอร์/สายเคเบิล และปรับค่าตั้งอินเวอร์เตอร์"
+    },
+    {
+      "code": "247",
+      "group": "Slave5",
+      "name": "OLM",
+      "description": "Slave5 Motor overload.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบกำลังมอเตอร์ ระบบ PLG และสภาพทางกล"
+    },
+    {
+      "code": "248",
+      "group": "Slave5",
+      "name": "OLI",
+      "description": "Slave5 Inverter overload.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบกำลังมอเตอร์และสภาพโหลด"
+    },
+    {
+      "code": "249",
+      "group": "Slave5",
+      "name": "A CPU",
+      "description": "Slave5 ACR CPU error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยนยูนิตอินเวอร์เตอร์หรือ controller (CTR)"
+    },
+    {
+      "code": "250",
+      "group": "Slave5",
+      "name": "GND",
+      "description": "Slave5 Ground fault.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบความเป็นฉนวนของสายมอเตอร์และขดลวด"
+    },
+    {
+      "code": "256",
+      "group": "Slave5",
+      "name": "OTDDC",
+      "description": "Slave5 Print Board Temperature error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบอุณหภูมิแวดล้อมตู้ให้อยู่ในเกณฑ์มาตรฐาน"
+    },
+    {
+      "code": "259",
+      "group": "Slave5",
+      "name": "OTM",
+      "description": "Slave5 Motor overheat.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบอุณหภูมิมอเตอร์ พัดลม และเซนเซอร์"
+    },
+    {
+      "code": "261",
+      "group": "Slave5",
+      "name": "THMOM",
+      "description": "Slave5 Motor temperature sensor error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสายเทอร์มิสเตอร์หรือเปลี่ยนไปใช้ตัวสำรอง"
+    },
+    {
+      "code": "262",
+      "group": "Slave5",
+      "name": "FTA",
+      "description": "Slave5 External major fault signal.",
+      "severity": "Major Fault 2",
+      "action": "กำจัดสาเหตุของ external major fault"
+    },
+    {
+      "code": "263",
+      "group": "Slave5",
+      "name": "FTB",
+      "description": "Slave5 External minor fault signal.",
+      "severity": "Minor Fault 1",
+      "action": "กำจัดสาเหตุของ external minor fault"
+    },
+    {
+      "code": "264",
+      "group": "Slave5",
+      "name": "FTC",
+      "description": "Slave5 External middle fault signal.",
+      "severity": "Middle Fault",
+      "action": "กำจัดสาเหตุของ external middle fault"
+    },
+    {
+      "code": "265",
+      "group": "Slave5",
+      "name": "OS",
+      "description": "Slave5 Motor overspeed.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ transmitted torque limit และค่าความเร็วที่ตั้ง"
+    },
+    {
+      "code": "266",
+      "group": "Slave5",
+      "name": "PLG",
+      "description": "Slave5 PLG error.",
+      "severity": "Major Fault 2 / Middle / Minor Fault 1",
+      "action": "ตรวจสอบสาย PLG ไฟเลี้ยง และเปลี่ยน PLG หากจำเป็น"
+    },
+    {
+      "code": "267",
+      "group": "Slave5",
+      "name": "DCCT",
+      "description": "Slave5 Current sensor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบสายและคอนเนกเตอร์ DCCT"
+    },
+    {
+      "code": "270",
+      "group": "Slave5",
+      "name": "PSB",
+      "description": "Slave5 Power supply board error.",
+      "severity": "Major Fault 2",
+      "action": "เปลี่ยน controller"
+    },
+    {
+      "code": "271",
+      "group": "Slave5",
+      "name": "ST",
+      "description": "Slave5 Initial charging delay.",
+      "severity": "Major Fault 1",
+      "action": "ตรวจสอบอุปกรณ์ในวงจร สายไฟ และสถานะคอนแทกเตอร์"
+    },
+    {
+      "code": "272",
+      "group": "Slave5",
+      "name": "MCST",
+      "description": "Slave5 Initial charging contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบคอนแทกเตอร์ initial charging และสายไฟ"
+    },
+    {
+      "code": "273",
+      "group": "Slave5",
+      "name": "MCRN",
+      "description": "Slave5 DC contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ DC main contactor และสายไฟ"
+    },
+    {
+      "code": "274",
+      "group": "Slave5",
+      "name": "MCM",
+      "description": "Slave5 Output contactor error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output contactor และสายไฟ"
+    },
+    {
+      "code": "275",
+      "group": "Slave5",
+      "name": "MCB",
+      "description": "Slave5 Output breaker error.",
+      "severity": "Major Fault 2",
+      "action": "ตรวจสอบ output breaker"
+    },
+    {
+      "code": "276",
+      "group": "Slave5",
+      "name": "MFAN",
+      "description": "Slave5 Motor fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมมอเตอร์"
+    },
+    {
+      "code": "277",
+      "group": "Slave5",
+      "name": "SFAN",
+      "description": "Slave5 System fan error.",
+      "severity": "Minor Fault 1",
+      "action": "ตรวจสอบพัดลมระบบ"
+    }
+  ]
+}

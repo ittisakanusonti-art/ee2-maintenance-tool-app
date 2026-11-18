@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NS-SUS Plant Maintenance App</title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col justify-between select-none">
+
+    <!-- ================= HEADER: โลโก้บริษัท (ดึงจากไฟล์ Logo.png) ================= -->
+    <header class="bg-white text-black py-2 px-3 shadow-md flex items-center justify-between">
+        <div class="flex items-center">
+            <img src="Logo.png" alt="NS-SUS Logo" class="h-6 sm:h-8 object-contain">
+        </div>
+    </header>
+
+
+    <!-- ================= 1. หน้าจอเมนูหลัก (8 ไลน์การผลิต) ================= -->
+    <div id="mainMenuScreen" class="max-w-md mx-auto w-full p-4 flex-1 flex flex-col justify-between">
+        <div>
+            <h1 class="text-xl font-bold mb-6 text-center text-blue-400">EE2 Maintenance Tools / Select Line</h1>
+            
+            <div class="grid grid-cols-2 gap-3">
+                <button onclick="openSubMenu('CAL')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">CAL</button>
+                <button onclick="openSubMenu('CAPL')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">CAPL</button>
+                <button onclick="openSubMenu('TPM')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">TPM</button>
+                <button onclick="openSubMenu('#1CPL')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">#1CPL</button>
+                <button onclick="openSubMenu('#2CPL')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">#2CPL</button>
+                <button onclick="openSubMenu('ECL')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">ECL</button>
+                <button onclick="openSubMenu('1RCL')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition">1RCL</button>
+                <button onclick="openSubMenu('PACKING & CTC')" class="bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-4 rounded-xl font-bold border border-gray-700 shadow-md text-center transition text-xs flex items-center justify-center">PACKING & CTC</button>
+            </div>
+        </div>
+
+        <!-- [จุดที่มีอยู่แล้ว] ปุ่ม EXIT ชิดขวาด้านล่าง -->
+        <div class="flex justify-end pt-6 pb-2">
+            <button onclick="exitApp()" class="bg-red-600 hover:bg-red-500 active:bg-red-700 text-white px-6 py-2.5 rounded-xl font-bold shadow-lg transition text-sm flex items-center gap-1.5 border border-red-500">
+                <span>🚪 EXIT</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- ================= 2. หน้าจอเมนูย่อย (20 ปุ่มของแต่ละไลน์) ================= -->
+    <div id="subMenuScreen" class="max-w-md mx-auto w-full p-4 hidden flex-1">
+        <div class="flex justify-between items-center mb-4 bg-gray-800 p-3 rounded-lg border border-gray-700">
+            <h2 id="subTitle" class="text-lg font-bold text-blue-400">LINE NAME</h2>
+            <button onclick="goToMainMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">MENU</button>
+        </div>
+
+        <div id="subMenuGrid" class="grid grid-cols-2 gap-2 pb-16">
+            <!-- สร้างผ่าน JavaScript อัตโนมัติ 20 ปุ่ม -->
+        </div>
+    </div>
+
+
+    <!-- ================= 3. หน้าจอค้นหา Alarm แบบเดิม (1 ช่องกรอก + Keypad ตัวเลข) ================= -->
+    <div id="alarmScreen" class="max-w-md mx-auto w-full p-4 hidden flex-1">
+        <div class="flex justify-between items-center mb-3 bg-gray-800 p-2 rounded-lg border border-gray-700">
+            <button onclick="goBackToSubMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">BACK</button>
+            <span id="alarmTitle" class="text-xs sm:text-sm font-bold text-orange-400 truncate px-1">ALARM CHECK</span>
+            <button onclick="goToMainMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">MENU</button>
+        </div>
+        
+        <div class="mb-3">
+            <input type="text" id="searchInput" readonly placeholder="กรอกรหัส Alarm" class="w-full p-3 text-center text-xl font-bold rounded-lg bg-gray-800 text-white border border-gray-700 tracking-wider">
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 mb-3">
+            <button onclick="pressNum('1')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">1</button>
+            <button onclick="pressNum('2')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">2</button>
+            <button onclick="pressNum('3')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">3</button>
+            <button onclick="pressNum('4')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">4</button>
+            <button onclick="pressNum('5')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">5</button>
+            <button onclick="pressNum('6')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">6</button>
+            <button onclick="pressNum('7')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">7</button>
+            <button onclick="pressNum('8')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">8</button>
+            <button onclick="pressNum('9')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">9</button>
+            <button onclick="clearInput()" class="bg-red-900/50 hover:bg-red-900 p-3 text-sm font-bold rounded-lg border border-red-700 text-red-300">C</button>
+            <button onclick="pressNum('0')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">0</button>
+            <button onclick="deleteNum()" class="bg-gray-800 hover:bg-gray-700 p-3 text-sm font-bold rounded-lg border border-gray-700 active:bg-gray-600">⌫</button>
+        </div>
+
+        <button onclick="searchFault()" class="w-full bg-blue-600 hover:bg-blue-500 py-2.5 rounded-lg font-bold text-base mb-3 shadow-lg">ค้นหาข้อมูล</button>
+        <div id="resultContainer" class="space-y-3 pb-10"></div>
+    </div>
+
+
+    <!-- ================= 3.1 หน้าจอค้นหา Alarm แบบ 3 ช่อง (สำหรับ Hitachi Hivectol VSI) ================= -->
+    <div id="hitachiAlarmScreen" class="max-w-md mx-auto w-full p-4 hidden flex-1">
+        <div class="flex justify-between items-center mb-3 bg-gray-800 p-2 rounded-lg border border-gray-700">
+            <button onclick="goBackToSubMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">BACK</button>
+            <span id="hitachiAlarmTitle" class="text-xs sm:text-sm font-bold text-orange-400 truncate px-1">HITACHI ALARM CHECK</span>
+            <button onclick="goToMainMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">MENU</button>
+        </div>
+        
+        <div class="grid grid-cols-3 gap-2 mb-2">
+            <div id="box1" onclick="selectHitachiBox(1)" class="p-3 text-center text-xl font-bold rounded-lg bg-gray-800 border-2 border-blue-500 text-white cursor-pointer h-14 flex items-center justify-center tracking-widest shadow-inner">-</div>
+            <div id="box2" onclick="selectHitachiBox(2)" class="p-3 text-center text-xl font-bold rounded-lg bg-gray-800 border-2 border-gray-700 text-white cursor-pointer h-14 flex items-center justify-center tracking-widest shadow-inner">-</div>
+            <div id="box3" onclick="selectHitachiBox(3)" class="p-3 text-center text-xl font-bold rounded-lg bg-gray-800 border-2 border-gray-700 text-white cursor-pointer h-14 flex items-center justify-center tracking-widest shadow-inner">---</div>
+        </div>
+
+        <div id="sensorStatusText" class="text-center text-xs text-blue-300 font-semibold h-5 mb-2"></div>
+
+        <div class="grid grid-cols-3 gap-2 mb-3">
+            <button onclick="pressHitachiKey('1')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">1</button>
+            <button onclick="pressHitachiKey('2')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">2</button>
+            <button onclick="pressHitachiKey('3')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">3</button>
+            <button onclick="pressHitachiKey('4')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">4</button>
+            <button onclick="pressHitachiKey('5')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">5</button>
+            <button onclick="pressHitachiKey('6')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">6</button>
+            <button onclick="pressHitachiKey('7')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">7</button>
+            <button onclick="pressHitachiKey('8')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">8</button>
+            <button onclick="pressHitachiKey('9')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">9</button>
+            <button onclick="clearHitachiInput()" class="bg-red-900/50 hover:bg-red-900 p-3 text-sm font-bold rounded-lg border border-red-700 text-red-300">C</button>
+            <button onclick="pressHitachiKey('0')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600">0</button>
+            <button onclick="deleteHitachiKey()" class="bg-gray-800 hover:bg-gray-700 p-3 text-sm font-bold rounded-lg border border-gray-700 active:bg-gray-600">⌫</button>
+            <button onclick="pressHitachiKey('-')" class="col-span-3 bg-gray-800 hover:bg-gray-700 p-2.5 text-sm font-bold rounded-lg border border-gray-700 active:bg-gray-600 text-yellow-400">ป้อนเครื่องหมาย (-) [เฉพาะช่องที่ 2]</button>
+        </div>
+
+        <button onclick="searchHitachiFault()" class="w-full bg-blue-600 hover:bg-blue-500 py-2.5 rounded-lg font-bold text-base mb-3 shadow-lg">ค้นหาข้อมูล</button>
+        <div id="hitachiResultContainer" class="space-y-3 pb-10"></div>
+    </div>
+
+
+    <!-- ================= [จุดที่เพิ่มใหม่] 3.2 หน้าจอค้นหา Alarm แบบตัวอักษร (สำหรับ Yaskawa G7 Inverter) ================= -->
+    <div id="yaskawaAlarmScreen" class="max-w-md mx-auto w-full p-4 hidden flex-1">
+        <div class="flex justify-between items-center mb-3 bg-gray-800 p-2 rounded-lg border border-gray-700">
+            <button onclick="goBackToSubMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">BACK</button>
+            <span id="yaskawaAlarmTitle" class="text-xs sm:text-sm font-bold text-orange-400 truncate px-1">Yaskawa G7</span>
+            <button onclick="goToMainMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">MENU</button>
+        </div>
+        
+        <!-- ช่องแสดงผลข้อความที่กรอก (Display Inverter) -->
+        <div class="mb-3">
+            <input type="text" id="yaskawaInput" readonly placeholder="กรอกชื่อ Alarm บน Display Inverter" class="w-full p-3 text-center text-xl font-bold rounded-lg bg-blue-600 text-white border border-blue-400 tracking-wider shadow-inner uppercase">
+        </div>
+
+        <!-- แป้นพิมพ์โทรศัพท์ (Phone Keypad / T9 Style) สำหรับป้อนตัวอักษรและตัวเลข -->
+        <div class="grid grid-cols-3 gap-2 mb-3">
+            <button onclick="pressYaskawaKey('1')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>1</span><span class="text-[9px] text-gray-400">. , ? !</span>
+            </button>
+            <button onclick="pressYaskawaKey('2')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>2</span><span class="text-[9px] text-gray-400">ABC</span>
+            </button>
+            <button onclick="pressYaskawaKey('3')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>3</span><span class="text-[9px] text-gray-400">DEF</span>
+            </button>
+            <button onclick="pressYaskawaKey('4')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>4</span><span class="text-[9px] text-gray-400">GHI</span>
+            </button>
+            <button onclick="pressYaskawaKey('5')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>5</span><span class="text-[9px] text-gray-400">JKL</span>
+            </button>
+            <button onclick="pressYaskawaKey('6')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>6</span><span class="text-[9px] text-gray-400">MNO</span>
+            </button>
+            <button onclick="pressYaskawaKey('7')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>7</span><span class="text-[9px] text-gray-400">PQRS</span>
+            </button>
+            <button onclick="pressYaskawaKey('8')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>8</span><span class="text-[9px] text-gray-400">TUV</span>
+            </button>
+            <button onclick="pressYaskawaKey('9')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>9</span><span class="text-[9px] text-gray-400">WXYZ</span>
+            </button>
+            <button onclick="clearYaskawaInput()" class="bg-red-900/50 hover:bg-red-900 p-3 text-sm font-bold rounded-lg border border-red-700 text-red-300">C</button>
+            <button onclick="pressYaskawaKey('0')" class="bg-gray-800 hover:bg-gray-700 p-3 text-lg font-bold rounded-lg border border-gray-700 active:bg-gray-600 flex flex-col items-center">
+                <span>0</span><span class="text-[9px] text-gray-400">SPACE</span>
+            </button>
+            <button onclick="deleteYaskawaKey()" class="bg-gray-800 hover:bg-gray-700 p-3 text-sm font-bold rounded-lg border border-gray-700 active:bg-gray-600">⌫</button>
+            <!-- ปุ่มพิเศษสำหรับพิมพ์เครื่องหมายขีดกลาง (-) และจุด (.) ที่พบบ่อยใน Error Code ของ Inverter -->
+            <button onclick="pressYaskawaKey('-')" class="col-span-1 bg-gray-800 hover:bg-gray-700 p-2 text-sm font-bold rounded-lg border border-gray-700 active:bg-gray-600 text-yellow-400">-</button>
+            <button onclick="pressYaskawaKey('.')" class="col-span-2 bg-gray-800 hover:bg-gray-700 p-2 text-sm font-bold rounded-lg border border-gray-700 active:bg-gray-600 text-yellow-400">.</button>
+        </div>
+
+        <button onclick="searchYaskawaFault()" class="w-full bg-blue-600 hover:bg-blue-500 py-2.5 rounded-lg font-bold text-base mb-3 shadow-lg">ค้นหาข้อมูล</button>
+        <div id="yaskawaResultContainer" class="space-y-3 pb-10"></div>
+    </div>
+
+
+    <!-- ================= 4. หน้าจอ Placeholder (ยังไม่ได้กำหนดข้อมูล) ================= -->
+    <div id="placeholderScreen" class="max-w-md mx-auto w-full p-4 hidden flex-1 flex flex-col justify-between">
+        <div class="flex justify-between items-center mb-4 bg-gray-800 p-2 rounded-lg border border-gray-700">
+            <button onclick="goBackToSubMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">BACK</button>
+            <span id="placeholderHeader" class="text-sm font-bold text-yellow-400">หัวข้อ</span>
+            <button onclick="goToMainMenu()" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-xs font-bold border border-gray-600">MENU</button>
+        </div>
+        <div class="text-center py-16 my-auto bg-gray-800/50 rounded-xl border border-gray-700/50 p-6">
+            <h2 class="text-xl font-bold mb-3 text-yellow-400">ยังไม่ได้กำหนดข้อมูล</h2>
+            <p class="text-gray-400 text-sm">หน้านี้กำลังอยู่ในระหว่างการพัฒนา...</p>
+        </div>
+        <div></div>
+    </div>
+
+
+    <!-- ================= JavaScript ควบคุมระบบหน้าจอ ================= -->
+    <script>
+        let tmeicAlarmData = [];
+        let fujiAlarmData = [];
+        let fujiVm4AlarmData = [];
+        let hitachi8_200AlarmData = [];
+        let hitachi400_2400AlarmData = [];
+        let yaskawaG7AlarmData = [];      // [จุดที่เพิ่มใหม่] ตัวเก็บข้อมูล JSON ของ Yaskawa G7
+        let currentActiveDatabase = [];
+        let currentLine = '';
+
+        // ตัวแปรควบคุมระบบ 3 ช่องของ Hitachi
+        let activeHitachiBox = 1;
+        let hitachiValues = { box1: '', box2: '', box3: '' };
+
+        // ตัวแปรควบคุมระบบกดปุ่มมือถือของ Yaskawa (รองรับระบบกดซ้ำวนตัวอักษรแบบโทรศัพท์มือถือโบราณ / Multi-tap)
+        let lastYaskawaKey = '';
+        let yaskawaKeyClickCount = 0;
+        let yaskawaTimer = null;
+
+        const yaskawaKeyMap = {
+            '1': ['.', ',', '?', '!', '1'],
+            '2': ['A', 'B', 'C', '2'],
+            '3': ['D', 'E', 'F', '3'],
+            '4': ['G', 'H', 'I', '4'],
+            '5': ['J', 'K', 'L', '5'],
+            '6': ['M', 'N', 'O', '6'],
+            '7': ['P', 'Q', 'R', 'S', '7'],
+            '8': ['T', 'U', 'V', '8'],
+            '9': ['W', 'X', 'Y', 'Z', '9'],
+            '0': [' ', '0'],
+            '-': ['-'],
+            '.': ['.']
+        };
+
+        // โหลดข้อมูล TMEIC Alarm
+        fetch('Tmeic_alarms.json')
+            .then(response => response.json())
+            .then(data => { tmeicAlarmData = data.tmeic_alarms || data; })
+            .catch(err => console.error('โหลด Tmeic_alarms.json ไม่สำเร็จ:', err));
+
+        // โหลดข้อมูล Fuji Alarm (VM5,6)
+        fetch('Fuji_alarms.json')
+            .then(response => response.json())
+            .then(data => { fujiAlarmData = data.fuji_alarms || data; })
+            .catch(err => console.error('โหลด Fuji_alarms.json ไม่สำเร็จ:', err));
+
+        // โหลดข้อมูล Fuji VM4 Alarm
+        fetch('Fuji_VM4_alarms.json')
+            .then(response => response.json())
+            .then(data => { fujiVm4AlarmData = data.fuji_vm4_alarms || data; })
+            .catch(err => console.error('โหลด Fuji_VM4_alarms.json ไม่สำเร็จ:', err));    
+
+        // โหลดข้อมูล Hitachi HIVECTOL VSI 8-200kVA
+        fetch('Hitachi_hivectol_vsi_8_200_alarms.json')
+            .then(response => response.json())
+            .then(data => { hitachi8_200AlarmData = data.hitachi_hivectol_vsi_8_200_alarms || data; })
+            .catch(err => console.error('โหลด Hitachi_hivectol_vsi_8_200_alarms.json ไม่สำเร็จ:', err));
+
+        // โหลดข้อมูล Hitachi HIVECTOL VSI 400-2400kVA
+        fetch('Hitachi_hivectol_vsi_400_2400_alarms.json')
+            .then(response => response.json())
+            .then(data => { hitachi400_2400AlarmData = data.hitachi_hivectol_vsi_400_2400_alarms || data; })
+            .catch(err => console.error('โหลด Hitachi_hivectol_vsi_400_2400_alarms.json ไม่สำเร็จ:', err));
+
+        // [จุดที่เพิ่มใหม่] โหลดข้อมูล Yaskawa G7 Inverter Alarm
+        fetch('Yaskawa_g7_alarms.json')
+            .then(response => response.json())
+            .then(data => { yaskawaG7AlarmData = data.yaskawa_g7_alarms || data; })
+            .catch(err => console.error('โหลด Yaskawa_g7_alarms.json ไม่สำเร็จ:', err));
+
+        function goToMainMenu() {
+            hideAllScreens();
+            document.getElementById('mainMenuScreen').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function openSubMenu(lineName) {
+            currentLine = lineName;
+            document.getElementById('subTitle').innerText = lineName;
+
+            const grid = document.getElementById('subMenuGrid');
+            grid.innerHTML = '';
+
+            for (let i = 1; i <= 20; i++) {
+                const btn = document.createElement('button');
+                btn.className = "text-left bg-gray-800 hover:bg-gray-700 active:bg-gray-600 p-3 rounded-xl font-medium text-xs border border-gray-700 shadow flex justify-between items-center transition truncate";
+                
+                let labelText = `${i}. (ยังไม่ได้กำหนดข้อมูล)`;
+                
+                if (lineName === 'CAL' && i === 1) {
+                    labelText = `1. FUJI FRENIC4000 VM5,6 ALARM CHECK`;
+                    btn.classList.add('border-blue-500', 'bg-blue-950/40');
+                } else if (lineName === 'CAL' && i === 2) {
+                    labelText = `2. FUJI FRENIC4000 VM4 ALARM CHECK`;
+                    btn.classList.add('border-blue-500', 'bg-blue-950/40');    
+                } else if (lineName === 'CAPL' && i === 1) {
+                    labelText = `1. TMEIC TM-DRIVE ALARM CHECK`;
+                    btn.classList.add('border-blue-500', 'bg-blue-950/40');
+                } else if (lineName === 'TPM' && i === 1) {
+                    labelText = `1. HITACHI HIVECTOL VSI 8-200kVA ALARM`;
+                    btn.classList.add('border-blue-500', 'bg-blue-950/40');
+                } else if (lineName === 'TPM' && i === 2) {
+                    labelText = `2. HITACHI HIVECTOL VSI 400-2400kVA ALARM`;
+                    btn.classList.add('border-blue-500', 'bg-blue-950/40');
+                } // [จุดที่เพิ่มใหม่] เพิ่มปุ่ม Yaskawa G7 Inverter ให้กับไลน์ #1CPL, #2CPL และ 1RCL (กำหนดไว้ที่ปุ่มข้อ 1)
+                else if ((lineName === '#1CPL' || lineName === '#2CPL' || lineName === '1RCL') && i === 1) {
+                    labelText = `1. Yaskawa G7 Inverter ALARM`;
+                    btn.classList.add('border-blue-500', 'bg-blue-950/40');
+                }
+
+                btn.innerHTML = `<span class="truncate">${labelText}</span> <span class="text-gray-500 ml-1">➔</span>`;
+                
+                btn.onclick = function() {
+                    clearInput();
+                    if (lineName === 'CAL' && i === 1) {
+                        currentActiveDatabase = fujiAlarmData;
+                        document.getElementById('alarmTitle').innerText = 'FUJI FRENIC4000 VM5,6 ALARM CHECK';
+                        goToScreen('alarmScreen');
+                    } else if (lineName === 'CAL' && i === 2) {
+                        currentActiveDatabase = fujiVm4AlarmData;
+                        document.getElementById('alarmTitle').innerText = 'FUJI FRENIC4000 VM4 ALARM CHECK';
+                        goToScreen('alarmScreen');    
+                    } else if (lineName === 'CAPL' && i === 1) {
+                        currentActiveDatabase = tmeicAlarmData;
+                        document.getElementById('alarmTitle').innerText = 'TMEIC TM-DRIVE ALARM CHECK';
+                        goToScreen('alarmScreen');
+                    } else if (lineName === 'TPM' && i === 1) {
+                        currentActiveDatabase = hitachi8_200AlarmData;
+                        document.getElementById('hitachiAlarmTitle').innerText = '1. HITACHI HIVECTOL VSI 8-200kVA ALARM';
+                        resetHitachiKeypad();
+                        goToScreen('hitachiAlarmScreen');
+                    } else if (lineName === 'TPM' && i === 2) {
+                        currentActiveDatabase = hitachi400_2400AlarmData;
+                        document.getElementById('hitachiAlarmTitle').innerText = '2. HITACHI HIVECTOL VSI 400-2400kVA ALARM';
+                        resetHitachiKeypad();
+                        goToScreen('hitachiAlarmScreen');
+                    } // [จุดที่เพิ่มใหม่] กำหนดการคลิกเปิดหน้าจอ Yaskawa G7
+                    else if ((lineName === '#1CPL' || lineName === '#2CPL' || lineName === '1RCL') && i === 1) {
+                        currentActiveDatabase = yaskawaG7AlarmData;
+                        document.getElementById('yaskawaAlarmTitle').innerText = `${lineName} : Yaskawa G7 Inverter ALARM`;
+                        clearYaskawaInput();
+                        goToScreen('yaskawaAlarmScreen');
+                    } else {
+                        goToPlaceholder(lineName, i);
+                    }
+                };
+
+                grid.appendChild(btn);
+            }
+
+            hideAllScreens();
+            document.getElementById('subMenuScreen').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function goToPlaceholder(lineName, num) {
+            document.getElementById('placeholderHeader').innerText = `${lineName} : ข้อ ${num}`;
+            hideAllScreens();
+            document.getElementById('placeholderScreen').classList.add('hidden');
+            document.getElementById('placeholderScreen').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function goBackToSubMenu() {
+            if (currentLine) {
+                openSubMenu(currentLine);
+            } else {
+                goToMainMenu();
+            }
+        }
+
+        function hideAllScreens() {
+            document.getElementById('mainMenuScreen').classList.add('hidden');
+            document.getElementById('subMenuScreen').classList.add('hidden');
+            document.getElementById('alarmScreen').classList.add('hidden');
+            document.getElementById('hitachiAlarmScreen').classList.add('hidden');
+            document.getElementById('yaskawaAlarmScreen').classList.add('hidden'); // [จุดที่เพิ่มใหม่] ซ่อนหน้า Yaskawa
+            document.getElementById('placeholderScreen').classList.add('hidden');
+        }
+
+        function goToScreen(screenId) {
+            hideAllScreens();
+            document.getElementById(screenId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // ================= [จุดที่เพิ่มใหม่] ฟังก์ชันควบคุม Keypad แบบโทรศัพท์ (T9 Multi-tap) สำหรับ Yaskawa G7 =================
+        function pressYaskawaKey(key) {
+            const input = document.getElementById('yaskawaInput');
+            const chars = yaskawaKeyMap[key];
+            if (!chars) return;
+
+            if (lastYaskawaKey === key) {
+                // กดปุ่มเดิมซ้ำในเวลาไล่เลี่ยกันเพื่อเปลี่ยนตัวอักษรหมุนเวียน (เช่น กด 2 สองครั้งได้ B)
+                yaskawaKeyClickCount = (yaskawaKeyClickCount + 1) % chars.length;
+                let val = input.value;
+                input.value = val.substring(0, val.length - 1) + chars[yaskawaKeyClickCount];
+            } else {
+                // กดปุ่มใหม่ เพิ่มตัวอักษรตัวแรกของปุ่มนั้นเข้าไป
+                if (input.value.length < 15) {
+                    lastYaskawaKey = key;
+                    yaskawaKeyClickCount = 0;
+                    input.value += chars[yaskawaKeyClickCount];
+                }
+            }
+
+            // ตั้งเวลาพัก (Timeout) เพื่อบันทึกตัวอักษรนั้นถาวร แล้วเตรียมรับตัวอักษรใหม่
+            clearTimeout(yaskawaTimer);
+            yaskawaTimer = setTimeout(() => {
+                lastYaskawaKey = '';
+                yaskawaKeyClickCount = 0;
+            }, 1000);
+        }
+
+        function deleteYaskawaKey() {
+            const input = document.getElementById('yaskawaInput');
+            input.value = input.value.slice(0, -1);
+            lastYaskawaKey = '';
+            yaskawaKeyClickCount = 0;
+        }
+
+        function clearYaskawaInput() {
+            document.getElementById('yaskawaInput').value = '';
+            document.getElementById('yaskawaResultContainer').innerHTML = '';
+            lastYaskawaKey = '';
+            yaskawaKeyClickCount = 0;
+        }
+
+        function searchYaskawaFault() {
+            const code = document.getElementById('yaskawaInput').value.trim().toUpperCase();
+            const container = document.getElementById('yaskawaResultContainer');
+            container.innerHTML = '';
+
+            if (!code) {
+                container.innerHTML = `<div class="text-yellow-400 text-center text-sm">กรุณากรอกชื่อ Alarm ก่อนค้นหา</div>`;
+                return;
+            }
+
+            // [จุดแก้ปัญหา] แปลงข้อมูลให้เป็น Array ป้องกัน Error กรณีข้อมูลยังไม่พร้อม
+            let dbArray = [];
+            if (Array.isArray(currentActiveDatabase)) {
+                dbArray = currentActiveDatabase;
+            } else if (currentActiveDatabase && typeof currentActiveDatabase === 'object') {
+                // เผื่อกรณีข้อมูลถูกครอบด้วย Object เช่น { yaskawa_g7_alarms: [...] }
+                dbArray = currentActiveDatabase.yaskawa_g7_alarms || Object.values(currentActiveDatabase)[0] || [];
+            }
+
+            if (dbArray.length === 0) {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm">⚠️ ฐานข้อมูลยังไม่พร้อมใช้งาน หรือยังไม่ได้เลือกหมวดหมู่</div>`;
+                return;
+            }
+
+            // ค้นหาข้อมูลด้วย dbArray ที่ปลอดภัยแล้ว
+            const found = dbArray.find(item => {
+                const dbCode = item.code !== undefined && item.code !== null ? item.code.toString().trim().toUpperCase() : '';
+                return dbCode === code;
+            });
+
+            if (found) {
+                let severityBadge = `<span class="px-2 py-0.5 text-[10px] font-semibold rounded bg-orange-900/80 text-orange-200 border border-orange-700">${found.severity || 'Fault'}</span>`;
+                
+                container.innerHTML = `
+                    <div class="p-3 bg-gray-800 rounded-lg border border-gray-700 shadow-md space-y-2 text-sm">
+                        <div class="flex justify-between items-start border-b border-gray-700 pb-2">
+                            <div>
+                                <span class="text-[10px] text-gray-400 font-semibold">ALARM CODE (${code})</span>
+                                <div class="text-xl font-bold text-orange-400">${found.code} : ${found.name}</div>
+                            </div>
+                            <div>${severityBadge}</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Description</div>
+                            <div class="text-sm font-semibold text-white">${found.description}</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Action (วิธีแก้ไข)</div>
+                            <p class="text-gray-300 text-xs bg-gray-900/50 p-2 rounded border border-gray-700/50">${found.action}</p>
+                        </div>
+                        <div class="mt-3 p-3 bg-blue-950/60 border border-blue-600 rounded-lg text-blue-300 text-center text-sm">ℹ️ Trackback Alarm และ กด RESET</div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm bg-gray-800 p-3 rounded-lg border border-red-700 font-semibold">คุณป้อนข้อมูลไม่ถูกต้อง หรือไม่มีข้อมูล Alarm</div>`;
+            }
+        }
+        // ================= จบส่วนที่เพิ่มใหม่ของ Yaskawa G7 =================
+
+
+        // ฟังก์ชันเดิมของ Hitachi และ Keypad อื่นๆ
+        function resetHitachiKeypad() {
+            hitachiValues = { box1: '', box2: '', box3: '' };
+            activeHitachiBox = 1;
+            updateHitachiDisplay();
+            document.getElementById('hitachiResultContainer').innerHTML = '';
+        }
+
+        function selectHitachiBox(boxNum) {
+            activeHitachiBox = boxNum;
+            updateHitachiDisplay();
+        }
+
+        function updateHitachiDisplay() {
+            const b1 = document.getElementById('box1');
+            const b2 = document.getElementById('box2');
+            const b3 = document.getElementById('box3');
+            const statusText = document.getElementById('sensorStatusText');
+
+            b1.innerText = hitachiValues.box1 || '-';
+            b2.innerText = hitachiValues.box2 || '-';
+            b3.innerText = hitachiValues.box3 || '---';
+
+            b1.className = `p-3 text-center text-xl font-bold rounded-lg bg-gray-800 border-2 ${activeHitachiBox === 1 ? 'border-blue-500 shadow-lg' : 'border-gray-700'} text-white cursor-pointer h-14 flex items-center justify-center tracking-widest`;
+            b2.className = `p-3 text-center text-xl font-bold rounded-lg bg-gray-800 border-2 ${activeHitachiBox === 2 ? 'border-blue-500 shadow-lg' : 'border-gray-700'} text-white cursor-pointer h-14 flex items-center justify-center tracking-widest`;
+            b3.className = `p-3 text-center text-xl font-bold rounded-lg bg-gray-800 border-2 ${activeHitachiBox === 3 ? 'border-blue-500 shadow-lg' : 'border-gray-700'} text-white cursor-pointer h-14 flex items-center justify-center tracking-widest`;
+
+            if (hitachiValues.box2 === '1') {
+                statusText.innerText = 'Drive with speed sensor';
+            } else if (hitachiValues.box2 === '3') {
+                statusText.innerText = 'Drive sensorless';
+            } else {
+                statusText.innerText = '';
+            }
+        }
+
+        function pressHitachiKey(char) {
+            if (activeHitachiBox === 1) {
+                if (char === '6' || char === '7') {
+                    hitachiValues.box1 = char;
+                    activeHitachiBox = 2;
+                }
+            } else if (activeHitachiBox === 2) {
+                if (char === '1' || char === '3' || char === '-') {
+                    hitachiValues.box2 = char;
+                    activeHitachiBox = 3;
+                }
+            } else if (activeHitachiBox === 3) {
+                if (!isNaN(char) && hitachiValues.box3.length < 3) {
+                    hitachiValues.box3 += char;
+                }
+            }
+            updateHitachiDisplay();
+        }
+
+        function deleteHitachiKey() {
+            if (activeHitachiBox === 3) {
+                if (hitachiValues.box3.length > 0) {
+                    hitachiValues.box3 = hitachiValues.box3.slice(0, -1);
+                } else {
+                    activeHitachiBox = 2;
+                }
+            } else if (activeHitachiBox === 2) {
+                if (hitachiValues.box2.length > 0) {
+                    hitachiValues.box2 = '';
+                } else {
+                    activeHitachiBox = 1;
+                }
+            } else if (activeHitachiBox === 1) {
+                hitachiValues.box1 = '';
+            }
+            updateHitachiDisplay();
+        }
+
+        function clearHitachiInput() {
+            resetHitachiKeypad();
+        }
+
+        function searchHitachiFault() {
+            const container = document.getElementById('hitachiResultContainer');
+            container.innerHTML = '';
+
+            if (!hitachiValues.box1 || !hitachiValues.box2 || hitachiValues.box3.length !== 3) {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm bg-gray-800 p-3 rounded-lg border border-red-700">คุณป้อนข้อมูลไม่ครบ ให้ป้อนใหม่</div>`;
+                return;
+            }
+
+            const fullCode = hitachiValues.box1 + hitachiValues.box2 + hitachiValues.box3;
+
+            if (!currentActiveDatabase || currentActiveDatabase.length === 0) {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm">⚠️ ฐานข้อมูลยังไม่พร้อมใช้งาน หรือยังไม่ได้เลือกหมวดหมู่</div>`;
+                return;
+            }
+
+            const found = currentActiveDatabase.find(item => {
+                let dbCode = item.code.toString().trim();
+                if (dbCode.includes('*')) {
+                    const regexPattern = '^' + dbCode.replace('*', '[13]') + '$';
+                    const regex = new RegExp(regexPattern);
+                    return regex.test(fullCode);
+                } else {
+                    return dbCode.toLowerCase() === fullCode.toLowerCase();
+                }
+            });
+
+            if (found) {
+                let severityBadge = `<span class="px-2 py-0.5 text-[10px] font-semibold rounded bg-orange-900/80 text-orange-200 border border-orange-700">${found.severity || 'Fault'}</span>`;
+                
+                container.innerHTML = `
+                    <div class="p-3 bg-gray-800 rounded-lg border border-gray-700 shadow-md space-y-2 text-sm">
+                        <div class="flex justify-between items-start border-b border-gray-700 pb-2">
+                            <div>
+                                <span class="text-[10px] text-gray-400 font-semibold">ALARM CODE (${fullCode})</span>
+                                <div class="text-xl font-bold text-orange-400">${found.code} : ${found.name}</div>
+                            </div>
+                            <div>${severityBadge}</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Description</div>
+                            <div class="text-sm font-semibold text-white">${found.description}</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Action (วิธีแก้ไข)</div>
+                            <p class="text-gray-300 text-xs bg-gray-900/50 p-2 rounded border border-gray-700/50">${found.action}</p>
+                        </div>
+                        <div class="mt-3 p-3 bg-blue-950/60 border border-blue-600 rounded-lg text-blue-300 text-center text-sm">ℹ️ Trackback Alarm และ กด RESET</div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm bg-gray-800 p-3 rounded-lg border border-red-700 font-semibold">คุณป้อนข้อมูลไม่ถูกต้อง หรือไม่มีข้อมูล Alarm</div>`;
+            }
+        }
+
+        // ระบบ Keypad หน้า Alarm ปกติเดิม
+        function pressNum(num) {
+            const input = document.getElementById('searchInput');
+            if (input.value.length < 6) {
+                input.value += num;
+            }
+        }
+
+        function deleteNum() {
+            const input = document.getElementById('searchInput');
+            input.value = input.value.slice(0, -1);
+        }
+
+        function clearInput() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('resultContainer').innerHTML = '';
+        }
+
+        function searchFault() {
+            const code = document.getElementById('searchInput').value.trim();
+            const container = document.getElementById('resultContainer');
+            container.innerHTML = '';
+
+            if (!code) {
+                container.innerHTML = `<div class="text-yellow-400 text-center text-sm">กรุณากรอกรหัส Alarm ก่อนค้นหา</div>`;
+                return;
+            }
+
+            if (!currentActiveDatabase || currentActiveDatabase.length === 0) {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm">⚠️ ฐานข้อมูลยังไม่พร้อมใช้งาน หรือยังไม่ได้เลือกหมวดหมู่</div>`;
+                return;
+            }
+
+            const found = currentActiveDatabase.find(item => item.code.toString().trim().toLowerCase() === code.toLowerCase());
+
+            if (found) {
+                let resetHtml = '';
+                const titleElement = document.getElementById('alarmTitle');
+                const isTmeic = titleElement ? titleElement.innerText.includes('TMEIC') : false;
+
+                if (isTmeic && (code === '50' || code === '145' || code === '82')) {
+                    resetHtml = `<div class="mt-3 p-3 bg-red-950/60 border border-red-600 rounded-lg text-red-400 font-bold text-center text-sm">⚠️ ห้าม RESET !!! ให้ติดต่อ Engineer</div>`;
+                } else {
+                    resetHtml = `<div class="mt-3 p-3 bg-blue-950/60 border border-blue-600 rounded-lg text-blue-300 text-center text-sm">ℹ️ Trackback Alarm และ กด RESET</div>`;
+                }
+
+                let severityBadge = `<span class="px-2 py-0.5 text-[10px] font-semibold rounded bg-orange-900/80 text-orange-200 border border-orange-700">${found.severity || 'Fault'}</span>`;
+                
+                container.innerHTML = `
+                    <div class="p-3 bg-gray-800 rounded-lg border border-gray-700 shadow-md space-y-2 text-sm">
+                        <div class="flex justify-between items-start border-b border-gray-700 pb-2">
+                            <div>
+                                <span class="text-[10px] text-gray-400 font-semibold">ALARM CODE</span>
+                                <div class="text-xl font-bold text-orange-400">${found.code} : ${found.name}</div>
+                            </div>
+                            <div>${severityBadge}</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Description</div>
+                            <div class="text-sm font-semibold text-white">${found.description}</div>
+                        </div>
+                        <div>
+                            <div class="text-[10px] uppercase tracking-wider text-gray-400 font-bold">Action (วิธีแก้ไข)</div>
+                            <p class="text-gray-300 text-xs bg-gray-900/50 p-2 rounded border border-gray-700/50">${found.action}</p>
+                        </div>
+                        ${resetHtml}
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `<div class="text-red-400 text-center text-sm bg-gray-800 p-3 rounded-lg border border-red-700 font-semibold">คุณป้อนข้อมูลไม่ถูกต้อง หรือไม่มีข้อมูล Alarm</div>`;
+            }
+        }
+
+        // ฟังก์ชัน Exit App
+        function exitApp() {
+            if (confirm('คุณต้องการออกจากแอปพลิเคชันใช่หรือไม่?')) {
+                window.close();
+                setTimeout(() => {
+                    alert('หากหน้าต่างไม่ปิดอัตโนมัติ คุณสามารถปิดแท็บหรือออกจากแอปได้เลยครับ');
+                }, 300);
+            }
+        }
+
+        // ลงทะเบียน PWA Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
